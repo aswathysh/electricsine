@@ -1,7 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Providers from "./provider";
-import { CartProvider } from "@/context/cartContext";
+import { CartProvider } from "@/context/CartContext";
 // import { ToastContainer } from "react-toastify";
 import ToastProvider from "./ToastContainer";
 

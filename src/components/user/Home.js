@@ -7,7 +7,7 @@ import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from "react";
 import '../sharables/sharables.css';
 import { CourseViewModal } from '@/components/sharables/CourseViewModal'
-import { useCart } from '@/context/cartContext';
+import { useCart } from '@/context/CartContext';
 import { Alert, Snackbar } from '@mui/material';
 export const UserHome = () => {
     const router = useRouter();

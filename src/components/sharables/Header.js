@@ -12,7 +12,7 @@ import Grid from "@mui/material/Grid2";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import React, { useEffect, useMemo, useState } from "react";
 import "../../styles/header.css";
-import { useCart } from "@/context/cartContext";
+import { useCart } from "@/context/CartContext";
 import Image from "next/image";
 import MenuIcon from "@mui/icons-material/Menu";
 import AccountCircle from "@mui/icons-material/AccountCircle";
