@@ -1,0 +1,123 @@
+/* #565353db */
+.bg_grey{
+    background-color: #565353db;
+}
+.pdt25{
+    padding-top: 10%;
+}
+.login {
+    background-image: url('/assets/images/loginbg.png');
+    background-size: cover !important;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100% !important;
+    height: 100vh !important;
+    color: white !important;
+    /* padding-top: 2%; */
+
+}
+.login_div_container {
+    overflow: hidden;
+    height: 100% !important;
+}
+.login_div1 {
+    width:100%;
+padding-left: 5% !important;
+padding-right: 5% !important;
+
+    /* margin-top: 2%; */
+    /* background-color: #ffffff; */
+    /* height: 100vh !important; */
+}
+.loginlogostyle {
+    width: 200px !important;
+    height: auto;
+    margin: auto;
+    /* position: absolute; */
+}
+.logo-wrap{
+    text-align: center;
+    margin-top: 20%;
+}
+.loginlabel {
+    font-family: Nunito, sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: rgb(255, 255, 255) !important;
+
+}
+.text {
+    border-width: 0px !important;
+    background-color: #FCFCFC;
+    border-color: none !important;
+    width: 99%;
+}
+.forget_div {
+    color: #E28909 !important;
+    float: right !important;
+    margin-bottom: 2%;
+}
+.forgotlabel {
+    font-family: Nunito, sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    line-height: 22px !important;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #ffffff !important;
+
+}
+.full_width {
+    width: 100% !important;
+}
+.gridItems{
+    width: 50px;
+  height: 50px;
+  background-color: rgb(0, 49, 128);
+  border-radius: 5px;
+  text-align: center;
+  align-content: center;
+  justify-content: center;
+  display: grid;
+  justify-items: center;
+  color: white;
+  border: 1px solid #194a99ff;
+}
+/* styles/globals.css or styles/TriangleList.module.css */
+.triangle-list {
+    list-style: none; /* Remove default bullet points */
+    padding-left: 0;
+  }
+  
+  .triangle-list li {
+    position: relative;
+    padding-left: 20px; /* Add space for the triangle */
+  }
+  
+  .triangle-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 23%;
+    /* transform: translateY(-50%) rotate(45deg); Rotate the square to make a triangle */
+    width: 10px;
+    height: 10px;
+    background-color: white; /* Triangle color */
+    clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
+}
+@media (max-width: 1200px) {
+  .login_div1 {
+    /* Your styles for mobile */
+   width:90% !important;
+    padding-left: 5% !important;
+    /* font-size: 14px; */
+  }
+}@media (max-width: 600px) {
+    .gridItems{
+    width: 35px;
+  height: 35px;
+    }
+}

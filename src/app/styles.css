@@ -1,0 +1,61 @@
+/* styles/Home.module.css */
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #f5f5f5;
+  }
+  
+  .title {
+    font-size: 3rem;
+    margin: 0;
+    color: #333;
+  }
+  
+  .description {
+    margin: 20px 0;
+    font-size: 1.5rem;
+    color: #666;
+  }
+  
+  .subscribeForm {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .emailInput {
+    padding: 10px;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .subscribeButton {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #0070f3;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .subscribeButton:hover {
+    background-color: #005bb5;
+  }
+  
+  .footer {
+    position: absolute;
+    bottom: 20px;
+    font-size: 0.8rem;
+    color: #888;
+  }
+  

@@ -1,0 +1,31 @@
+.main_padding{
+    padding: 8px 8px 8px 8px;
+
+}
+.main_padding_practice{
+  padding: 1px 8px 8px 8px;
+
+}
+@media(max-width: 960px) {
+    .hide {
+       display: none !important;
+    }
+  }
+  @media (min-width: 960px) {
+    .responsive-image {
+        width: 60%; /* Width for medium devices and above */
+    }
+    .hide_above_mob{
+      display: none !important;
+    }
+  }
+  .practice_mob_sidebar {
+    background-color: #2c70ae;
+    border: 3px solid rgb(222, 222, 222);
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 30px;
+    height: 132px !important;
+    overflow-y: hidden;
+    overflow-x: scroll;
+  }

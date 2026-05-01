@@ -1,0 +1,28 @@
+.headerlogo {
+    width: 200px !important;
+   height: 90px;
+   
+}
+.header_exam_logo{
+    width: 145px !important;
+    height: 60px;
+}
+.headerbg{
+    background-color: blue;
+    border-color: blue !important;
+}
+.headerpad{
+    padding: 10px 15px 1px 15px;
+}
+@media(max-width:1200px){
+   .hide_for_small{
+    display: none !important;
+}
+
+}
+@media(min-width:1200px){
+    .hide_for_large{
+     display: none !important;
+ }
+ 
+ }
