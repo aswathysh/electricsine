@@ -57,7 +57,7 @@ export const BannerNew = () => {
   ];
 
   const subjects = [
-    { label: "Circuits", pct: 88, color: "#4a9eff" },
+    { label: "Circuits", pct: 88, color: "#222546" },
     { label: "Machines", pct: 74, color: "#f5a623" },
     { label: "Control Sys.", pct: 62, color: "#1db976" },
     { label: "Power Sys.", pct: 81, color: "#a855f7" },

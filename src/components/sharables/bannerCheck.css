@@ -14,6 +14,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -46,7 +47,7 @@
 .tagDot {
   width: 8px;
   height: 8px;
-  background: #4a9eff;
+  background: #222546;
   border-radius: 50%;
   display: inline-block;
 }
@@ -63,7 +64,7 @@
   color: white;
 }
 .textBlue {
-  color: #4a9eff;
+  color: #222546;
 }
 .textAmber {
   color: #ff8c02;
@@ -84,7 +85,7 @@
 }
 
 .btnPrimary {
-  background: #4a9eff;
+  background: #222546;
   color: white;
   font-size: 16px;
   font-weight: 700;
@@ -188,7 +189,7 @@
   align-items: center;
   gap: 14px;
   background: #edf0f72e;
-  border: 1px solid #4a9eff73;
+  border: 1px solid #22254673;
   border-radius: 12px;
   padding: 10px 15px;
   margin-bottom: 12px;
@@ -200,7 +201,7 @@
 }
 
 .option.correct {
-  background: #4a9eff1c;
+  background: #2225461c;
   border: 2px solid #1db976;
 }
 
@@ -216,7 +217,7 @@
 }
 
 .option.wrong {
-  background: #4a9eff1c;
+  background: #2225461c;
   border: 2px solid #ff4d4f;
 }
 
@@ -236,7 +237,7 @@
   border: 2px solid #1db976;
 } */
 .opt-letter {
-  /* width: 34px; */
+  width: 34px;
   height: 34px;
   border-radius: 8px;
   background: #ff8c0224;
@@ -281,13 +282,13 @@
   font-weight: 600;
 }
 .progress-bar-bg {
-  background: #4a9eff;
+  background: #222546;
   border-radius: 999px;
   height: 6px;
   margin-bottom: 20px;
 }
 .progress-bar-fill {
-  background: linear-gradient(to right, #4a9eff, #1db976);
+  background: linear-gradient(to right, #222546, #1db976);
   height: 6px;
   border-radius: 999px;
 }
@@ -341,7 +342,7 @@
 }
 
 .nav-btn-next-more {
-  background: #4a9eff;
+  background: #222546;
   border: none;
 }
 .nav-btn-next-more:hover {
@@ -403,7 +404,7 @@
 }
 
 .card {
-  background: #2e6fba;
+  background: #222546;
   border: 1px solid white;
   border-radius: 16px;
   padding: 32px 28px;
@@ -516,7 +517,7 @@
 .gr-dot {
   width: 8px;
   height: 8px;
-  background: #4a9eff;
+  background: #222546;
   border-radius: 50%;
   margin-top: 6px;
   flex-shrink: 0;
@@ -570,7 +571,7 @@
 .perf-pct {
   font-size: 14px;
   font-weight: 700;
-  color: #4a9eff;
+  color: #222546;
   width: 36px;
   text-align: right;
   flex-shrink: 0;
@@ -585,7 +586,7 @@
 
 .btn-primary {
   flex: 1;
-  background: #4a9eff;
+  background: #222546;
   color: white;
   font-size: 14px;
   font-weight: 700;
@@ -601,12 +602,12 @@
   align-items: center;
   gap: 8px;
   background: white;
-  border: 1px solid #4a9eff47;
+  border: 1px solid #22254647;
   border-radius: 999px;
   padding: 8px 18px;
   font-size: 13px;
   font-weight: 700;
-  color: #4a9eff;
+  color: #222546;
 }
 .badge-v1 .dot {
   width: 7px;
@@ -626,7 +627,7 @@
 }
 
 .sec-left {
-  flex: 0 1 280px;
+  flex: 0 1 25%;
 }
 
 .sec-tag {
@@ -655,7 +656,7 @@
 .sec-line {
   width: 48px;
   height: 3px;
-  background: linear-gradient(to right, #4a9eff, #1db976);
+  background: linear-gradient(to right, #222546, #1db976);
   border-radius: 999px;
 }
 
@@ -725,7 +726,7 @@
 
 .cta-card {
   background: white;
-  border: 1px solid #4a9eff78;
+  border: 1px solid #22254678;
   border-radius: 20px;
   padding: 33px 25px;
   display: flex;
@@ -756,7 +757,7 @@
 }
 .cta-desc-sub {
   font-size: 16px;
-  color: #2e6fba;
+  color: #222546;
   line-height: 1.7;
   margin: 0;
 }
@@ -770,7 +771,7 @@
 }
 
 .cta-btn-primary {
-  background: #4a9eff;
+  background: #222546;
   color: white;
   font-size: 14px;
   font-weight: 700;
@@ -1359,7 +1360,7 @@
 }
 
 .ft-wrap {
-  background: #2e6fba;
+  background: #222546;
   font-family: "Barlow", sans-serif;
   color: #fff;
 }

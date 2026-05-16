@@ -353,12 +353,15 @@ export const Header = () => {
 };
 const styles = {
   header: {
-    backgroundColor:"#135aac",
+    backgroundColor:"#222546",
      padding: "20px 0px 25px 0px",
     display: "flex",
     justifyContent: "center", // Center the content within the header
     width: "100%",
     borderBottom: "1px solid #a67422",
+       position: 'sticky',
+    top: '0px',    left: '0px',
+    zIndex: 999
   },
   headerContent: {
     display: "flex",
