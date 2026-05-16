@@ -71,7 +71,7 @@
 
 .heroDesc {
   max-width: 700px;
-  font-size: 19px;
+  font-size: 20px;
   color: white;
   margin: 0 0 36px;
 }
@@ -177,7 +177,7 @@
   margin-bottom: 12px;
 }
 .quiz-question {
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 700;
   color: white;
   line-height: 1.4;
@@ -255,7 +255,7 @@
   color: #fff;
 } */
 .opt-text {
-  font-size: 13px;
+  font-size: 17px;
   color: white;
   font-weight: 500;
 }
@@ -276,7 +276,7 @@
 }
 .progress-label,
 .progress-count {
-  font-size: 10px;
+  font-size: 13px;
   color: #5a7a9a;
   font-weight: 600;
 }
@@ -319,7 +319,7 @@
   transition: all 0.18s;
 }
 .nav-btn-label {
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 600;
   color: #fff;
   letter-spacing: 0.3px;
@@ -387,7 +387,7 @@
 }
 
 .about-desc {
-  font-size: 16px;
+  font-size: 18px;
   color: #5a7a9a;
   line-height: 1.7;
   /* max-width: 600px; */
@@ -450,7 +450,7 @@
 }
 
 .card-text {
-  font-size: 14px !important;
+  font-size: 17px !important;
   color: white !important;
   line-height: 1.75;
   margin: 0;
@@ -487,7 +487,7 @@
 }
 
 .gr-desc {
-  font-size: 15px;
+  font-size: 18px;
   color: #5a7a9a;
   line-height: 1.75;
   margin: 0 0 28px;
@@ -507,7 +507,7 @@
   display: flex;
   align-items: flex-start;
   gap: 12px;
-  font-size: 15px;
+  font-size: 17px;
   color: #5a7a9a;
   font-weight: 600;
   line-height: 1.5;
@@ -533,7 +533,7 @@
 }
 
 .perf-title {
-  font-size: 11px;
+  font-size: 16px;
   font-weight: 700;
   letter-spacing: 0.14em;
   color: black;
@@ -548,7 +548,7 @@
 }
 
 .perf-label {
-  font-size: 14px;
+  font-size: 16px;
   color: #000000a1;
   width: 100px;
   flex-shrink: 0;
@@ -646,7 +646,7 @@
 }
 
 .sec-desc {
-  font-size: 15px;
+  font-size: 18px;
   color: #5a7a9a;
   line-height: 1.75;
   margin: 0 0 24px;
@@ -711,7 +711,7 @@
 }
 
 .sec-card-text {
-  font-size: 14px;
+  font-size: 17px;
   color: white;
   line-height: 1.75;
   margin: 0;
@@ -748,14 +748,14 @@
 }
 
 .cta-desc {
-  font-size: 15px;
+  font-size: 18px;
   color: #5a7a9a;
   line-height: 1.7;
   margin: 0;
   max-width: 90%;
 }
 .cta-desc-sub {
-  font-size: 14px;
+  font-size: 16px;
   color: #2e6fba;
   line-height: 1.7;
   margin: 0;
@@ -867,7 +867,7 @@
   margin-bottom: 18px;
 }
 .hero-desc {
-  font-size: 22px;
+  font-size: 24px;
   color: #555;
   line-height: 1.75;
   margin-bottom: 14px;
@@ -883,7 +883,7 @@
   display: flex;
   align-items: flex-start;
   gap: 10px;
-  font-size: 20px;
+  font-size: 22px;
   color: #222;
   line-height: 1.5;
 }
@@ -895,9 +895,7 @@
   flex-shrink: 0;
 }
 
-/* ══════════════════════════════
-           TABLET  (≤ 1024px)
-        ══════════════════════════════ */
+
 @media (max-width: 1024px) {
   .hero-wrap {
     padding: 60px 40px;
@@ -925,9 +923,6 @@
   }
 }
 
-/* ══════════════════════════════
-           MOBILE  (≤ 768px) — stack layout
-        ══════════════════════════════ */
 @media (max-width: 768px) {
   .hero-wrap {
     flex-direction: column;
@@ -936,12 +931,10 @@
     gap: 0;
   }
 
-  /* Content first on mobile */
   .hero-content {
     order: 1;
     max-width: 100%;
   }
-  /* .hero-media   { order: 2; } */
 
   .hero-title {
     font-size: 1.65rem;
@@ -949,10 +942,9 @@
     margin-top: 32px;
   }
   .hero-desc {
-    font-size: 0.93rem;
+    font-size: 18px;
   }
 
-  /* Media block becomes horizontal strip */
   .hero-media {
     flex: none;
     width: 100%;
@@ -991,13 +983,11 @@
     gap: 10px;
   }
   .hero-checklist li {
-    font-size: 0.93rem;
+    font-size: 17px;
   }
 }
 
-/* ══════════════════════════════
-           SMALL MOBILE  (≤ 400px)
-        ══════════════════════════════ */
+
 @media (max-width: 400px) {
   .hero-wrap {
     padding: 30px 16px 40px;
@@ -1021,8 +1011,9 @@
 
 @media (min-width: 600px) {
   .card-svg {
-  width: 24px;
-  height: 24px;}
+    width: 24px;
+    height: 24px;
+  }
   .container {
     padding: 48px 40px 40px;
   }
@@ -1041,9 +1032,10 @@
   .ft-info-type {
     font-size: 18px !important;
   }
-  .ft-copy ,.ft-dev{
-  font-size: 15px !important;
-}
+  .ft-copy,
+  .ft-dev {
+    font-size: 15px !important;
+  }
   .ft-info-value {
     font-size: 22px !important;
   }
@@ -1116,10 +1108,10 @@
   .sec-desc,
   .gr-desc,
   .cta-desc {
-    font-size: 22px;
+    font-size: 24px;
   }
   .cta-desc-sub {
-    font-size: 20px;
+    font-size: 21px;
   }
 
   .card-title {
@@ -1140,7 +1132,7 @@
   .pf-card-text,
   .sec-card-text,
   .ft-address {
-    font-size: 21px !important;
+    font-size: 23px !important;
   }
   .pf-card-title,
   .sec-card-title,
@@ -1150,7 +1142,7 @@
   .gr-list li,
   .perf-label,
   .perf-pct {
-    font-size: 18px;
+    font-size: 21px;
   }
   .perf-title {
     font-size: 18px;
@@ -1173,7 +1165,7 @@
     font-size: 7px;
   }
   .heroDesc {
-    font-size: 15px;
+    font-size: 17px;
   }
   .btnPrimary {
     font-size: 14px;
@@ -1238,7 +1230,6 @@
   box-shadow: 0 24px 48px rgba(0, 0, 0, 0.18);
 }
 
-/* Diagonal shine overlay */
 .cc-card::before {
   content: "";
   position: absolute;
@@ -1329,7 +1320,6 @@
   width: 100%;
 }
 
-/* ── Tablet ── */
 @media (max-width: 1024px) {
   .cc-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -1342,7 +1332,6 @@
   }
 }
 
-/* ── Mobile ── */
 @media (max-width: 640px) {
   .cc-section {
     padding: 36px 16px;
@@ -1384,7 +1373,6 @@
   margin: 0 auto;
 }
 
-/* ── Col 1: Brand ── */
 .ft-brand h2 {
   font-size: 29px;
   font-weight: 800;
@@ -1443,7 +1431,6 @@
   color: #fff;
 }
 
-/* ── Col 2: Useful Links ── */
 .ft-col h3 {
   font-size: 17px;
   font-weight: 700;
@@ -1484,7 +1471,6 @@
   color: #e8500a;
 }
 
-/* ── Col 3: Contact Info ── */
 .ft-contact-cards {
   display: flex;
   flex-direction: column;
@@ -1535,7 +1521,6 @@
   margin: 0 80px;
 }
 
-/* ── Bottom bar ── */
 .ft-bottom {
   display: flex;
   justify-content: space-between;
@@ -1565,7 +1550,6 @@
   text-decoration: underline;
 }
 
-/* ── Responsive ── */
 @media (max-width: 1024px) {
   .ft-main {
     grid-template-columns: 1fr 1fr;

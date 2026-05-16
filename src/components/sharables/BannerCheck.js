@@ -2,13 +2,14 @@
 import { useState } from "react";
 import "./bannerCheck.css";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 export const BannerCheck = () => {
   const router = useRouter();
 
 const links = [
   { name: "Home", link: "/dashboard" },
-  { name: "About", link: "/privacypolicy" },
+  { name: "About", link: "/aboutus" },
   { name: "Mock Tests", link: "/sample_questions/1" },
   { name: "Courses", link: "/courses" },
 ];
@@ -427,7 +428,7 @@ Sine provides the tools to succeed.
             <div className="hero-circle-inner" />
           </div>
           <div className="hero-img-main">
-            <img
+            <Image
               src="/assets/images/studyImg.png"
               alt="Student studying on laptop for engineering exam preparation"
               className="hero-photo"
@@ -437,7 +438,7 @@ Sine provides the tools to succeed.
             />
           </div>
           <div className="hero-img-thumb">
-            <img
+            <Image
               src="/assets/images/boyStudy.png"
               alt="Young student learning electrical engineering"
               className="hero-thumb-photo"

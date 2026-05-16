@@ -8,7 +8,7 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import { LogoutModal } from "../sharables/LogoutModal";
 import Grid from '@mui/material/Grid2';
 import Image from "next/image";
-import { useCart } from "@/context/CartContext";
+import { useCart } from "@/context/cartContext";
 import { useRouter } from "next/navigation";
 import { stringAvatar } from "../sharables/HelperFunctions";
 export const UserHeader = () => {
