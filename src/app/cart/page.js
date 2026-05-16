@@ -5,7 +5,7 @@ import Grid from '@mui/material/Grid2';
 import React, { useEffect, useState } from "react";
 import { CartItem } from '../../components/sharables/CartItem';
 import './cart.css'
-import { useCart } from "@/context/cartContext";
+import { useCart } from "@/context/CartContext";
 import { LoginModal } from '../../components/Authentication/LoginModal'
 import { SignUpModal } from "@/components/Authentication/SignUpModal";
 import { useMutation } from "@tanstack/react-query";

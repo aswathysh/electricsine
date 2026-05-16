@@ -1,7 +1,7 @@
 "use client"
 import { Header } from "@/components/sharables/Header";
 import MediaCard from "@/components/sharables/subjectCard";
-import { useCart } from "@/context/cartContext";
+import { useCart } from "@/context/CartContext";
 import Grid from "@mui/material/Grid2";
 import React, { useEffect, useState } from "react";
 import { useSubjects } from '../../services/PracticeQueris';
