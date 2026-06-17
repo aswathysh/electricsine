@@ -15,6 +15,16 @@ export const fetchPracticeQuestions = async ({ pageParam,subjectId }) => {
     const response = await axiosInstance.get(`subjects-purchased`);
     return response.data;
   };
+   export const fetchBolgList = async () => {
+    const response = await axiosInstance.get(`blogs`);
+    return response.data;
+  };
+
+   export const fetchBolgListDetails = async ({ slugId }) => {
+    const response = await axiosInstance.get(`blog/${slugId}`);
+    return response.data;
+  };
+
   export const postPracticeAnswers = async (data) => {
     const response = await axiosInstance.post(`save-practice-progress`,data);
     return response.data;

@@ -944,7 +944,8 @@
 }
 @media (min-width: 600px) {
   .opt-text,
-  .ct-card-title,.pf-num  {
+  .ct-card-title,
+  .pf-num {
     font-size: 18px;
   }
   .quiz-question {
@@ -964,7 +965,8 @@
     font-size: 32px;
   }
   .about-title,
-  .pf-title ,.ct-title {
+  .pf-title,
+  .ct-title {
     font-size: 42px;
   }
   .card-icon {
@@ -972,18 +974,20 @@
   }
 
   .sec-title,
-  .gr-title ,.cta-title {
+  .gr-title,
+  .cta-title {
     font-size: 38px;
   }
 
-  .btn-primary ,.badge-v1{
+  .btn-primary,
+  .badge-v1 {
     font-size: 16px;
   }
 
   .gr-right {
     padding: 28px 28px 24px;
   }
- 
+
   .cta-card {
     padding: 44px 48px;
   }
@@ -992,12 +996,16 @@
     font-size: 16px;
     padding: 16px 32px;
   }
- 
+
   .ct-card {
     padding: 36px 24px;
   }
 
-  .about-desc ,.pf-desc ,.sec-desc ,.gr-desc ,.cta-desc {
+  .about-desc,
+  .pf-desc,
+  .sec-desc,
+  .gr-desc,
+  .cta-desc {
     font-size: 20px;
   }
   .card-title {
@@ -1005,22 +1013,33 @@
   }
   .about-tag,
   .card-num,
-  .pf-tag,.sec-tag ,.sec-badge,.gr-tag ,.ct-tag  {
+  .pf-tag,
+  .sec-tag,
+  .sec-badge,
+  .gr-tag,
+  .ct-tag {
     font-size: 16px;
   }
-  .card-text,.pf-card-text ,  .sec-card-text{
+  .card-text,
+  .pf-card-text,
+  .sec-card-text {
     font-size: 18px !important;
   }
-  .pf-card-title,.sec-card-title,.ct-card-value{
+  .pf-card-title,
+  .sec-card-title,
+  .ct-card-value {
     font-size: 21px;
   }
-  .gr-list li ,.perf-label ,.perf-pct{
+  .gr-list li,
+  .perf-label,
+  .perf-pct {
     font-size: 17px;
   }
-  .perf-title{
+  .perf-title {
     font-size: 18px;
   }
-  .ct-badge,.quiz-qnum {
+  .ct-badge,
+  .quiz-qnum {
     font-size: 14px;
   }
 }

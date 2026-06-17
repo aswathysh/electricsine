@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import { fetchExamQuestions, fetchExamSections, fetchPracticeQuestions,fetchSampleQuestions, fetchPurchasedSubjectList, fetchSubjectList } from './PracticeServices';
+import { fetchExamQuestions, fetchExamSections, fetchPracticeQuestions,fetchSampleQuestions, fetchPurchasedSubjectList, fetchSubjectList, fetchBolgList, fetchBolgListDetails } from './PracticeServices';
 
 export const usePracticeQuestions = ({pageParam,subjectId}) => {
   return useQuery({ queryKey: ['questions', subjectId, pageParam], queryFn: () =>  fetchPracticeQuestions({pageParam,subjectId}) });
@@ -13,6 +13,13 @@ export const usePurchasedSubjects = () => {
   return useQuery({ queryKey: ['purchased-subjects'], queryFn: fetchPurchasedSubjectList });
 };
 
+  export const useBlogs = () => {
+  return useQuery({ queryKey: ['blogs'], queryFn: fetchBolgList });
+};
+
+export const useBlogDetails = ({ slugId }) => {
+  return useQuery({ queryKey: ['blog', slugId], queryFn: () => fetchBolgListDetails({ slugId }) });
+};
 
 //exam
 export const useExamSections = ({subjectId}) => {

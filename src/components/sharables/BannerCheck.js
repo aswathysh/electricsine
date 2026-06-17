@@ -7,12 +7,13 @@ import Image from "next/image";
 export const BannerCheck = () => {
   const router = useRouter();
 
-const links = [
-  { name: "Home", link: "/dashboard" },
-  { name: "About", link: "/aboutus" },
-  { name: "Mock Tests", link: "/sample_questions/1" },
-  { name: "Courses", link: "/courses" },
-];
+  const links = [
+    { name: "Home", link: "/dashboard" },
+    { name: "About", link: "/aboutus" },
+    { name: "Mock Tests", link: "/sample_questions/1" },
+    { name: "Courses", link: "/courses" },
+    { name: "Blog", link: "/blog" },
+  ];
   const questions = [
     {
       id: 1,
@@ -78,7 +79,6 @@ const links = [
 
   const q = questions[currentIndex];
   const selected = answers[q.id] ?? null;
-  console.log(currentIndex, "lll");
   const cards = [
     {
       num: " Mission",
@@ -218,7 +218,6 @@ const links = [
   ];
   return (
     <>
-      {/* ── Hero Section ── */}
       <section className="container" aria-label="Hero section">
         <div>
           <div className="leftSection">
@@ -253,7 +252,6 @@ const links = [
             </div>
           </div>
 
-          {/* Stats Section */}
           <div className="statsWrapper">
             <hr className="divider" aria-hidden="true" />
             <div
@@ -396,14 +394,15 @@ const links = [
             About Electric Sine
           </h2>
           <p className="about-desc">
-            Electric Sine is a leading online platform for Electrical and Electronics Engineering question
-bank and exam preparation. We help students and job seekers prepare for competitive
-exams, government jobs, and international engineering careers (GCC & global markets).
-Our platform offers online mock tests, practice questions, and real-time assessments
-designed to improve accuracy, speed, and technical knowledge. Whether you&lsquo;re preparing for
-engineering entrance exams, technical interviews, or government sector jobs, Electric
-Sine provides the tools to succeed.
-
+            Electric Sine is a leading online platform for Electrical and
+            Electronics Engineering question bank and exam preparation. We help
+            students and job seekers prepare for competitive exams, government
+            jobs, and international engineering careers (GCC & global markets).
+            Our platform offers online mock tests, practice questions, and
+            real-time assessments designed to improve accuracy, speed, and
+            technical knowledge. Whether you&lsquo;re preparing for engineering
+            entrance exams, technical interviews, or government sector jobs,
+            Electric Sine provides the tools to succeed.
           </p>
         </div>
 
@@ -421,7 +420,6 @@ Sine provides the tools to succeed.
         </div>
       </section>
 
-      {/* ── Course / Hero Section ── */}
       <section className="hero-wrap" aria-labelledby="course-heading">
         <div className="hero-media" aria-hidden="true">
           <div className="hero-circle">
@@ -538,7 +536,6 @@ Sine provides the tools to succeed.
         </div>
       </section>
 
-      {/* ── Security Section ── */}
       <section className="sec-wrap" aria-labelledby="security-heading">
         <div className="sec-left">
           {/* <div className="sec-tag" aria-hidden="true"> */}
@@ -577,15 +574,12 @@ Sine provides the tools to succeed.
         </div>
       </section>
 
-      {/* ── Grading Section ── */}
       <section className="gr-wrap" aria-labelledby="grading-heading">
         <div className="gr-left">
           <div className="gr-title" aria-hidden="true">
-            Performance Insights            That Drive Results
-
+            Performance Insights That Drive Results
           </div>
-          {/* <h2 className="gr-title" id="grading-heading">
-          </h2> */}
+
           <p className="gr-desc">
             Get deeper insights into your Electrical and Electronics exam
             performance with real-time analytics, helping you identify weak
@@ -641,7 +635,6 @@ Sine provides the tools to succeed.
         </div>
       </section>
 
-      {/* ── CTA Section ── */}
       <section className="cta-outer" aria-labelledby="cta-heading">
         <div className="cta-card">
           <div className="cta-left">
@@ -673,40 +666,16 @@ Sine provides the tools to succeed.
         </div>
       </section>
 
-      {/* ── Footer ── */}
       <footer className="ft-wrap" role="contentinfo" aria-label="Site footer">
         <div className="ft-main">
           <div className="ft-brand">
             <h2>Electric Sine</h2>
             <p className="ft-address">
-              Empowering engineers with Electrical and Electronics exam preparation, mock tests, and global
-career readiness tools.
+              Empowering engineers with Electrical and Electronics exam
+              preparation, mock tests, and global career readiness tools.
               <br />
               Prepare smarter. Perform better.
-
             </p>
-            {/* <address className="ft-address" style={{ fontStyle: "normal" }}>
-              <div className="ft-contact-row">
-                <span className="label">Phone:</span>
-                <a href="tel:+917560884560">+91 75608 84560</a>
-              </div>
-              <div className="ft-contact-row">
-                <span className="label">Email:</span>
-                <a href="mailto:electricsine2024@gmail.com">
-                  electricsine2024@gmail.com
-                </a>
-              </div>
-              <div className="ft-contact-row">
-                <span className="label">Web:</span>
-                <a
-                  href="https://electricsine.com"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  electricsine.com
-                </a>
-              </div>
-            </address> */}
 
             <div className="ft-socials">
               {[
@@ -731,29 +700,24 @@ career readiness tools.
           <nav className="ft-col" aria-label="Footer navigation">
             <h3>Useful Links</h3>
             <ul className="ft-links">
-            {links.map((l, i) => (
-  <li key={i}>
-    <a onClick={() => router.push(l.link)}>{l.name}</a>
-  </li>
-))}
+              {links.map((l, i) => (
+                <li key={i}>
+                  <a onClick={() => router.push(l.link)}>{l.name}</a>
+                </li>
+              ))}
             </ul>
           </nav>
-            <nav className="ft-col" aria-label="Footer navigation">
+          <nav className="ft-col" aria-label="Footer navigation">
             <h3>Exams & Careers</h3>
             <p className="ft-address">
-
-👉 Govt Exam Preparation
+              👉 Govt Exam Preparation
               <br />
-
-👉 Competitive Exams
+              👉 Competitive Exams
               <br />
-
-👉 GCC Engineering Jobs
+              👉 GCC Engineering Jobs
               <br />
-
-👉 Interview Preparation
+              👉 Interview Preparation
             </p>
-            
           </nav>
 
           <div className="ft-col">
@@ -765,32 +729,19 @@ career readiness tools.
               <div className="ft-info-card">
                 {/* <span className="ft-info-label">Call Us</span> */}
                 {/* <span className="ft-info-type">Phone</span> */}
-                <span className="ft-info-value">Phone :
-                  <a href="tel:+917560884560"> +91 75608 84560</a>
+                <span className="ft-info-value">
+                  Phone :<a href="tel:+917560884560"> +91 75608 84560</a>
                 </span>
               </div>
               <div className="ft-info-card">
-                {/* <span className="ft-info-label">Write To Us</span> */}
-                {/* <span className="ft-info-type">Email</span> */}
-                <span className="ft-info-value">Email :
+                <span className="ft-info-value">
+                  Email :
                   <a href="mailto:electricsine2024@gmail.com">
                     electricsine2024@gmail.com
                   </a>
                 </span>
               </div>
-              <div className="ft-info-card">
-                {/* <span className="ft-info-label">Visit Us</span> */}
-                {/* <span className="ft-info-type">Website</span> */}
-                {/* <span className="ft-info-value">
-                  <a
-                    href="https://electricsine.com"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    electricsine.com
-                  </a>
-                </span> */}
-              </div>
+              <div className="ft-info-card"></div>
             </address>
           </div>
         </div>
@@ -799,7 +750,8 @@ career readiness tools.
 
         <div className="ft-bottom">
           <p className="ft-copy">
-               © 2026 Electric Sine. All rights reserved. | Designed for Engineers | Built for Success
+            © {new Date().getFullYear()} Electric Sine. All rights reserved. |
+            Designed for Engineers | Built for Success
           </p>
           <p className="ft-dev">
             Developed by{" "}

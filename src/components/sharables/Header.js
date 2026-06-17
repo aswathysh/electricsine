@@ -186,6 +186,12 @@ export const Header = () => {
             </MenuItem> */}
             {/* </a> */}
             {/* <a href="/courses" style={styles.navLink}> */}
+              <MenuItem
+              onClick={() => router.push("/blog")}
+              style={styles.navLink}
+            >
+              <p style={{ ...styles.navLinkLabel }}>Blog</p>
+            </MenuItem>
             <MenuItem
               onClick={() => router.push("/courses")}
               style={styles.navLink}
@@ -305,6 +311,14 @@ export const Header = () => {
           >
             {/* <a href="/courses" style={{ textDecoration: 'none', color: 'inherit' }}> */}
             Courses
+            {/* </a> */}
+          </MenuItem>
+           <MenuItem
+            onClick={() => router.push("/blog")}
+            sx={{ pt: 2, pb: 2 }}
+          >
+            {/* <a href="/courses" style={{ textDecoration: 'none', color: 'inherit' }}> */}
+            Blog
             {/* </a> */}
           </MenuItem>
           {showLogin ? (

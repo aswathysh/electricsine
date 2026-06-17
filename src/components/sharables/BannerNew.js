@@ -187,7 +187,6 @@ export const BannerNew = () => {
             </div>
           </div>
 
-          {/* Stats Section */}
           <div className="statsWrapper">
             <hr className="divider" />
             <div className="statsRow">
@@ -214,19 +213,16 @@ export const BannerNew = () => {
         </div>
 
         <div className="quiz-wrap">
-          {/* Header */}
           <div className="quiz-header">
             <div className="quiz-badge">GATE — ELECTRICAL ENGG.</div>
           </div>
 
-          {/* Question */}
           <div className="quiz-qnum">QUESTION</div>
           <div className="quiz-question">
             In a series RLC circuit at resonance, which of the following is
             true?
           </div>
 
-          {/* Options */}
           {options.map((opt) => (
             <div
               key={opt.id}
@@ -245,8 +241,6 @@ export const BannerNew = () => {
           ))}
 
           <hr className="quiz-divider" />
-
-          {/* Progress */}
           <div className="progress-row">
             <span className="progress-label">Progress</span>
             <span className="progress-count">Sample Question</span>
@@ -255,7 +249,6 @@ export const BannerNew = () => {
             <div className="progress-bar-fill" style={{ width: "35%" }} />
           </div>
 
-          {/* Stats */}
           <div className="stats-grid">
             <div className="stat-card">
               <div className="stat-card-label">ACCURACY</div>
@@ -314,7 +307,6 @@ export const BannerNew = () => {
       </div>
 
       <div className="sec-wrap">
-        {/* Left */}
         <div className="sec-left">
           <div className="sec-tag">PLATFORM SECURITY</div>
           <h2 className="sec-title">Secure Exam Delivery</h2>
@@ -326,7 +318,6 @@ export const BannerNew = () => {
           <div className="sec-line" />
         </div>
 
-        {/* Cards */}
         <div className="sec-cards">
           {cardsSecure.map((c) => (
             <div className="sec-card" key={c.badge}>
@@ -340,7 +331,6 @@ export const BannerNew = () => {
       </div>
 
       <div className="gr-wrap">
-        {/* Left */}
         <div className="gr-left">
           <div className="gr-tag">RESULTS & INSIGHTS</div>
           <h2 className="gr-title">Grading and Reporting</h2>
@@ -359,7 +349,6 @@ export const BannerNew = () => {
           </ul>
         </div>
 
-        {/* Right Card */}
         <div className="gr-right">
           <div className="perf-title">SUBJECT PERFORMANCE</div>
 
