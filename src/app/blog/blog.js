@@ -49,10 +49,10 @@ function Hero() {
           Guides, strategies and deep dives from exam toppers and certified
           coaches — all in one place.
         </p>
-        <div className="search-bar">
+        {/* <div className="search-bar">
           <input type="text" placeholder="Search articles, topics, exams…" />
           <button className="search-btn">Search</button>
-        </div>
+        </div> */}
       </section>
     </>
   );
@@ -73,7 +73,7 @@ function StatsStrip() {
   );
 }
 
-function FeaturedCard() {
+function FeaturedCard({ article }) {
   return (
     <>
       <div className="featured-card">
@@ -81,26 +81,20 @@ function FeaturedCard() {
           <div>
             <div className="featured-meta">
               <span className="tag tag-ink">Featured</span>
-              <span className="featured-time">12 min read · May 2026</span>
+              <span className="featured-time">12 min read · {article.date}</span>
             </div>
             <h2 className="featured-title">
-              The Memory Techniques That Top GMAT Scorers Actually Use
+              {article.title}
             </h2>
-            <p className="featured-excerpt">
-              Spaced repetition and active recall are just the beginning. We
-              break down the cognitive science behind high-stakes exam prep —
-              and the exact routines to apply it.
-            </p>
           </div>
           <div>
             <div className="featured-author">
               <div className="author-avatar avatar-a">DR</div>
               <div>
-                <div className="author-name-white">Dr. Rashid Okafor</div>
-                <div className="author-role">Cognitive Learning Coach</div>
+                <div className="author-name-white">{article.author}</div>
               </div>
             </div>
-            <a href="#" className="read-btn">
+            <a href={article.link} className="read-btn">
               Read article →
             </a>
           </div>
@@ -115,15 +109,13 @@ function FeaturedCard() {
             <div className="badge-circle">🧠</div>
             <div className="badge-label">Memory Mastery</div>
             <div className="badge-sub">
-              Cognitive techniques for
-              <br />
-              high-stakes exams
+Practice Smarter. Perform Better. Succeed Faster.              
             </div>
           </div>
           <div className="feat-pills">
-            <span className="feat-pill">GMAT</span>
-            <span className="feat-pill">Study Science</span>
-            <span className="feat-pill">Memory</span>
+            <span className="feat-pill">Electrical</span>
+            <span className="feat-pill">Electonics</span>
+            <span className="feat-pill">Instrumentation</span>
           </div>
         </div>
       </div>
@@ -175,7 +167,7 @@ function ArticleCard({ article, onClick }) {
             <span className="article-time">{article.readTime}</span>
           </div>
           <h3 className="article-title">{article.title}</h3>
-          <p className="article-excerpt">{article.description}</p>
+          <p className="article-excerpt" dangerouslySetInnerHTML={{__html: article.description} }></p>
           <div className="article-footer">
             <div className="article-author-row">
               <div className={`small-avatar ${article.authorClass}`}>
@@ -203,7 +195,7 @@ function Newsletter() {
             <br />
             Zero noise.
           </h2>
-          <p>One high-signal email every Sunday. Join 140,000 students.</p>
+          <p>One high-signal email every Sunday. Join 1400 students.</p>
         </div>
         <div className="newsletter-form">
           <input
@@ -291,13 +283,13 @@ export default function Blog() {
         <Navbar />
         <Hero />
         <div className="section">
-          <StatsStrip />
+          {/* <StatsStrip /> */}
           <p className="section-label">Featured article</p>
-          <FeaturedCard />
-          <CategoryFilter
+          { ARTICLES && ARTICLES.length > 0 && <FeaturedCard article={ARTICLES?.[0]} />  }
+          {/* <CategoryFilter
             active={activeCategory}
             onChange={setActiveCategory}
-          />
+          /> */}
           <div className="articles-grid">
             {ARTICLES?.map((article) => (
               <ArticleCard

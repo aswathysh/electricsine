@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useBlogs } from "@/services/PracticeQueris";
 import "./slug.css";
+import { Header } from "@/components/sharables/Header";
 
 const timeAgo = (dateString) => {
   const past = new Date(dateString.replace(" ", "T"));
@@ -63,7 +64,7 @@ function TableOfContents({ paragraphs }) {
             }}
             href="#"
           >
-            {item}
+          {item.replace(/<[^>]*>/g, "")}
           </a>
         ))}
       </div>
@@ -146,6 +147,7 @@ export default function BlogDetailPage() {
 
   return (
     <>
+       <Header />
       <div className="es-progress" ref={progressRef} style={{ width: "0%" }} />
 
       <div className="es-hero">
@@ -231,22 +233,18 @@ export default function BlogDetailPage() {
           <TableOfContents paragraphs={paragraphs} />
 
           <div className="es-article">
-            <div className="es-summary">
+            {/* <div className="es-summary">
               <div className="es-summary__label">Article Summary</div>
               <div className="es-summary__text">{paragraphs[0]}</div>
-            </div>
+            </div> */}
 
             <div className="es-article-body">
-              {paragraphs.slice(1).map((para, i) => (
-                <div key={i}>
-                  <p>{para}</p>
-                  {i === 1 && pullQuote && (
-                    <div className="es-pull-quote">
-                      <p>"{pullQuote}"</p>
-                    </div>
-                  )}
-                </div>
-              ))}
+               {article.description && (
+                <div
+                  className="es-article__content"
+                  dangerouslySetInnerHTML={{ __html: article.description }}
+                />
+              )}
             </div>
 
             <div className="es-divider" />
