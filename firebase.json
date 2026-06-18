@@ -12,15 +12,15 @@
       ]
     }
   ],
-  "hosting": {
-    "source": ".",
+  "apphosting": {
+    "backendId": "electric-sine-prod",
+    "rootDir": "/",
     "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
-    "frameworksBackend": {
-      "region": "asia-east1"
-    }
+      "node_modules",
+      ".git",
+      "firebase-debug.log",
+      "firebase-debug.*.log",
+      "functions"
+    ]
   }
 }
