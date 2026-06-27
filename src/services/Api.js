@@ -2,10 +2,10 @@
 import axios from 'axios';
 import { toast } from 'react-toastify';
 
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://electricsign.in/public/api/";
+
 const axiosInstance = axios.create({
-  //baseURL: process.env.NEXT_PUBLIC_API_URL, // Base URL for API
-  // baseURL: `https://rubiksoftwares.com/demoelectric/public/api`
-  baseURL:`https://electricsign.in/public/api/`
+  baseURL: API_URL,
   // timeout: 10000, // Request timeout
 });
 

@@ -1,149 +1,30 @@
-"use client"
-import { Header } from "@/components/sharables/Header";
-import MediaCard from "@/components/sharables/subjectCard";
-import { useCart } from "@/context/CartContext";
-import Grid from "@mui/material/Grid2";
-import React, { useEffect, useState } from "react";
-import { useSubjects } from '../../services/PracticeQueris';
-import { Alert, Snackbar } from "@mui/material";
-import { CourseViewModal } from "@/components/sharables/CourseViewModal";
-import  '@/components/sharables/sharables.css'
+import CoursesClient from "./CoursesClient";
 
-export default function Home() {
-  // const [courseListItems, setCourseListtems] = useState(subjectListItems);
-  const { cart, setCart } = useCart(); // Destructure both cart and setCart
-  const [showAlert, setShowAlert] = useState(false);
-  const [isSuccess, setIsSuccess] = useState(false);
-  const [showViewModal, setShowViewModal] = useState(false);
-  const [viewItem, setViewItem] = useState({})
-  const [alertMessage, setAlertMessage] = useState("");
-  const [isError, setError] = useState(false);
-  const handleCartItem = (item) => {
-    const existingCart = JSON.parse(sessionStorage.getItem('cart')) || [];
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://electricsign.in/public/api";
 
-    const isItemInCart = existingCart.some(cartItem => cartItem.id === item.id);
+async function fetchSubjects() {
+  try {
+    const response = await fetch(`${API_URL}/subjects`, {
+      cache: "no-store",
+      headers: {
+        "User-Agent": "Next.js-Server",
+      },
+    });
 
-    if (!isItemInCart) {
-      existingCart.push(item);
-      sessionStorage.setItem('cart', JSON.stringify(existingCart));
-      const updatedCart = [...existingCart];
-      setCart(updatedCart);
-      let msg = `Added ${item.title} to cart`;
-      setIsSuccess(true);
-      setAlertMessage(msg);
-      setShowAlert(true);
-      setTimeout(() => {
-        setShowAlert(false);
-        setIsSuccess(false);
-      }, 20000);
-    } else {
-      let msg = `${item.title} is already in the cart`;
-      setIsSuccess(false);
-      setAlertMessage(msg);
-      setShowAlert(true);
-      setTimeout(() => {
-        setShowAlert(false);
-      }, 20000);
-      //alert(`${item.title} is already in the cart`);
+    if (!response.ok) {
+      throw new Error(`Unable to load subjects: ${response.status}`);
     }
 
-    console.log(existingCart);
-
+    const json = await response.json();
+    return json?.data ?? [];
+  } catch (error) {
+    console.error("Courses page fetch error:", error);
+    return [];
   }
-  const [courseListItems, setCourseListtems] = useState([]);
-  const { data: subjectListDatas, isLoading, error } = useSubjects(); // Call the custom hook
-  useEffect(() => {
-    console.log("subjectListItems", subjectListDatas)
-
-    if (subjectListDatas) {
-      setCourseListtems(subjectListDatas.data); // Set course list items when data is available
-    }
-  }, [subjectListDatas]);
-  const handlealertClose = () => {
-    setShowAlert(false)
-  }
-  const handleView = (item) => {
-    setViewItem(item);
-    setShowViewModal(true);
-  }
-  const closeView = () => {
-    setShowViewModal(!showViewModal);
-  }
-
-  return (
-    <div>
-      <Header />
-      <Grid container 
-      style={{ justifyContent: 'center', backgroundColor: '#012967 !important', height: '100vh' }} 
-      className="light_bg">
-
-        <Snackbar
-          open={showAlert}
-          autoHideDuration={6000}
-          onClose={handlealertClose}
-          anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
-        >
-          <Alert
-            onClose={handlealertClose}
-            severity={isSuccess ? "success" : "warning"}
-            variant="outlined"
-            sx={{ width: 'auto', backgroundColor: '#FCDFDF' }}
-
-          >
-            {alertMessage}
-          </Alert>
-        </Snackbar>
-
-        <Grid container sx={{ pt: 0, pb: 2, pl:{sm:3, lg:15,xs:3,md:10}, pr: {sm:3, lg:15,xs:3,md:10} }}
-          style={{
-             justifyContent: 'center',
-            alignItems: "center",
-            alignContent: 'center',
-            backgroundColor: "#012967"
-          }}
-          rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3, lg: 5 }}
-        >
-          <CourseViewModal
-            showViewModal={showViewModal}
-            closeView={closeView}
-            item={viewItem} />
-          <Grid item size={{ xs: 12, md: 12, lg: 12, sm: 12 }} 
-          style={{ display: 'flex', justifyContent: 'center' }}>
-            <h1 style={styles.mainheading}>Our Courses</h1>
-
-          </Grid>
-          {
-            courseListItems.length != 0 ?
-              courseListItems.map((item, index) => (
-                <Grid item
-                  size={{ xs: 11, md: 5, lg: 4, sm: 11 }} key={index} >
-                  <MediaCard
-                    // Title={"Electrical & Electronics Engineering"}
-                    item={item}
-                    //Title={item.title}
-                    handleCartItem={handleCartItem}
-                    handleView={handleView}
-                  />
-                </Grid>))
-              : <></>}
-
-        </Grid>
-      </Grid>
-    </div>
-  )
 }
-const styles = {
 
-  mainheading: {
-    fontSize: "65px", // Adjust font size as needed
-    margin: "0 0 10px 0", // Margin below heading
-    fontFamily: "DM Serif Display, serif",
-    color: 'white',
-    paddingTop: '0px !important'
-  },
-  sliderImage: {
-    width: '100%',
-    height: '500px', // Adjust the height as needed
-    objectFit: 'cover',
-  }
-};
+export default async function Home() {
+  const subjects = await fetchSubjects();
+
+  return <CoursesClient subjects={subjects} />;
+}
