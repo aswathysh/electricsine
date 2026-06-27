@@ -79,7 +79,7 @@ export const Header = () => {
     window.location.href = "/";
   };
   return (
-    <header style={styles.header}>
+    <header style={styles.header} suppressHydrationWarning>
       <LogoutModal
         //onLogOutConform={onLogOutConform}
         openLogOutModal={openLogOutModal}

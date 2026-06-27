@@ -4,13 +4,20 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
-  const [cart, setCart] = useState(() => {
+  const [cart, setCart] = useState([]);
+
+  useEffect(() => {
     if (typeof window !== 'undefined') {
       const savedCart = sessionStorage.getItem('cart');
-      return savedCart ? JSON.parse(savedCart) : [];
+      if (savedCart) {
+        try {
+          setCart(JSON.parse(savedCart));
+        } catch (error) {
+          console.error('Failed to parse saved cart:', error);
+        }
+      }
     }
-    return []; // Initial server render should return an empty cart
-  });
+  }, []);
 
   useEffect(() => {
     if (typeof window !== 'undefined') {

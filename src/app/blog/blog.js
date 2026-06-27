@@ -1,310 +1,78 @@
-"use client";
+import BlogClient from "./BlogClient";
 
-import { useState } from "react";
-import "./blog.css";
-import { Header } from "@/components/sharables/Header";
-import Image from "next/image";
-import { useBlogs } from "@/services/PracticeQueris";
-import { useRouter } from "next/navigation";
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://electricsign.in/public/api";
 
-const CATEGORIES = [
-  "All Articles",
-  "Exam Strategy",
-  "Mock Tests",
-  "GMAT / GRE",
-  "IELTS / TOEFL",
-  "Professional Certs",
-  "Study Science",
-  "Time Management",
-];
+export const dynamic = "force-dynamic";
 
-const STATS = [
-  { number: "2.4M", label: "Students helped" },
-  { number: "840+", label: "Study articles" },
-  { number: "96%", label: "Pass rate improvement" },
-  { number: "120+", label: "Exams covered" },
-];
+function formatDate(dateString) {
+  const date = new Date(dateString);
+  const currentYear = new Date().getFullYear();
 
-function Navbar() {
-  return (
-    <>
-      <nav className="navbar">
-        <Header />
-      </nav>
-    </>
-  );
+  const day = date.getDate();
+  const month = date.toLocaleString("en-US", { month: "long" });
+  const year = date.getFullYear();
+
+  return year === currentYear ? `${day} ${month}` : `${day} ${month} ${year}`;
 }
 
-function Hero() {
-  return (
-    <>
-      <section className="hero">
-        <div className="hero-eyebrow">Knowledge Base</div>
-        <h1 className="hero-title">
-          Study smarter,
-          <br />
-          <em>score higher.</em>
-        </h1>
-        <p className="hero-subtitle">
-          Guides, strategies and deep dives from exam toppers and certified
-          coaches — all in one place.
-        </p>
-        {/* <div className="search-bar">
-          <input type="text" placeholder="Search articles, topics, exams…" />
-          <button className="search-btn">Search</button>
-        </div> */}
-      </section>
-    </>
-  );
+function timeAgo(dateString) {
+  const past = new Date(dateString.replace(" ", "T"));
+  const now = new Date();
+  const diffMs = now - past;
+
+  const seconds = Math.floor(diffMs / 1000);
+  const minutes = Math.floor(seconds / 60);
+  const hours = Math.floor(minutes / 60);
+  const days = Math.floor(hours / 24);
+  const months = Math.floor(days / 30);
+  const years = Math.floor(days / 365);
+
+  if (years > 0) return `${years} year${years > 1 ? "s" : ""} ago`;
+  if (months > 0) return `${months} month${months > 1 ? "s" : ""} ago`;
+  if (days > 0) return `${days} day${days > 1 ? "s" : ""} ago`;
+  if (hours > 0) return `${hours} hour${hours > 1 ? "s" : ""} ago`;
+  if (minutes > 0) return `${minutes} minute${minutes > 1 ? "s" : ""} ago`;
+  return "just now";
 }
 
-function StatsStrip() {
-  return (
-    <>
-      <div className="stats-strip">
-        {STATS.map((s) => (
-          <div key={s.label} className="stat-item">
-            <span className="stat-number">{s.number}</span>
-            <span className="stat-label">{s.label}</span>
-          </div>
-        ))}
-      </div>
-    </>
-  );
+async function fetchBlogs() {
+  try {
+    const response = await fetch(`${API_URL}/blogs`, {
+      cache: "no-store",
+    });
+
+    if (!response.ok) {
+      throw new Error(`Failed to load blogs: ${response.status}`);
+    }
+
+    const json = await response.json();
+    return json;
+  } catch (error) {
+    console.error("Blog page fetch error:", error);
+    return { data: [] };
+  }
 }
 
-function FeaturedCard({ article }) {
-  return (
-    <>
-      <div className="featured-card">
-        <div className="featured-content">
-          <div>
-            <div className="featured-meta">
-              <span className="tag tag-ink">Featured</span>
-              <span className="featured-time">12 min read · {article.date}</span>
-            </div>
-            <h2 className="featured-title">
-              {article.title}
-            </h2>
-          </div>
-          <div>
-            <div className="featured-author">
-              <div className="author-avatar avatar-a">DR</div>
-              <div>
-                <div className="author-name-white">{article.author}</div>
-              </div>
-            </div>
-            <a href={article.link} className="read-btn">
-              Read article →
-            </a>
-          </div>
-        </div>
-        <div className="featured-visual">
-          <div className="feat-deco">
-            <div className="ring ring-1" />
-            <div className="ring ring-2" />
-            <div className="ring ring-3" />
-          </div>
-          <div className="feat-badge">
-            <div className="badge-circle">🧠</div>
-            <div className="badge-label">Memory Mastery</div>
-            <div className="badge-sub">
-Practice Smarter. Perform Better. Succeed Faster.              
-            </div>
-          </div>
-          <div className="feat-pills">
-            <span className="feat-pill">Electrical</span>
-            <span className="feat-pill">Electonics</span>
-            <span className="feat-pill">Instrumentation</span>
-          </div>
-        </div>
-      </div>
-    </>
-  );
-}
-
-function CategoryFilter({ active, onChange }) {
-  return (
-    <>
-      <div className="categories">
-        {CATEGORIES.map((cat) => (
-          <button
-            key={cat}
-            className={`cat-btn${active === cat ? " active" : ""}`}
-            onClick={() => onChange(cat)}
-          >
-            {cat}
-          </button>
-        ))}
-      </div>
-    </>
-  );
-}
-
-function ArticleCard({ article, onClick }) {
-  return (
-    <>
-      <a
-        onClick={onClick}
-        className={`article-card${article.wide ? " wide" : ""}`}
-      >
-        <div className={`article-thumb`}>
-          {article.image ? (
-            <Image
-              src={article.image}
-              alt={"Loading..."}
-              fill
-              style={{ objectFit: "cover" }}
-              loading="lazy"
-            />
-          ) : (
-            <span>{article.emoji}</span>
-          )}
-        </div>
-        <div className="article-body">
-          <div className="article-tag-row">
-            <span className={`tag ${article.tagClass}`}>{article.tag}</span>
-            <span className="article-time">{article.readTime}</span>
-          </div>
-          <h3 className="article-title">{article.title}</h3>
-          <p className="article-excerpt" dangerouslySetInnerHTML={{__html: article.description} }></p>
-          <div className="article-footer">
-            <div className="article-author-row">
-              <div className={`small-avatar ${article.authorClass}`}>
-                {article.authorInitials}
-              </div>
-              <span className="article-author-name">{article.author}</span>
-            </div>
-            <span className="article-time">{article.date}</span>
-          </div>
-        </div>
-      </a>
-    </>
-  );
-}
-
-function Newsletter() {
-  const [email, setEmail] = useState("");
-
-  return (
-    <>
-      <div className="newsletter">
-        <div className="newsletter-left">
-          <h2>
-            Weekly prep tips.
-            <br />
-            Zero noise.
-          </h2>
-          <p>One high-signal email every Sunday. Join 1400 students.</p>
-        </div>
-        <div className="newsletter-form">
-          <input
-            type="email"
-            className="newsletter-input"
-            placeholder="your@email.com"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <button className="newsletter-btn">Subscribe →</button>
-        </div>
-      </div>
-    </>
-  );
-}
-
-function SiteFooter() {
-  return (
-    <>
-      <footer className="site-footer">
-        <span>© 2026 Electric Sine.</span>
-        <span className="footer-dot">·</span>
-        <span>Built for students</span>
-      </footer>
-    </>
-  );
-}
-
-export default function Blog() {
-  const [activeCategory, setActiveCategory] = useState("All Articles");
-  const { data: blogListDatas, isLoading, error } = useBlogs();
-  const router = useRouter();
-
-  const nameClass = ["avatar-a", "avatar-b", "avatar-c", "avatar-d"];
-  const formatDate = (dateString) => {
-    const date = new Date(dateString);
-    const currentYear = new Date().getFullYear();
-
-    const day = date.getDate();
-    const month = date.toLocaleString("en-US", { month: "long" });
-    const year = date.getFullYear();
-
-    return year === currentYear ? `${day} ${month}` : `${day} ${month} ${year}`;
-  };
-
-  const timeAgo = (dateString) => {
-    const past = new Date(dateString.replace(" ", "T"));
-    const now = new Date();
-    const diffMs = now - past;
-
-    const seconds = Math.floor(diffMs / 1000);
-    const minutes = Math.floor(seconds / 60);
-    const hours = Math.floor(minutes / 60);
-    const days = Math.floor(hours / 24);
-    const months = Math.floor(days / 30);
-    const years = Math.floor(days / 365);
-
-    if (years > 0) return `${years} year${years > 1 ? "s" : ""} ago`;
-    if (months > 0) return `${months} month${months > 1 ? "s" : ""} ago`;
-    if (days > 0) return `${days} day${days > 1 ? "s" : ""} ago`;
-    if (hours > 0) return `${hours} hour${hours > 1 ? "s" : ""} ago`;
-    if (minutes > 0) return `${minutes} minute${minutes > 1 ? "s" : ""} ago`;
-    return "just now";
-  };
-
-  const ARTICLES = blogListDatas?.data?.map((item, index) => ({
-    ...item,
-    wide: index === 0 || index === blogListDatas?.data.length - 1,
-    authorInitials: item.author
+export default async function BlogPage() {
+  const blogListDatas = await fetchBlogs();
+  const articles = blogListDatas?.data?.map((item, index) => {
+    const authorName = item.author || "";
+    const initials = authorName
       .split(" ")
       .slice(0, 2)
-      .map((word) => word[0])
+      .map((word) => word[0] || "")
       .join("")
-      .toUpperCase(),
-    authorClass: nameClass[index % nameClass.length],
-    date: formatDate(item.post_date),
-    readTime: timeAgo(item?.updated_at),
-  }));
-  const handleBlogDetail = (slug) => {
-    router.push(`/blog/${slug}`);
-  };
-  return (
-    <>
-      <div className="app">
-        <Navbar />
-        <Hero />
-        <div className="section">
-          {/* <StatsStrip /> */}
-          <p className="section-label">Featured article</p>
-          { ARTICLES && ARTICLES.length > 0 && <FeaturedCard article={ARTICLES?.[0]} />  }
-          {/* <CategoryFilter
-            active={activeCategory}
-            onChange={setActiveCategory}
-          /> */}
-          <div className="articles-grid">
-            {ARTICLES?.map((article) => (
-              <ArticleCard
-                key={article.id}
-                article={article}
-                onClick={() => handleBlogDetail(article.slug)}
-              />
-            ))}
-          </div>
-        </div>
-        <div className="section">
-          <Newsletter />
-        </div>
-        <SiteFooter />
-      </div>
-    </>
-  );
+      .toUpperCase();
+
+    return {
+      ...item,
+      wide: index === 0 || index === (blogListDatas?.data?.length ?? 0) - 1,
+      authorInitials: initials,
+      authorClass: ["avatar-a", "avatar-b", "avatar-c", "avatar-d"][index % 4],
+      date: formatDate(item.post_date),
+      readTime: timeAgo(item?.updated_at),
+    };
+  }) ?? [];
+
+  return <BlogClient articles={articles} />;
 }

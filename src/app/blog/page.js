@@ -1,6 +1,3 @@
-"use client";
+import BlogPage from "./blog";
 
-import Blog from "./blog";
-export default function BlogPage() {
-  return <Blog />;
-}
+export default BlogPage;
