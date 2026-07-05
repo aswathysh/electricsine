@@ -57,7 +57,6 @@ export default function QuizPageNew({ params }) {
   const ss = String(secs % 60).padStart(2, "0");
 
   const q = samplequestions?.[current];
-  console.log(samplequestions, "ll");
   const sel = answers[current] ?? null;
 
   const correct = Object.keys(answers).filter(
@@ -140,7 +139,7 @@ export default function QuizPageNew({ params }) {
               onClick={() => handleSelect(i)}
             >
               <div className="opt-key">{KEYS[i]}</div>
-              <div className="opt-text">{opt}</div>
+              <div className="opt-text-home">{opt}</div>
               {sel !== null && i === q.correct && (
                 <span className="opt-icon">✓</span>
               )}

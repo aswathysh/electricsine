@@ -8,14 +8,14 @@ import { Alert, Snackbar } from "@mui/material";
 import { CourseViewModal } from "@/components/sharables/CourseViewModal";
 import '@/components/sharables/sharables.css';
 
-export default function CoursesClient({ subjects = [] }) {
+export default function CoursesClient({ subjects = [] }) {  
   const { setCart } = useCart();
   const [showAlert, setShowAlert] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [showViewModal, setShowViewModal] = useState(false);
   const [viewItem, setViewItem] = useState({});
   const [alertMessage, setAlertMessage] = useState("");
-
+  
   const showUserAlert = (message, success = true) => {
     setIsSuccess(success);
     setAlertMessage(message);

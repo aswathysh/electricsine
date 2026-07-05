@@ -64,7 +64,7 @@ function TableOfContents({ paragraphs }) {
             }}
             href="#"
           >
-          {item.replace(/<[^>]*>/g, "")}
+            {item.replace(/<\/?[^>]+(>|$)/g, "").replace(/[\r\n]+/g, " ")}
           </a>
         ))}
       </div>
@@ -147,7 +147,7 @@ export default function BlogDetailPage() {
 
   return (
     <>
-       <Header />
+      <Header />
       <div className="es-progress" ref={progressRef} style={{ width: "0%" }} />
 
       <div className="es-hero">
@@ -239,7 +239,7 @@ export default function BlogDetailPage() {
             </div> */}
 
             <div className="es-article-body">
-               {article.description && (
+              {article.description && (
                 <div
                   className="es-article__content"
                   dangerouslySetInnerHTML={{ __html: article.description }}

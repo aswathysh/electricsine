@@ -53,7 +53,7 @@
 }
 
 .heroTitle {
-  font-size: clamp(44px, 8vw, 72px);
+  font-size: 55px;
   font-weight: 900;
   line-height: 1.05;
   margin: 0 0 24px;
@@ -114,7 +114,7 @@
 }
 
 .statNum {
-  font-size: 44px;
+  font-size: 35px;
   font-weight: 900;
   line-height: 1;
   margin-bottom: 6px;
@@ -615,7 +615,7 @@
 
 .sec-wrap {
   background: white;
-  padding: 60px 40px;
+  padding: 20px 40px;
   font-family: "Inter", sans-serif;
   display: flex;
   align-items: center;
@@ -681,8 +681,8 @@
 }
 
 .sec-svg {
-  width: 36px;
-  height: 36px;
+  width: 32px;
+  height: 32px;
   stroke: white;
   fill: none;
   stroke-width: 1.6;
@@ -694,7 +694,7 @@
   display: inline-block;
   border-radius: 6px;
   padding: 4px 0px;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 700;
   letter-spacing: 0.12em;
   color: white;
@@ -856,14 +856,14 @@
   max-width: 50%;
 }
 .hero-title {
-  font-size: 2.5rem;
+  font-size: 35px;
   font-weight: 800;
   color: #1a237e;
   line-height: 1.22;
   margin-bottom: 18px;
 }
 .hero-desc {
-  font-size: 24px;
+  font-size: 18px;
   color: #555;
   line-height: 1.75;
   margin-bottom: 14px;
@@ -879,7 +879,7 @@
   display: flex;
   align-items: flex-start;
   gap: 10px;
-  font-size: 22px;
+  font-size: 18px;
   color: #222;
   line-height: 1.5;
 }
@@ -937,7 +937,7 @@
     margin-top: 32px;
   }
   .hero-desc {
-    font-size: 18px;
+    font-size: 17px;
   }
 
   .hero-media {
@@ -1034,7 +1034,7 @@
     font-size: 15px !important;
   }
   .ft-info-value {
-    font-size: 22px !important;
+    font-size: 20px !important;
   }
   .ft-brand h2 {
     font-size: 36px !important;
@@ -1047,10 +1047,10 @@
   .nav-btn-label,
   .ct-card-title,
   .pf-num {
-    font-size: 23px;
+    font-size: 18px;
   }
   .quiz-question {
-    font-size: 28px;
+    font-size: 20px;
   }
   .option {
     padding: 16px 18px;
@@ -1066,7 +1066,7 @@
   .about-title,
   .pf-title,
   .ct-title {
-    font-size: 42px;
+    font-size: 35px;
   }
   .card-icon {
     height: 52px;
@@ -1075,7 +1075,7 @@
   .sec-title,
   .gr-title,
   .cta-title {
-    font-size: 38px;
+    font-size: 35px;
   }
 
   .btn-primary,
@@ -1105,14 +1105,14 @@
   .sec-desc,
   .gr-desc,
   .cta-desc {
-    font-size: 24px;
+    font-size: 18px;
   }
   .cta-desc-sub {
-    font-size: 21px;
+    font-size: 18px;
   }
 
   .card-title {
-    font-size: 23px;
+    font-size: 20px;
   }
   .about-tag,
   .card-num,
@@ -1120,26 +1120,26 @@
   .sec-tag,
   .gr-tag,
   .ct-tag {
-    font-size: 32px;
+    font-size: 25px;
   }
   .sec-badge {
-    font-size: 30px;
+    font-size: 20px;
   }
   .card-text,
   .pf-card-text,
   .sec-card-text,
   .ft-address {
-    font-size: 23px !important;
+    font-size: 18px !important;
   }
   .pf-card-title,
   .sec-card-title,
   .ct-card-value {
-    font-size: 21px;
+    font-size: 18px;
   }
   .gr-list li,
   .perf-label,
   .perf-pct {
-    font-size: 21px;
+    font-size: 18px;
   }
   .perf-title {
     font-size: 18px;
@@ -1151,12 +1151,22 @@
 }
 
 @media (max-width: 600px) {
+  .sec-left {
+    flex: 0 1 100%;
+  }
+  .cta-outer{
+    padding: 20px;
+  }
+  .sec-wrap ,.gr-wrap ,.about-wrap{
+    padding:20px 20px;
+  }
+  .hero-wrap{
+        padding:20px 20px;
+
+  }
   .cards-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    /* display: flex;
-  justify-content: space-around;
-  gap: 20px; */
   }
   .tagPill {
     font-size: 7px;
@@ -1172,7 +1182,7 @@
     max-width: 180px;
   }
   .statNum {
-    font-size: 34px;
+    font-size: 30px;
     font-weight: 700;
     line-height: 1;
     margin-bottom: 6px;
