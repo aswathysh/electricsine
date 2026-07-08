@@ -26,9 +26,7 @@ export default function CartItemCard({ item, index, removeItem }) {
             <Image
               src={`https://rubiksoftwares.com/demoelectric/public${item?.image}`}
               alt={
-                item?.title
-                  ? `${item.title} course thumbnail`
-                  : "Course thumbnail"
+                 "Img"
               }
               itemProp="image"
               fill
@@ -37,7 +35,7 @@ export default function CartItemCard({ item, index, removeItem }) {
             />
           ) : (
             <span className="cart-thumb-fallback" aria-hidden="true">
-              🛍️
+              Loading...
             </span>
           )}
         </div>

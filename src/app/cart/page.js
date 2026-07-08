@@ -435,7 +435,7 @@ const styles = {
     objectFit: "cover",
   },
   mainsubhead: {
-    fontSize: "35px", // Adjust font size as needed
+    fontSize: "32px", // Adjust font size as needed
     margin: "0", // No margin for subheading
     fontFamily: "DM Serif Display, serif",
     paddingBottom: "2%",

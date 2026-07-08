@@ -13,6 +13,8 @@ import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import React, { useEffect, useMemo, useState } from "react";
 import "../../styles/header.css";
 import { useCart } from "@/context/CartContext";
+import useMediaQuery from "@mui/material/useMediaQuery";
+
 import Image from "next/image";
 import MenuIcon from "@mui/icons-material/Menu";
 import AccountCircle from "@mui/icons-material/AccountCircle";
@@ -34,6 +36,7 @@ export const Header = () => {
   );
   const [showButton, setShowButton] = useState(false);
   const [userName, setUserName] = useState("");
+  const isMobile = useMediaQuery("(max-width:600px)");
 
   useEffect(() => {
     let logged = sessionStorage.getItem("token");
@@ -79,7 +82,13 @@ export const Header = () => {
     window.location.href = "/";
   };
   return (
-    <header style={styles.header} suppressHydrationWarning>
+    <header
+      style={{
+        ...styles.header,
+        padding: isMobile ? "10px 0px 10px 0px" : "20px 0px 25px 0px",
+      }}
+      suppressHydrationWarning
+    >
       <LogoutModal
         //onLogOutConform={onLogOutConform}
         openLogOutModal={openLogOutModal}
@@ -186,7 +195,7 @@ export const Header = () => {
             </MenuItem> */}
             {/* </a> */}
             {/* <a href="/courses" style={styles.navLink}> */}
-              <MenuItem
+            <MenuItem
               onClick={() => router.push("/blog")}
               style={styles.navLink}
             >
@@ -313,10 +322,7 @@ export const Header = () => {
             Courses
             {/* </a> */}
           </MenuItem>
-           <MenuItem
-            onClick={() => router.push("/blog")}
-            sx={{ pt: 2, pb: 2 }}
-          >
+          <MenuItem onClick={() => router.push("/blog")} sx={{ pt: 2, pb: 2 }}>
             {/* <a href="/courses" style={{ textDecoration: 'none', color: 'inherit' }}> */}
             Blog
             {/* </a> */}
@@ -367,15 +373,16 @@ export const Header = () => {
 };
 const styles = {
   header: {
-    backgroundColor:"#222546",
-     padding: "20px 0px 25px 0px",
+    backgroundColor: "#222546",
+    padding: "20px 0px 25px 0px",
     display: "flex",
     justifyContent: "center", // Center the content within the header
     width: "100%",
     borderBottom: "1px solid #a67422",
-       position: 'sticky',
-    top: '0px',    left: '0px',
-    zIndex: 999
+    position: "sticky",
+    top: "0px",
+    left: "0px",
+    zIndex: 999,
   },
   headerContent: {
     display: "flex",
