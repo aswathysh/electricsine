@@ -24,7 +24,7 @@ export default function CourseDetailPage() {
   const [isSuccess, setIsSuccess] = useState(false);
 
   const courseId = params.id;
-
+  
 
   useEffect(() => {
     if (!courseId) return;

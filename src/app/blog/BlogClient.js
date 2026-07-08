@@ -147,7 +147,7 @@ function ArticleCard({ article, onClick }) {
         {article.image ? (
           <Image
             src={article.image}
-            alt={article.title ?? "Article image"}
+            alt={"image"}
             fill
             style={{ objectFit: "cover" }}
             loading="lazy"
@@ -163,7 +163,7 @@ function ArticleCard({ article, onClick }) {
         </div>
         <h3 className="article-title">{article.title}</h3>
         <div
-          className="article-excerpt"
+          className={`article-excerpt ${article.wide ? "blob-wide" : "blob-nonWide"}`}
           dangerouslySetInnerHTML={{ __html: article.description }}
         />
         <div className="article-footer">
