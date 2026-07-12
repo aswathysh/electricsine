@@ -6,7 +6,7 @@ import { CircularProgress, Table, TableBody, TableCell, TableHead, TableRow, Typ
 import { Header } from '@/components/sharables/Header';
 import Grid from '@mui/material/Grid2';
 import Image from 'next/image';
-import { UserHeader } from '@/components/practice/UserHeader';
+
 
 export default function OrdersPage() {
   const { data, isLoading, error } = useQuery({
@@ -84,7 +84,7 @@ export default function OrdersPage() {
 
   return (
     <div>
-      <UserHeader />
+      <Header/>
       <Grid
         container
         style={{ justifyContent: 'center', backgroundColor: '#012967 !important', minHeight: '100vh' }}

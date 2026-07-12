@@ -1,11 +1,11 @@
 
-import { UserHeader } from '@/components/practice/UserHeader';
+import { Header } from '@/components/sharables/Header';
 import {Profile} from '@/components/user/Profile'
 export default function ProfilePage() {
  
   return (
     <div>
-      <UserHeader />
+      <Header/>
       <Profile />
     </div>
   );

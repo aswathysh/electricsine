@@ -5,7 +5,9 @@ import {
   Drawer,
   IconButton,
   List,
+  Menu,
   MenuItem,
+  Typography,
   useTheme,
 } from "@mui/material";
 import Grid from "@mui/material/Grid2";
@@ -28,6 +30,7 @@ export const Header = () => {
   const theme = useTheme();
   const [showLogin, setShowLogin] = useState(true);
   const [openLogOutModal, setOpenLogOutModal] = useState(false);
+  const [anchorEl, setAnchorEl] = useState(null);
 
   // const cart=[];
   const cartLength = useMemo(
@@ -81,6 +84,24 @@ export const Header = () => {
     sessionStorage.clear();
     window.location.href = "/";
   };
+  const handleMenu = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleMenuClose = () => {
+    setAnchorEl(null);
+  };
+  const handleClick = (tab) => {
+    handleMenuClose();
+    if (tab == "dashboard") {
+      router.push("/dashboard");
+    } else if (tab == "logout") {
+      handleOpenLogOutModal();
+    } else if (tab == "orders") {
+      router.push("/orders");
+    } else if (tab == "profile") {
+      router.push("/profile");
+    }
+  };
   return (
     <header
       style={{
@@ -90,7 +111,7 @@ export const Header = () => {
       suppressHydrationWarning
     >
       <LogoutModal
-        //onLogOutConform={onLogOutConform}
+        onLogOutConform={onLogOutConform}
         openLogOutModal={openLogOutModal}
         onLogoutModalClose={onLogoutModalClose}
       />
@@ -141,7 +162,7 @@ export const Header = () => {
             size="large"
             aria-label="show 17 new notifications"
             color="inherit"
-            onClick={() => router.push("/cart")}
+            onClick={() => router.replace(`${showLogin?'/cart':'/user/cart'}`)}
           >
             {showButton ? (
               <Badge badgeContent={cartLength} color="error">
@@ -202,7 +223,7 @@ export const Header = () => {
               <p style={{ ...styles.navLinkLabel }}>Blog</p>
             </MenuItem>
             <MenuItem
-              onClick={() => router.push("/courses")}
+            onClick={() => router.push(`${showLogin?'/courses':'/user/home'}`)}
               style={styles.navLink}
             >
               <p style={{ ...styles.navLinkLabel }}>Courses</p>
@@ -216,7 +237,7 @@ export const Header = () => {
             {/* <a href="/cart" style={{ ...styles.navLink }} suppressHydrationWarning> */}
             <MenuItem
               sx={{ mt: -1 }}
-              onClick={() => router.replace("/cart")}
+              onClick={() => router.replace(`${showLogin?'/cart':'/user/cart'}`)}
               style={styles.navLink}
               suppressHydrationWarning
             >
@@ -254,14 +275,44 @@ export const Header = () => {
                   <p style={{ ...styles.navLinkLabel }}>Login</p>
                 </MenuItem>
               ) : (
-                <MenuItem
-                  sx={{ mt: 0 }}
-                  suppressHydrationWarning
-                  onClick={() => router.push("/user/home")}
-                  style={styles.navLink}
-                >
-                  <Avatar {...stringAvatar(userName)} />
-                </MenuItem>
+                <>
+                  <MenuItem
+                    sx={{ mt: 0 }}
+                    suppressHydrationWarning
+                    onClick={handleMenu}
+                    style={styles.navLink}
+                  >
+                    <Avatar {...stringAvatar(userName)} />
+                  </MenuItem>
+                  <Menu
+                    sx={{ mt: "45px" }}
+                    anchorEl={anchorEl}
+                    anchorOrigin={{
+                      vertical: "top",
+                      horizontal: "right",
+                    }}
+                    keepMounted
+                    transformOrigin={{
+                      vertical: "top",
+                      horizontal: "right",
+                    }}
+                    open={Boolean(anchorEl)}
+                    onClose={handleMenuClose}
+                  >
+                    <MenuItem onClick={() => handleClick("dashboard")}>
+                      <Typography textAlign="center">Dashboard</Typography>
+                    </MenuItem>
+                    <MenuItem onClick={() => handleClick("orders")}>
+                      <Typography textAlign="center">Order History</Typography>
+                    </MenuItem>
+                    <MenuItem onClick={() => handleClick("profile")}>
+                      <Typography textAlign="center">Profile</Typography>
+                    </MenuItem>
+                    <MenuItem onClick={() => handleClick("logout")}>
+                      <Typography textAlign="center">Logout</Typography>
+                    </MenuItem>
+                  </Menu>
+                </>
               )
               // </a>
             }
@@ -315,7 +366,7 @@ export const Header = () => {
             {/* </a> */}
           </MenuItem>
           <MenuItem
-            onClick={() => router.push("/courses")}
+            onClick={() => router.push(`${showLogin?'/courses':'/user/home'}`)}
             sx={{ pt: 2, pb: 2 }}
           >
             {/* <a href="/courses" style={{ textDecoration: 'none', color: 'inherit' }}> */}
@@ -330,12 +381,20 @@ export const Header = () => {
           {showLogin ? (
             <></>
           ) : (
-            <MenuItem
-              onClick={() => router.push("/orders")}
-              sx={{ pt: 2, pb: 2 }}
-            >
-              Order History
-            </MenuItem>
+            <>
+              <MenuItem
+                onClick={() => router.push("/orders")}
+                sx={{ pt: 2, pb: 2 }}
+              >
+                Order History
+              </MenuItem>
+              <MenuItem
+                onClick={() => router.push("/profile")}
+                sx={{ pt: 2, pb: 2 }}
+              >
+                Profile
+              </MenuItem>
+            </>
           )}
 
           <MenuItem
@@ -364,7 +423,7 @@ export const Header = () => {
               {/* </a> */}
             </MenuItem>
           ) : (
-            <MenuItem onClick={onLogOutConform}>Logout</MenuItem>
+            <MenuItem onClick={handleLogout}>Logout</MenuItem>
           )}
         </List>
       </Drawer>

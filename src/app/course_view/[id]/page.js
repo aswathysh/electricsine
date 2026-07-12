@@ -22,9 +22,16 @@ export default function CourseDetailPage() {
   const [alertMessage, setAlertMessage] = useState("");
   const [showAlert, setShowAlert] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [showLogin, setShowLogin] = useState(true);
 
   const courseId = params.id;
-  
+
+  useEffect(() => {
+    let logged = sessionStorage.getItem("token");
+    if (logged == "" || logged == null) {
+      setShowLogin(true);
+    } else setShowLogin(false);
+  }, []);
 
   useEffect(() => {
     if (!courseId) return;
@@ -98,7 +105,7 @@ export default function CourseDetailPage() {
   };
 
   const handleBack = () => {
-    router.push("/courses");
+    router.push(`${showLogin ? "/courses" : "/user/home"}`);
   };
 
   const handleAlertClose = () => {
