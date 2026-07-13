@@ -217,7 +217,7 @@
     border-color 0.15s;
   cursor: pointer;
 }
-.es-toc__item:hover,
+/* .es-toc__item:hover, */
 .es-toc__item--active {
   color: var(--heading);
   border-left-color: var(--teal-green);

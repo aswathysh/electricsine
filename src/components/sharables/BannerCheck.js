@@ -236,8 +236,9 @@ export const BannerCheck = () => {
             </h1>
 
             <p className="heroDesc">
-            Access solved question papers, adaptive MCQs, timed mock tests, and valuable industry insights—everything engineers need to succeed in GATE, IES, and beyond.
-
+              Access solved question papers, adaptive MCQs, timed mock tests,
+              and valuable industry insights—everything engineers need to
+              succeed in GATE, IES, and beyond.
             </p>
 
             <div className="btnRow">

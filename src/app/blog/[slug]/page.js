@@ -44,7 +44,7 @@ const readTime = (text = "") =>
   `${Math.max(1, Math.ceil(text.trim().split(/\s+/).length / 200))} min read`;
 
 function TableOfContents({ paragraphs }) {
-  const [active, setActive] = useState(0);
+  // const [active, setActive] = useState(0);
   const items = paragraphs
     .filter((p) => p.length > 60)
     .slice(0, 6)
@@ -57,12 +57,12 @@ function TableOfContents({ paragraphs }) {
         {items.map((item, i) => (
           <a
             key={i}
-            className={`es-toc__item${active === i ? " es-toc__item--active" : ""}`}
-            onClick={(e) => {
-              e.preventDefault();
-              setActive(i);
-            }}
-            href="#"
+            className={`es-toc__item${0 === i ? " es-toc__item--active" : ""}`}
+            // onClick={(e) => {
+            //   e.preventDefault();
+            //   setActive(i);
+            // }}
+            // href="#"
           >
             {item.replace(/<\/?[^>]+(>|$)/g, "").replace(/[\r\n]+/g, " ")}
           </a>
