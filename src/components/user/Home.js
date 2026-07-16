@@ -148,7 +148,7 @@ function SubjectCard({
             </div>
             <button
               type="button"
-              className="primary-enrol-btn"
+              className="primary-enrol-btn bg-user-purchase"
               onClick={() => handleCartItem(item)}
             >
               <IconCart />
@@ -159,7 +159,7 @@ function SubjectCard({
           <div className="dual-primary-actions-row">
             <button
               type="button"
-              className="primary-enrol-btn"
+              className="primary-enrol-btn bg-user-practice"
               onClick={() => handlePracticeMode(item.id)}
             >
               <IconPractice />
@@ -167,7 +167,7 @@ function SubjectCard({
             </button>
             <button
               type="button"
-              className="primary-enrol-btn"
+              className="primary-enrol-btn bg-user-exam"
               onClick={() => handleExamMode(item.id)}
             >
               <IconExam />

@@ -3,16 +3,29 @@ import Script from "next/script";
 import "./globals.css";
 import Providers from "./provider";
 import { CartProvider } from "@/context/CartContext";
-// import { ToastContainer } from "react-toastify";
 import ToastProvider from "./ToastContainer";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Electric Sine",
+  metadataBase: new URL("https://www.electricsine.com"),
+  title: {
+    default: "Electric Sine",
+    template: "%s | Electric Sine",
+  },
   description:
-    "Our online training platform, Electricsine, is more than just a collection of courses; it's a comprehensive resource designed to provide a deep understanding of electrical engineering, electronics engineering, and instrumentation.",
+    "Learn Electrical Engineering, Electronics, Instrumentation and Automation through online courses, mock tests and practice questions at Electric Sine.",
+  keywords: [
+    "Electrical Engineering",
+    "Electronics Engineering",
+    "Instrumentation",
+    "Online Courses",
+    "Electric Sine",
+  ],
+  alternates: {
+    canonical: "/",
+  },
 };
 
 export default function RootLayout({ children }) {
@@ -49,8 +62,9 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
+
 const styles = {
   nomargin: {
-    margin: "0px !important",
+    margin: 0,
   },
 };
