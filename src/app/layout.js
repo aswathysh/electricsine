@@ -10,12 +10,15 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   metadataBase: new URL("https://www.electricsine.com"),
+
   title: {
     default: "Electric Sine",
     template: "%s | Electric Sine",
   },
+
   description:
     "Learn Electrical Engineering, Electronics, Instrumentation and Automation through online courses, mock tests and practice questions at Electric Sine.",
+
   keywords: [
     "Electrical Engineering",
     "Electronics Engineering",
@@ -23,6 +26,7 @@ export const metadata = {
     "Online Courses",
     "Electric Sine",
   ],
+
   alternates: {
     canonical: "/",
   },
@@ -32,11 +36,18 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+        {/* Pinterest Domain Verification */}
+        <meta
+          name="p:domain_verify"
+          content="b8380c82895d4c197371f0bfd25d1e40"
+        />
+
         {/* Google Analytics */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-797S63WJF4"
           strategy="afterInteractive"
         />
+
         <Script id="google-analytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
