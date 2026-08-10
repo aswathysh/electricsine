@@ -46,7 +46,7 @@ export default function RootLayout({ children }) {
         {/* Pinterest Domain Verification */}
         <meta
           name="p:domain_verify"
-          content="b8380c8287371f0bfd25d1e0"
+          content="b8380c82895d4c197371f0bfd25d1e40"
         />
 
         {/* Google Analytics */}
