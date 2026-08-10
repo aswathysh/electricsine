@@ -30,6 +30,13 @@ export const metadata = {
   alternates: {
     canonical: "/",
   },
+
+  // Favicon
+  icons: {
+    icon: "/icon.png",
+    shortcut: "/icon.png",
+    apple: "/icon.png",
+  },
 };
 
 export default function RootLayout({ children }) {
@@ -39,7 +46,7 @@ export default function RootLayout({ children }) {
         {/* Pinterest Domain Verification */}
         <meta
           name="p:domain_verify"
-          content="b8380c82895d4c197371f0bfd25d1e40"
+          content="b8380c8287371f0bfd25d1e0"
         />
 
         {/* Google Analytics */}
@@ -62,10 +69,10 @@ export default function RootLayout({ children }) {
       <body className={inter.className} style={styles.nomargin}>
         <Providers>
           <CartProvider>
-            {/* <ToastContainer position="top-right" 
-        autoClose={5000} hideProgressBar={false} closeOnClick /> */}{" "}
             <ToastProvider />
+
             <SpeedInsights id="speed-insights" />
+
             {children}
           </CartProvider>
         </Providers>
