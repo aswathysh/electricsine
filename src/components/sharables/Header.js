@@ -5,7 +5,9 @@ import {
   Drawer,
   IconButton,
   List,
+  Menu,
   MenuItem,
+  Typography,
   useTheme,
 } from "@mui/material";
 import Grid from "@mui/material/Grid2";
@@ -13,6 +15,8 @@ import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import React, { useEffect, useMemo, useState } from "react";
 import "../../styles/header.css";
 import { useCart } from "@/context/CartContext";
+import useMediaQuery from "@mui/material/useMediaQuery";
+
 import Image from "next/image";
 import MenuIcon from "@mui/icons-material/Menu";
 import AccountCircle from "@mui/icons-material/AccountCircle";
@@ -26,6 +30,7 @@ export const Header = () => {
   const theme = useTheme();
   const [showLogin, setShowLogin] = useState(true);
   const [openLogOutModal, setOpenLogOutModal] = useState(false);
+  const [anchorEl, setAnchorEl] = useState(null);
 
   // const cart=[];
   const cartLength = useMemo(
@@ -34,6 +39,7 @@ export const Header = () => {
   );
   const [showButton, setShowButton] = useState(false);
   const [userName, setUserName] = useState("");
+  const isMobile = useMediaQuery("(max-width:600px)");
 
   useEffect(() => {
     let logged = sessionStorage.getItem("token");
@@ -78,10 +84,34 @@ export const Header = () => {
     sessionStorage.clear();
     window.location.href = "/";
   };
+  const handleMenu = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleMenuClose = () => {
+    setAnchorEl(null);
+  };
+  const handleClick = (tab) => {
+    handleMenuClose();
+    if (tab == "dashboard") {
+      router.push("/dashboard");
+    } else if (tab == "logout") {
+      handleOpenLogOutModal();
+    } else if (tab == "orders") {
+      router.push("/orders");
+    } else if (tab == "profile") {
+      router.push("/profile");
+    }
+  };
   return (
-    <header style={styles.header} suppressHydrationWarning>
+    <header
+      style={{
+        ...styles.header,
+        padding: isMobile ? "10px 0px 10px 0px" : "20px 0px 25px 0px",
+      }}
+      suppressHydrationWarning
+    >
       <LogoutModal
-        //onLogOutConform={onLogOutConform}
+        onLogOutConform={onLogOutConform}
         openLogOutModal={openLogOutModal}
         onLogoutModalClose={onLogoutModalClose}
       />
@@ -132,7 +162,7 @@ export const Header = () => {
             size="large"
             aria-label="show 17 new notifications"
             color="inherit"
-            onClick={() => router.push("/cart")}
+            onClick={() => router.replace(`${showLogin?'/cart':'/user/cart'}`)}
           >
             {showButton ? (
               <Badge badgeContent={cartLength} color="error">
@@ -186,14 +216,14 @@ export const Header = () => {
             </MenuItem> */}
             {/* </a> */}
             {/* <a href="/courses" style={styles.navLink}> */}
-              <MenuItem
+            <MenuItem
               onClick={() => router.push("/blog")}
               style={styles.navLink}
             >
               <p style={{ ...styles.navLinkLabel }}>Blog</p>
             </MenuItem>
             <MenuItem
-              onClick={() => router.push("/courses")}
+            onClick={() => router.push(`${showLogin?'/courses':'/user/home'}`)}
               style={styles.navLink}
             >
               <p style={{ ...styles.navLinkLabel }}>Courses</p>
@@ -207,7 +237,7 @@ export const Header = () => {
             {/* <a href="/cart" style={{ ...styles.navLink }} suppressHydrationWarning> */}
             <MenuItem
               sx={{ mt: -1 }}
-              onClick={() => router.replace("/cart")}
+              onClick={() => router.replace(`${showLogin?'/cart':'/user/cart'}`)}
               style={styles.navLink}
               suppressHydrationWarning
             >
@@ -245,14 +275,44 @@ export const Header = () => {
                   <p style={{ ...styles.navLinkLabel }}>Login</p>
                 </MenuItem>
               ) : (
-                <MenuItem
-                  sx={{ mt: 0 }}
-                  suppressHydrationWarning
-                  onClick={() => router.push("/user/home")}
-                  style={styles.navLink}
-                >
-                  <Avatar {...stringAvatar(userName)} />
-                </MenuItem>
+                <>
+                  <MenuItem
+                    sx={{ mt: 0 }}
+                    suppressHydrationWarning
+                    onClick={handleMenu}
+                    style={styles.navLink}
+                  >
+                    <Avatar {...stringAvatar(userName)} />
+                  </MenuItem>
+                  <Menu
+                    sx={{ mt: "45px" }}
+                    anchorEl={anchorEl}
+                    anchorOrigin={{
+                      vertical: "top",
+                      horizontal: "right",
+                    }}
+                    keepMounted
+                    transformOrigin={{
+                      vertical: "top",
+                      horizontal: "right",
+                    }}
+                    open={Boolean(anchorEl)}
+                    onClose={handleMenuClose}
+                  >
+                    <MenuItem onClick={() => handleClick("dashboard")}>
+                      <Typography textAlign="center">Dashboard</Typography>
+                    </MenuItem>
+                    <MenuItem onClick={() => handleClick("orders")}>
+                      <Typography textAlign="center">Order History</Typography>
+                    </MenuItem>
+                    <MenuItem onClick={() => handleClick("profile")}>
+                      <Typography textAlign="center">Profile</Typography>
+                    </MenuItem>
+                    <MenuItem onClick={() => handleClick("logout")}>
+                      <Typography textAlign="center">Logout</Typography>
+                    </MenuItem>
+                  </Menu>
+                </>
               )
               // </a>
             }
@@ -306,17 +366,14 @@ export const Header = () => {
             {/* </a> */}
           </MenuItem>
           <MenuItem
-            onClick={() => router.push("/courses")}
+            onClick={() => router.push(`${showLogin?'/courses':'/user/home'}`)}
             sx={{ pt: 2, pb: 2 }}
           >
             {/* <a href="/courses" style={{ textDecoration: 'none', color: 'inherit' }}> */}
             Courses
             {/* </a> */}
           </MenuItem>
-           <MenuItem
-            onClick={() => router.push("/blog")}
-            sx={{ pt: 2, pb: 2 }}
-          >
+          <MenuItem onClick={() => router.push("/blog")} sx={{ pt: 2, pb: 2 }}>
             {/* <a href="/courses" style={{ textDecoration: 'none', color: 'inherit' }}> */}
             Blog
             {/* </a> */}
@@ -324,12 +381,20 @@ export const Header = () => {
           {showLogin ? (
             <></>
           ) : (
-            <MenuItem
-              onClick={() => router.push("/orders")}
-              sx={{ pt: 2, pb: 2 }}
-            >
-              Order History
-            </MenuItem>
+            <>
+              <MenuItem
+                onClick={() => router.push("/orders")}
+                sx={{ pt: 2, pb: 2 }}
+              >
+                Order History
+              </MenuItem>
+              <MenuItem
+                onClick={() => router.push("/profile")}
+                sx={{ pt: 2, pb: 2 }}
+              >
+                Profile
+              </MenuItem>
+            </>
           )}
 
           <MenuItem
@@ -358,7 +423,7 @@ export const Header = () => {
               {/* </a> */}
             </MenuItem>
           ) : (
-            <MenuItem onClick={onLogOutConform}>Logout</MenuItem>
+            <MenuItem onClick={handleLogout}>Logout</MenuItem>
           )}
         </List>
       </Drawer>
@@ -367,15 +432,16 @@ export const Header = () => {
 };
 const styles = {
   header: {
-    backgroundColor:"#222546",
-     padding: "20px 0px 25px 0px",
+    backgroundColor: "#222546",
+    padding: "20px 0px 25px 0px",
     display: "flex",
     justifyContent: "center", // Center the content within the header
     width: "100%",
     borderBottom: "1px solid #a67422",
-       position: 'sticky',
-    top: '0px',    left: '0px',
-    zIndex: 999
+    position: "sticky",
+    top: "0px",
+    left: "0px",
+    zIndex: 999,
   },
   headerContent: {
     display: "flex",

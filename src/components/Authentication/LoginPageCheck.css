@@ -584,6 +584,7 @@
     font-size: 27px;
   }
   .lp-social-btns {
+    display: none;
     width: 70%;
   }
   .lp-social-btn {
@@ -596,6 +597,8 @@
   }
   .lp-tagline {
     font-size: 25px;
+      margin-bottom: 0px;
+
   }
   .lp-page-main {
     flex-direction: column;

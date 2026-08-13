@@ -56,12 +56,10 @@ export const UserHeader = () => {
   //     setAuth(event.target.checked);
   //   };
   const handleCartPage = () => {
-    window.location.href = "/user/cart";
+    router.push("/user/cart");
   }
   const handleUserHome = () => {
-
-    window.location.href = '/dashboard'
-
+    router.push('/dashboard');
   }
   const onLogoutModalClose = () => {
     setOpenLogOutModal(false);
@@ -78,25 +76,25 @@ export const UserHeader = () => {
   };
   const handleClick = (tab) => {
     if (tab == "dashboard") {
-      window.location.href = "/dashboard";
+      router.push("/dashboard");
     } else if (tab == "logout") {
       handleOpenLogOutModal();
     }
     else if( tab == "orders") {
-      window.location.href = "/orders";
+      router.push("/orders");
     }
     else if( tab == "profile") {
-      window.location.href = "/profile";
+      router.push("/profile");
     }
   };
   const handleCourse = () => {
 
-    window.location.href = "/user/home";
+    router.push( "/user/home");
 
   }
    const handleHistory = () => {
 
-    window.location.href = "/user/home";
+    router.push("/user/home");
 
   }
   return (

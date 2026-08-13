@@ -1,8 +1,40 @@
 import BlogClient from "./BlogClient";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://electricsign.in/public/api";
+const API_URL =
+  process.env.NEXT_PUBLIC_API_URL || "https://electricsign.in/public/api";
 
 export const dynamic = "force-dynamic";
+
+export const metadata = {
+  title: "Electrical Engineering Blog | Electric Sine",
+  description:
+    "Read Electrical Engineering, Electronics, Instrumentation and competitive exam preparation articles, study tips, mock test guides and career insights from Electric Sine.",
+  keywords: [
+    "Electrical Engineering Blog",
+    "Electronics Blog",
+    "Instrumentation",
+    "Engineering Articles",
+    "Study Tips",
+    "Mock Test",
+    "Electric Sine",
+  ],
+  alternates: {
+    canonical: "https://www.electricsine.com/blog",
+  },
+  openGraph: {
+    title: "Electrical Engineering Blog | Electric Sine",
+    description:
+      "Engineering articles, exam preparation guides and study resources.",
+    url: "https://www.electricsine.com/blog",
+    siteName: "Electric Sine",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Electrical Engineering Blog | Electric Sine",
+    description: "Electrical Engineering study guides and career articles.",
+  },
+};
 
 function formatDate(dateString) {
   const date = new Date(dateString);
@@ -55,24 +87,42 @@ async function fetchBlogs() {
 
 export default async function BlogPage() {
   const blogListDatas = await fetchBlogs();
-  const articles = blogListDatas?.data?.map((item, index) => {
-    const authorName = item.author || "";
-    const initials = authorName
-      .split(" ")
-      .slice(0, 2)
-      .map((word) => word[0] || "")
-      .join("")
-      .toUpperCase();
+  const articles =
+    blogListDatas?.data?.map((item, index) => {
+      const authorName = item.author || "";
+      const initials = authorName
+        .split(" ")
+        .slice(0, 2)
+        .map((word) => word[0] || "")
+        .join("")
+        .toUpperCase();
 
-    return {
-      ...item,
-      wide: index === 0 || index === (blogListDatas?.data?.length ?? 0) - 1,
-      authorInitials: initials,
-      authorClass: ["avatar-a", "avatar-b", "avatar-c", "avatar-d"][index % 4],
-      date: formatDate(item.post_date),
-      readTime: timeAgo(item?.updated_at),
-    };
-  }) ?? [];
+      return {
+        ...item,
+        wide: index === 0 || index === (blogListDatas?.data?.length ?? 0) - 1,
+        authorInitials: initials,
+        authorClass: ["avatar-a", "avatar-b", "avatar-c", "avatar-d"][
+          index % 4
+        ],
+        date: formatDate(item.post_date),
+        readTime: timeAgo(item?.updated_at),
+      };
+    }) ?? [];
 
-  return <BlogClient articles={articles} />;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Blog",
+            name: "Electric Sine Blog",
+            url: "https://www.electricsine.com/blog",
+          }),
+        }}
+      />
+      <BlogClient articles={articles} />
+    </>
+  );
 }

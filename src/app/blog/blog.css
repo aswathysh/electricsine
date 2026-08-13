@@ -287,11 +287,12 @@
 }
 
 .featured-title {
-  font-family: var(--font-serif);
+  font-family:Body, Quicksand, sans-serif;
+  /* font-style: italic; */
   font-size: 36px;
   font-weight: 700;
   line-height: 1.1;
-  letter-spacing: -1px;
+  letter-spacing: 1px;
   color: #fff;
   margin-bottom: 20px;
 }
@@ -618,25 +619,37 @@
 
 .article-title {
   font-family: var(--font-serif);
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 600;
   line-height: 1.25;
   letter-spacing: -0.3px;
   color: var(--ink);
   margin-bottom: 10px;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .article-excerpt {
-  font-size: 20px;
+  font-size: 18px;
   color: var(--ink-2);
   line-height: 1.6;
   font-weight: 300;
   margin-bottom: 20px;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+.blob-wide{
+    -webkit-line-clamp: 4;
+
+}
+.blob-nonWide{
+    -webkit-line-clamp: 2;
+
 }
 .article-footer {
   display: flex;
@@ -762,6 +775,14 @@
 }
 
 @media (max-width: 900px) {
+  .featured-title {
+  font-weight: 600;
+  font-size: 26px;
+ 
+}
+.newsletter-left h2 {
+  font-size: 28px;}
+
   .newsletter-btn {
     font-size: 14px;
   }

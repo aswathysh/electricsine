@@ -2,16 +2,16 @@
   --font-xs: 12px;
   --font-sm: 14px;
   --font-base: 16px;
-  --font-md: 18px;
-  --font-lg: 20px;
-  --font-lx: 22px;
-  --font-llx: 23px;
-  --font-xl: 25px;
-  --font-xll: 26px;
-  --font-xxl: 28px;
+  --font-md: 16px;
+  --font-lg: 18px;
+  --font-lx: 19px;
+  --font-llx: 18px;
+  --font-xl: 18px;
+  --font-xll: 20px;
+  --font-xxl: 22px;
   --font-xxxl: 30px;
-  --font-2xl: 32px;
-  --font-5xl: 52px;
+  --font-2xl: 24px;
+  --font-5xl: 28px;
 }
 
 .qz-root {
@@ -211,17 +211,17 @@
   border-color: #ef4444;
   color: #b91c1c;
 }
-.opt-text {
+.opt-text-home {
   font-size: var(--font-xl);
   color: #334155;
   line-height: 1.5;
   flex: 1;
 }
-.opt-correct .opt-text {
+.opt-correct .opt-text-home {
   color: #15803d;
   font-weight: 500;
 }
-.opt-wrong .opt-text {
+.opt-wrong .opt-text-home {
   color: #b91c1c;
 }
 .opt-icon {
@@ -526,7 +526,7 @@
   .qz-explain-text {
     font-size: 17px;
   }
-  .opt-text {
+  .opt-text-home {
     font-size: var(--font-md);
   }
 

@@ -1,5 +1,5 @@
-import CoursesClient from "./CoursesClient";
-
+// import CoursesClient from "./CoursesClient";
+import CoursesPage from "./CoursesClientNew";
 const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://electricsign.in/public/api";
 
 async function fetchSubjects() {
@@ -25,6 +25,8 @@ async function fetchSubjects() {
 
 export default async function Home() {
   const subjects = await fetchSubjects();
+  
+  return <CoursesPage subjects={subjects} />
 
-  return <CoursesClient subjects={subjects} />;
+  // return <CoursesClient subjects={subjects} />;
 }

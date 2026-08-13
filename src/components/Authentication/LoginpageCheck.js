@@ -44,7 +44,7 @@ export default function LoginPage() {
       window.location.href = "/user/home";
     },
     onError: (error) => {
-      console.error("Error while logging:", error.response.data.error);
+      console.error("Error while logging:", error.response?.data?.error);
     },
   });
 
@@ -55,9 +55,14 @@ export default function LoginPage() {
       window.location.href = "/auth/login";
     },
     onError: (error) => {
-      console.error("Error creating user:", error.response.data.error);
-      console.error("Error creating user msg:", error.response.data.messages);
-      toast.error(error.response.data.messages || "Something went wrong", {
+      console.error("Error creating user:", error.response?.data?.error);
+      console.error("Error creating user msg:", error.response?.data?.messages);
+      const errorMsg =
+        error.response?.data?.messages?.error ||
+        error.response?.data?.messages ||
+        "Something went wrong";
+
+      toast.error(errorMsg, {
         autoClose: 5000,
         style: { fontSize: "16px", fontWeight: 600 },
       });
@@ -66,7 +71,6 @@ export default function LoginPage() {
 
   const forgetMutation = useMutation({
     mutationFn: (forgetEmail) => forgetPasswordLogin(forgetEmail),
-
     onSuccess: (data) => {
       console.log("User email sended successfully:", data);
       toast.success(
@@ -78,19 +82,21 @@ export default function LoginPage() {
       );
       setTimeout(() => {
         setForgot(false);
-            setValidate(false);
-
+        setValidate(false);
       }, 1500);
     },
     onError: (error) => {
-      console.error("Error  while loggin:", error.response?.data?.error);
-      toast.error(
-        error.response?.data?.messages.error || "Something went wrong",
-        {
-          autoClose: 5000,
-          style: { fontSize: "16px", fontWeight: 600 },
-        },
-      );
+      console.error("Error while logging:", error.response?.data?.error);
+
+      const errorMsg =
+        error.response?.data?.messages?.error ||
+        error.response?.data?.messages ||
+        "Something went wrong";
+
+      toast.error(errorMsg, {
+        autoClose: 5000,
+        style: { fontSize: "16px", fontWeight: 600 },
+      });
     },
   });
 
@@ -127,13 +133,11 @@ export default function LoginPage() {
 
   const validateForgot = () => {
     let validationErrors = {};
-
     if (!formData.email) {
       validationErrors.email = "Email is required";
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
       validationErrors.email = "Email is invalid";
     }
-
     return validationErrors;
   };
 
@@ -152,34 +156,34 @@ export default function LoginPage() {
     }
   };
 
-const handleSubmit = async (event) => {
-  event.preventDefault(); // ✅ first line
-  setValidate(true);
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setValidate(true);
 
-  const validationErrors = forgot
-    ? validateForgot()
-    : activeTab === "login"
-      ? validateLogin()
-      : validateRegister();
+    const validationErrors = forgot
+      ? validateForgot()
+      : activeTab === "login"
+        ? validateLogin()
+        : validateRegister();
 
-  if (Object.keys(validationErrors).length > 0) {
-    setErrors(validationErrors);
-    return; // ✅ stop here
-  }
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      return;
+    }
 
-  setErrors({});
+    setErrors({});
 
-  if (forgot) {
-    forgetMutation.mutate({ email: formData.email });
-  } else if (activeTab === "login") {
-    loginMutation.mutate({
-      username: formData.username,
-      password: formData.password,
-    });
-  } else {
-    registerMutation.mutate(formData);
-  }
-};
+    if (forgot) {
+      forgetMutation.mutate({ email: formData.email });
+    } else if (activeTab === "login") {
+      loginMutation.mutate({
+        username: formData.username,
+        password: formData.password,
+      });
+    } else {
+      registerMutation.mutate(formData);
+    }
+  };
 
   const handleForgot = () => {
     setForgot(true);
@@ -193,7 +197,10 @@ const handleSubmit = async (event) => {
     }
   };
 
-  const isPending = loginMutation.isPending || registerMutation.isPending || forgetMutation.isPending;
+  const isPending =
+    loginMutation.isPending ||
+    registerMutation.isPending ||
+    forgetMutation.isPending;
 
   return (
     <>
@@ -264,7 +271,6 @@ const handleSubmit = async (event) => {
             </div>
           </div>
 
-          {/* ── RIGHT ── */}
           <section className="lp-right" aria-label="Login form">
             <div className="lp-form-card">
               <div className="back-url">
@@ -310,7 +316,9 @@ const handleSubmit = async (event) => {
 
               {registerMutation?.isError && (
                 <p style={{ color: "red", fontSize: "14px" }}>
-                  {registerMutation?.error?.response?.data?.messages}
+                  {registerMutation?.error?.response?.data?.messages?.error ||
+                    registerMutation?.error?.response?.data?.messages ||
+                    "Something went wrong"}
                 </p>
               )}
 
@@ -323,7 +331,7 @@ const handleSubmit = async (event) => {
                     <input
                       className="lp-input"
                       id="lp-email"
-                        value={formData.email}
+                      value={formData.email}
                       name="email"
                       type="email"
                       placeholder="Enter your email"
@@ -335,6 +343,7 @@ const handleSubmit = async (event) => {
                     )}
                   </div>
                 )}
+
                 {activeTab === "register" && !forgot && (
                   <>
                     <div className="lp-field">
@@ -372,6 +381,7 @@ const handleSubmit = async (event) => {
                         <span className="lp-error">{errors.email}</span>
                       )}
                     </div>
+
                     <div className="lp-field">
                       <label className="lp-label" htmlFor="lp-mobile">
                         Phone Number
