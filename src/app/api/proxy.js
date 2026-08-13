@@ -1,5 +1,5 @@
 export default async function handler(req, res) {
-    const response = await fetch("https://electricsign.in/public/api/", {
+    const response = await fetch("https://rubiksoftwares.com/electricsine-api/public/", {
     method: req.method,
     headers: {
       "Content-Type": "application/json",
