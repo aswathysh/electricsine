@@ -2,7 +2,7 @@
 import axios from 'axios';
 import { toast } from 'react-toastify';
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://electricsign.in/public/api/";
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://rubiksoftwares.com/electricsine-api/public/public/api/";
 
 const axiosInstance = axios.create({
   baseURL: API_URL,

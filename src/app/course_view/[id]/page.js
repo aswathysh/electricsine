@@ -37,7 +37,7 @@ export default function CourseDetailPage() {
     if (!courseId) return;
 
     const API_URL =
-      process.env.NEXT_PUBLIC_API_URL || "https://electricsign.in/public/api";
+      process.env.NEXT_PUBLIC_API_URL || "https://rubiksoftwares.com/electricsine-api/public/public/api";
 
     async function fetchCourseDetails() {
       try {
@@ -233,7 +233,7 @@ export default function CourseDetailPage() {
                     src={
                       course.image.startsWith("http")
                         ? course.image
-                        : `https://electricsign.in/public${course.image}`
+                        : `https://rubiksoftwares.com/electricsine-api/public/public${course.image}`
                     }
                     alt={course?.title || "Course"}
                     fill

@@ -56,7 +56,7 @@ export const fetchPracticeQuestions = async ({ pageParam,subjectId }) => {
   };
   // export const fetchExamSectionsParams = async () => {
   //   const subjectId = sessionStorage.getItem("elec_exam_id")
-  //   const response = await axiosInstance.get(`https://electricsign.in/public/api/exam-list/${subjectId}`);
+  //   const response = await axiosInstance.get(`https://rubiksoftwares.com/electricsine-api/public/public/api/exam-list/${subjectId}`);
   //   return response.data;
   // };
   // File: services/PracticeServices.js
@@ -67,13 +67,13 @@ export async function fetchExamSectionsParam() {
   // This is just an example; replace with actual data fetching logic
   const subjectId = sessionStorage.getItem("elec_exam_id")
 
-  const response = await fetch(`https://electricsign.in/public/api/exam-list/${subjectId}`);
+  const response = await fetch(`https://rubiksoftwares.com/electricsine-api/public/public/api/exam-list/${subjectId}`);
   const data = await response.json();
   return data;
 }
 export async function fetchExamSectionsParams() {
   try {
-    const response = await fetch('https://electricsign.in/public/api/exam-list/1');
+    const response = await fetch('https://rubiksoftwares.com/electricsine-api/public/public/api/exam-list/1');
     
     // Check if the response is OK
     if (!response.ok) {

@@ -1,7 +1,7 @@
 import BlogClient from "./BlogClient";
 
 const API_URL =
-  process.env.NEXT_PUBLIC_API_URL || "https://electricsign.in/public/api";
+  process.env.NEXT_PUBLIC_API_URL || "https://rubiksoftwares.com/electricsine-api/public/public/api";
 
 export const dynamic = "force-dynamic";
 

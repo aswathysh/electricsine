@@ -9,7 +9,7 @@ const nextConfig = {
     return [
       {
         source: '/api/:path*',
-        destination: 'https://electricsign.in/public/api/*',  // Your API server's URL
+        destination: 'https://rubiksoftwares.com/electricsine-api/public/api/*',  // Your API server's URL
       },
     ]
   },

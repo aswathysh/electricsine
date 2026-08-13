@@ -1,6 +1,6 @@
 // import CoursesClient from "./CoursesClient";
 import CoursesPage from "./CoursesClientNew";
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://electricsign.in/public/api";
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://rubiksoftwares.com/electricsine-api/public/public/api";
 
 async function fetchSubjects() {
   try {
