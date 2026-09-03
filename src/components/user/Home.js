@@ -105,7 +105,7 @@ function SubjectCard({
           objectFit="cover"
           src={
             item.image
-              ? `https://rubiksoftwares.com/electricsine-api/public${item?.image}`
+              ? `https://rubiksoftwares.com/demoelectric/public${item?.image}`
               : "/assets/images/logincoverpic.jpg"
           }
           alt="courseimg"

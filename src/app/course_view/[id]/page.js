@@ -212,8 +212,8 @@ export default function CourseDetailPage() {
           </section>
 
           <aside className="cm-action-panel">
-            <div className="cm-floating-sticky-card">
-              <div className="cm-image-frame">
+            <div className="cm-floating-sticky-card" >
+              <div className="cm-image-frame" style={{height:350}}>
                 {(imageLoading || !course) && (
                   <Skeleton
                     variant="rounded"
@@ -238,9 +238,10 @@ export default function CourseDetailPage() {
                     alt={course?.title || "Course"}
                     fill
                     priority
-                    className="cm-scaled-image"
+                    className="object-contain"
                     sizes="(max-width: 480px) 100vw, 400px"
                     onLoad={() => setImageLoading(false)}
+                
                   />
                 ) : (
                   !loading && <div className="cm-frame-fallback">⚡</div>
