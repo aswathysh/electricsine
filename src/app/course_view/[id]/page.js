@@ -246,7 +246,6 @@ export default function CourseDetailPage() {
                   !loading && <div className="cm-frame-fallback">⚡</div>
                 )}
               </div>
-
               <div className="cm-pricing-row">
                 <div className="cm-price-tag">
                   <span className="cm-currency-sign">₹</span>
