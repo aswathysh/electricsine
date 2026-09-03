@@ -13,7 +13,7 @@ export const CartItem = ({ title, image, description, price, index, removeItem }
                         objectFit="cover"
                         // width={100}
                         // height={100}
-                        src={`https://rubiksoftwares.com/demoelectric/public${image}`}
+                        src={`https://rubiksoftwares.com/electricsine-api/public${image}`}
                         alt="courseimg" />
                 </Grid>
                 <Grid item size={{ xs: 6, md: 5.5, lg: 5.5, sm: 6 }}>
