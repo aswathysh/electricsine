@@ -86,7 +86,7 @@ function CourseCard({ course, handleCartItem }) {
         <Image
           src={
             course?.image
-              ? `https://rubiksoftwares.com/electricsine-api/public/public${course.image}`
+              ? `https://rubiksoftwares.com/electricsine-api/public/${course.image}`
               : "/assets/images/logincoverpic.jpg"
           }
           alt={course?.title || "Course Image"}
