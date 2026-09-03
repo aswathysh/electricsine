@@ -239,7 +239,6 @@ export default function CourseDetailPage() {
                     fill
                     priority
                     className="object-contain"
-                    sizes="(max-width: 480px) 100vw, 400px"
                     onLoad={() => setImageLoading(false)}
                 
                   />

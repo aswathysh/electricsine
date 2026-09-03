@@ -92,10 +92,8 @@ function CourseCard({ course, handleCartItem }) {
           width={300}
           height={300}
           alt={course?.title || "Course Image"}
-          sizes="(max-width: 768px) 100vw, 33vw"
           priority={true}
           style={{ 
-            objectFit: "cover",
             opacity: isLoading ? 0 : 1, 
             transition: "opacity 0.3s ease-in-out",
             height: "300px",
