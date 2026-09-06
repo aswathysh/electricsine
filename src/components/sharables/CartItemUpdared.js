@@ -24,7 +24,7 @@ export default function CartItemCard({ item, index, removeItem }) {
         <div className="cart-thumb">
           {item?.image ? (
             <Image
-              src={`https://rubiksoftwares.com/electricsine-api/public${item?.image}`}
+              src={`https://rubiksoftwares.com/electricsine-api/public/${item?.image}`}
               alt={
                  "Img"
               }

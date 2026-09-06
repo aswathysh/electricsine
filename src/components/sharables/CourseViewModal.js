@@ -34,7 +34,7 @@ export const CourseViewModal = ({ showViewModal, closeView, item }) => {
                     <CardMedia
                         className='product-new-label'
                         sx={{ height: "100%" }}
-                        image={item.image ? `https://rubiksoftwares.com/electricsine-api/public${item?.image}` : '/assets/images/logincoverpic.jpg'}
+                        image={item.image ? `https://rubiksoftwares.com/electricsine-api/public/${item?.image}` : '/assets/images/logincoverpic.jpg'}
                         title={item?.title}
                     />
                     <CardContent style={{ alignContent: "center", display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>

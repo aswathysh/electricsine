@@ -187,7 +187,7 @@ export default function OrdersPage() {
                             }}
                           >
                             <Image
-                              src={`https://rubiksoftwares.com/electricsine-api/public${item.image}`}
+                              src={`https://rubiksoftwares.com/electricsine-api/public/${item.image}`}
                               alt={item.title}
                               width={60}
                               height={40}
