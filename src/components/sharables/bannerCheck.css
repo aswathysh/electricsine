@@ -64,7 +64,7 @@
   color: white;
 }
 .textBlue {
-  color: #222546;
+  color: rgb(108, 99, 255);
 }
 .textAmber {
   color: #ff8c02;
@@ -85,7 +85,7 @@
 }
 
 .btnPrimary {
-  background: #222546;
+  background: rgb(108, 99, 255);
   color: white;
   font-size: 16px;
   font-weight: 700;
@@ -380,7 +380,7 @@
 .about-title {
   font-size: 28px;
   font-weight: 900;
-  color: #ff8c02;
+  color: rgb(108, 99, 255);
   margin: 0 0 20px;
 }
 
@@ -412,7 +412,7 @@
   font-size: 16px;
   font-weight: 700;
   letter-spacing: 0.12em;
-  color: #ff8c02;
+  color: rgb(108, 99, 255);
   font-family: monospace;
   margin-bottom: 20px;
   display: flex;
@@ -583,7 +583,7 @@
 
 .btn-primary {
   flex: 1;
-  background: #222546;
+  background: rgb(108, 99, 255);
   color: white;
   font-size: 14px;
   font-weight: 700;
@@ -768,7 +768,7 @@
 }
 
 .cta-btn-primary {
-  background: #222546;
+  background: rgb(108, 99, 255);
   color: white;
   font-size: 14px;
   font-weight: 700;
@@ -1547,7 +1547,7 @@
 }
 
 .ft-dev a {
-  color: #f0a480;
+  color: rgb(108, 99, 255);
   text-decoration: none;
   font-weight: 600;
 }
