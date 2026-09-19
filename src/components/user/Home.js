@@ -101,7 +101,8 @@ function SubjectCard({
         {isLoading && <div className="subject-image-skeleton" />}
         <Image
           className="responsive-image"
-          layout="fill"
+          width={300}
+          height={300}
           objectFit="cover"
           src={
             item.image
@@ -113,6 +114,7 @@ function SubjectCard({
           style={{
             opacity: isLoading ? 0 : 1,
             transition: "opacity 0.3s ease-in-out",
+            position: "relative",
           }}
         />
       </div>

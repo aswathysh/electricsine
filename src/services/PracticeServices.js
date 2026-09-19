@@ -20,7 +20,7 @@ export const fetchPracticeQuestions = async ({ pageParam,subjectId }) => {
     return response.data;
   };
 
-   export const fetchBolgListDetails = async ({ slugId }) => {
+   export const fetchBolgListDetails = async (slugId ) => {
     const response = await axiosInstance.get(`blog/${slugId}`);
     return response.data;
   };

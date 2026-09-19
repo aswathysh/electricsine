@@ -17,8 +17,9 @@ export const usePurchasedSubjects = () => {
   return useQuery({ queryKey: ['blogs'], queryFn: fetchBolgList });
 };
 
-export const useBlogDetails = ({ slugId }) => {
-  return useQuery({ queryKey: ['blog', slugId], queryFn: () => fetchBolgListDetails({ slugId }) });
+export const useBlogDetails = ( slugId ) => {
+  console.log("useBlogDetails slugId", slugId);
+  return useQuery({ queryKey: ['blog', slugId], enabled: !!slugId, queryFn: () => fetchBolgListDetails(slugId) });
 };
 
 //exam

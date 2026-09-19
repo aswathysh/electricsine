@@ -4,6 +4,7 @@ import { toast } from 'react-toastify';
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://rubiksoftwares.com/electricsine-api/public/api/";
 
+console.log("API_URL",API_URL)
 const axiosInstance = axios.create({
   baseURL: API_URL,
   // timeout: 10000, // Request timeout
@@ -16,6 +17,7 @@ axiosInstance.interceptors.request.use(
     if (token) {
       config.headers['Authorization'] = `Bearer ${token}`;
     }
+    console.log('Request Config:', config); // Log the request config for debugging 
     return config;
   },
   (error) => {

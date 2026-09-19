@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { Header } from "@/components/sharables/Header";
 import "./blog.css";
+import Link from "next/link";
 
 const CATEGORIES = [
   "All Articles",
@@ -145,6 +146,7 @@ function ArticleCard({ article, onClick }) {
     >
       <div className="article-thumb">
         {article.image ? (
+          <Link href={`/blog/${article.slug}`} className="article-link">
           <Image
             src={article.image}
             alt={"image"}
@@ -152,6 +154,7 @@ function ArticleCard({ article, onClick }) {
             style={{ objectFit: "cover" }}
             loading="lazy"
           />
+          </Link>
         ) : (
           <span>{article.emoji}</span>
         )}
@@ -161,7 +164,11 @@ function ArticleCard({ article, onClick }) {
           <span className={`tag ${article.tagClass}`}>{article.tag}</span>
           <span className="article-time">{article.readTime}</span>
         </div>
-        <h3 className="article-title">{article.title}</h3>
+        <Link href={`/blog/${article.slug}`} className="article-link">
+        <h3 className="article-title" style={{ textDecoration: "none" }}>
+          {article.title}
+        </h3>
+        </Link>
         <div
           className={`article-excerpt ${article.wide ? "blob-wide" : "blob-nonWide"}`}
           dangerouslySetInnerHTML={{ __html: article.description }}
