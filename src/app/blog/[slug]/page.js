@@ -89,7 +89,7 @@ const readTime = (text = "") => {
 // Server-side API functions
 // -----------------------------
 
-export const getBlog = cache(async (slug) => {
+ const getBlog = cache(async (slug) => {
     const response = await fetch(
         `${API_URL}/blog/${encodeURIComponent(slug)}`,
         {
