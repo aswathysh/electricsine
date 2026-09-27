@@ -1,84 +1,37 @@
-"use client";
-import { useState } from "react";
 import "./bannerCheck.css";
-import { useRouter } from "next/navigation";
+import "./homepageContent.css";
 import Image from "next/image";
+import Link from "next/link";
+import HomeQuiz from "./HomeQuiz";
 
-export const BannerCheck = () => {
-  const router = useRouter();
+const getPlainText = (value, limit = 150) =>
+  String(value || "")
+    .replace(/<[^>]*>/g, " ")
+    .replace(/&nbsp;/gi, " ")
+    .replace(/\s+/g, " ")
+    .trim()
+    .slice(0, limit);
+
+const getImageUrl = (image) => {
+  if (!image) return null;
+  if (/^https?:\/\//i.test(image)) return image;
+  return `https://rubiksoftwares.com/electricsine-api/public/${image.replace(/^\/+/, "")}`;
+};
+const features = [
+  "Instant Test Analysis — Get detailed results immediately after every test",
+  "Topic-Level Breakdown — Identify weak and strong areas with precision",
+  "Accuracy & Speed Tracking — Improve both correctness and time management",
+  "Progress Over Time — Monitor your improvement with clear performance trends",
+];
+export const BannerCheck = ({ subjects = [], articles = [] }) => {
 
   const links = [
-    { name: "Home", link: "/dashboard" },
+    { name: "Home", link: "/" },
     { name: "About", link: "/aboutus" },
     { name: "Mock Tests", link: "/sample_questions/1" },
     { name: "Courses", link: "/courses" },
     { name: "Blog", link: "/blog" },
   ];
-  const questions = [
-    {
-      id: 1,
-      subject: "GATE — ELECTRICAL ENGG.",
-      text: "In a series RLC circuit at resonance, which of the following is true?",
-      options: [
-        { id: "A", text: "Impedance is maximum" },
-        { id: "B", text: "Impedance is minimum and purely resistive" },
-        { id: "C", text: "Current is minimum" },
-        { id: "D", text: "Voltage across R equals source voltage squared" },
-      ],
-      correct: "B",
-    },
-    {
-      id: 2,
-      subject: "GATE — ELECTRICAL ENGG.",
-      text: "The Thevenin equivalent resistance is found by:",
-      options: [
-        {
-          id: "A",
-          text: "Short-circuiting all voltage sources and open-circuiting all current sources",
-        },
-        {
-          id: "B",
-          text: "Open-circuiting all voltage sources and short-circuiting all current sources",
-        },
-        {
-          id: "C",
-          text: "Replacing all sources with their internal resistances",
-        },
-        { id: "D", text: "Removing all resistors from the circuit" },
-      ],
-      correct: "A",
-    },
-    {
-      id: 3,
-      subject: "GATE — ELECTRICAL ENGG.",
-      text: "Transformer ratio 2:1, primary 240V, what is secondary voltage?",
-      options: [
-        { id: "A", text: "480 V" },
-        { id: "B", text: "240 V" },
-        { id: "C", text: "120 V" },
-        { id: "D", text: "60 V" },
-      ],
-      correct: "C",
-    },
-    {
-      id: 4,
-      subject: "GATE — ELECTRICAL ENGG.",
-      text: "The unit of magnetic flux density is:",
-      options: [
-        { id: "A", text: "Weber (Wb)" },
-        { id: "B", text: "Tesla (T)" },
-        { id: "C", text: "Henry (H)" },
-        { id: "D", text: "Farad (F)" },
-      ],
-      correct: "B",
-    },
-  ];
-
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [answers, setAnswers] = useState({});
-
-  const q = questions[currentIndex];
-  const selected = answers[q.id] ?? null;
   const cards = [
     {
       num: " Mission",
@@ -131,21 +84,6 @@ export const BannerCheck = () => {
         </svg>
       ),
     },
-  ];
-
-  const features = [
-    "Instant Test Analysis — Get detailed results immediately after every test",
-    "Topic-Level Breakdown — Identify weak and strong areas with precision",
-    "Accuracy & Speed Tracking — Improve both correctness and time management",
-    "Progress Over Time — Monitor your improvement with clear performance trends",
-  ];
-
-  const subjects = [
-    { label: "Circuits", pct: 88, color: "#222546" },
-    { label: "Machines", pct: 74, color: "#f5a623" },
-    { label: "Control Sys.", pct: 62, color: "#1db976" },
-    { label: "Power Sys.", pct: 81, color: "#a855f7" },
-    { label: "Measurements", pct: 55, color: "#ef4444" },
   ];
 
   const cardsSecure = [
@@ -239,13 +177,13 @@ export const BannerCheck = () => {
             </p>
 
             <div className="btnRow">
-              <button
+              <Link
+                href="/sample_questions/1"
                 className="btnPrimary"
                 aria-label="Start practicing engineering exam questions"
-                onClick={() => router.push("/sample_questions/1")}
               >
                 Start Practicing
-              </button>
+              </Link>
             </div>
           </div>
 
@@ -257,128 +195,18 @@ export const BannerCheck = () => {
               aria-label="Platform statistics"
             >
               <div role="listitem">
-                <div
-                  className="statNum statNumBlue"
-                  aria-label="50 thousand plus students trained"
-                >
-                  50<span className="statSuffix">K+</span>
-                </div>
-                <div className="statLabel">Students Trained</div>
+                <div className="statNum statNumBlue">{subjects.length}</div>
+                <div className="statLabel">Courses Available</div>
               </div>
               <div role="listitem">
-                <div
-                  className="statNum statNumBlue"
-                  aria-label="10 thousand plus questions and solutions"
-                >
-                  10<span className="statSuffix">K+</span>
-                </div>
-                <div className="statLabel">Questions & Solutions</div>
-              </div>
-              <div role="listitem">
-                <div
-                  className="statNum statNumAmber"
-                  aria-label="99 percent pass rate"
-                >
-                  99<span className="statNumBlue">%</span>
-                </div>
-                <div className="statLabel">Pass Rate</div>
+                <div className="statNum statNumAmber">{articles.length}</div>
+                <div className="statLabel">Engineering Articles</div>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Quiz Widget */}
-        <aside className="quiz-wrap" aria-label="Sample GATE question">
-          <div className="quiz-header">
-            <div className="quiz-badge">GATE — ELECTRICAL ENGG.</div>
-          </div>
-
-          <div className="quiz-qnum" aria-hidden="true">
-            SAMPLE QUESTION
-          </div>
-          <p className="quiz-question">{q.text}</p>
-
-          <fieldset className="ims-src-components-sharables-BannerCheck-js-0001" >
-            {q.options.map((opt) => (
-              <div
-                key={opt.id}
-                role="radio"
-                aria-checked={selected === opt.id}
-                tabIndex={0}
-                className={`option
-        ${selected === opt.id ? "selected" : ""}
-        ${selected && opt.id === q.correct ? "correct" : ""}
-        ${selected && selected === opt.id && opt.id !== q.correct ? "wrong" : ""}
-      `}
-                onClick={() =>
-                  !selected &&
-                  setAnswers((prev) => ({ ...prev, [q.id]: opt.id }))
-                }
-                onKeyDown={(e) => {
-                  if ((e.key === "Enter" || e.key === " ") && !selected)
-                    setAnswers((prev) => ({ ...prev, [q.id]: opt.id }));
-                }}
-              >
-                <div className="opt-letter" aria-hidden="true">
-                  {opt.id}
-                </div>
-                <div className="opt-text">{opt.text}</div>
-              </div>
-            ))}
-          </fieldset>
-
-          <hr className="quiz-divider" aria-hidden="true" />
-
-          <div className="progress-row">
-            <span className="progress-label">Progress</span>
-            <span className="progress-count">Sample Question</span>
-          </div>
-          <div
-            className="progress-bar-bg"
-            role="progressbar"
-            aria-valuenow={35}
-            aria-valuemin={0}
-            aria-valuemax={100}
-            aria-label="Quiz progress 35 percent"
-          >
-            <div className={["progress-bar-fill", "ims-src-components-sharables-BannerCheck-js-0002"].filter(Boolean).join(" ")}  />
-          </div>
-
-          <div className="nav-btn-grid">
-            <div
-              className={`nav-btn nav-btn-back ${currentIndex === 0 ? "nav-btn-disabled" : ""}`}
-              role="button"
-              tabIndex={0}
-              onClick={() => currentIndex > 0 && setCurrentIndex((i) => i - 1)}
-              onKeyDown={(e) => {
-                if (e.key === "Enter" || e.key === " ")
-                  setCurrentIndex((i) => Math.max(0, i - 1));
-              }}
-            >
-              <div className="nav-btn-label">← Back</div>
-            </div>
-            <div
-              className={`nav-btn ${currentIndex === 3 ? "nav-btn-next-more" : " nav-btn-next"} ${currentIndex === questions.length - 1 ? "nav-btn-disabled" : ""}`}
-              role="button"
-              tabIndex={0}
-              onClick={() => {
-                if (currentIndex < questions.length - 1) {
-                  setCurrentIndex((i) => i + 1);
-                } else {
-                  router.push("/sample_questions/2");
-                }
-              }}
-              onKeyDown={(e) => {
-                if (e.key === "Enter" || e.key === " ")
-                  setCurrentIndex((i) => Math.min(questions.length - 1, i + 1));
-              }}
-            >
-              <div className="nav-btn-label">
-                {currentIndex === 3 ? "More →" : "Next →"}
-              </div>
-            </div>
-          </div>
-        </aside>
+        <HomeQuiz />
       </section>
 
       {/* ── About Section ── */}
@@ -522,13 +350,13 @@ export const BannerCheck = () => {
           </ul>
 
           <div className="cta-btns">
-            <button
+            <Link
+              href="/courses"
               className="cta-btn-primary"
               aria-label="View all engineering courses"
-              onClick={() => router.push("/courses")}
             >
               View All Courses <span aria-hidden="true">↗</span>
-            </button>
+            </Link>
           </div>
         </div>
       </section>
@@ -570,6 +398,56 @@ export const BannerCheck = () => {
         </div>
       </section>
 
+      <section className="home-catalog-wrap" aria-labelledby="home-courses-heading">
+        <div className="home-content-heading">
+          <div className="gr-tag">LEARN AND PRACTICE</div>
+          <h2 className="gr-title" id="home-courses-heading">Engineering courses</h2>
+          <p className="gr-desc">
+            Browse Electrical, Electronics and Instrumentation courses with focused
+            descriptions, course duration and pricing.
+          </p>
+
+        </div>
+        {subjects.length ? (
+          <div className="home-course-grid">
+            {subjects.slice(0, 3).map((subject) => {
+              const image = getImageUrl(subject.image);
+              const description = getPlainText(
+                subject.short_description || subject.short || subject.description,
+              );
+              const price = Number(subject.price);
+              return (
+                <article className="home-content-card" key={subject.id}>
+                  <Link className="home-content-card-link" href={`/courses/${encodeURIComponent(subject.url || subject.id)}`}>
+                    {image && (
+                      <Image
+                        className="home-content-image"
+                        src={image}
+                        alt={subject.image_alt || subject.title}
+                        width={480}
+                        height={270}
+                        loading="lazy"
+                      />
+                    )}
+                    <div className="home-content-card-body">
+                      <h3>{subject.title}</h3>
+                      <p>{description || "Explore this engineering course and build stronger subject knowledge."}</p>
+                      <span className="home-content-card-meta">
+                        {Number.isFinite(price) ? `From ₹${price.toLocaleString("en-IN")}` : "Explore course"}
+                      </span>
+                    </div>
+                  </Link>
+                </article>
+              );
+            })}
+          </div>
+        ) : (
+          <p className="home-content-empty">Courses are temporarily unavailable. Browse all courses for updates.</p>
+        )}
+        <div className=" text-center cta-btns">
+          <Link className="btn-primary mt-10 mb-10 m-auto home-all-link" href="/courses">View all courses</Link>
+        </div>
+      </section>
       <section className="gr-wrap" aria-labelledby="grading-heading">
         <div className="gr-left">
           <div className="gr-title" aria-hidden="true">
@@ -613,19 +491,58 @@ export const BannerCheck = () => {
           ))}
 
           <div className="btn-row">
-            <button
+            <a
               className="btn-primary"
               aria-label="Continue to next subject"
-              onClick={() => router.push("/courses")}
+              href="/courses"
             >
               Continue
-            </button>
+            </a>
             <div className="badge-v1" aria-label="24 by 7 support available">
               <span className="dot" aria-hidden="true" />
               24 × 7 Support
             </div>
           </div>
         </div>
+      </section>
+      <section className="home-articles-wrap" aria-labelledby="home-articles-heading">
+        <div className="home-content-heading">
+          <div className="gr-tag">FROM THE ELECTRIC SINE BLOG</div>
+          <h2 className="gr-title" id="home-articles-heading">Engineering articles and career guides</h2>
+        </div>
+        {articles.length ? (
+          <div className="home-article-grid">
+            {articles.slice(0, 3).map((article) => {
+              const image = getImageUrl(article.image);
+              const description = getPlainText(
+                article.meta_description || article.short_description || article.description,
+              );
+              return (
+                <article className="home-content-card" key={article.id || article.slug}>
+                  <Link className="home-content-card-link" href={`/blog/${encodeURIComponent(article.slug)}`}>
+                    {image && (
+                      <Image
+                        className="home-content-image"
+                        src={image}
+                        alt={article.image_alt || article.title}
+                        width={480}
+                        height={270}
+                        loading="lazy"
+                      />
+                    )}
+                    <div className="home-content-card-body">
+                      <h3>{article.title}</h3>
+                      <p>{description || "Read the latest engineering study guide from Electric Sine."}</p>
+                      <span className="home-content-card-meta">Read article</span>
+                    </div>
+                  </Link>
+                </article>
+              );
+            })}
+          </div>
+        ) : (
+          <p className="home-content-empty">New engineering articles will appear here.</p>
+        )}
       </section>
 
       <section className="cta-outer" aria-labelledby="cta-heading">
@@ -648,13 +565,13 @@ export const BannerCheck = () => {
             </p>
           </div>
           <div className="cta-btns">
-            <button
+            <Link
+              href="/sample_questions/3"
               className="cta-btn-primary"
               aria-label="Get started with Electric Sine for free"
-              onClick={() => router.push("/sample_questions/3")}
             >
               Start Free Test
-            </button>
+            </Link>
           </div>
         </div>
       </section>
@@ -695,7 +612,7 @@ export const BannerCheck = () => {
             <ul className="ft-links">
               {links.map((l, i) => (
                 <li key={i}>
-                  <a onClick={() => router.push(l.link)}>{l.name}</a>
+                  <Link href={l.link}>{l.name}</Link>
                 </li>
               ))}
             </ul>

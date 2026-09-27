@@ -1,54 +1,87 @@
-"use client";
-// import { Banner } from "@/components/sharables/Banner";
 import { BannerCheck } from "@/components/sharables/BannerCheck";
-
 import { Header } from "@/components/sharables/Header";
-
 import "../styles/authStyles.css";
-export default function Home() {
-  return (
-    <div className="ims-src-app-page-js-0001" >
-      <Header />
 
-      <BannerCheck />
-    </div>
-  );
-}
-const styles = {
-  mainbg: {
-    backgroundImage: "url(/assets/images/about.png) !important",
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    backgroundRepeat: "no-repeat",
-    // height: "100%",
-    width: "100%",
-    //  position: "absolute",
+const API_URL =
+  process.env.NEXT_PUBLIC_API_URL ||
+  "https://rubiksoftwares.com/electricsine-api/public/api";
+
+export const revalidate = 3600;
+
+export const metadata = {
+  title: "Electrical Engineering Courses, Mock Tests & Exam Preparation",
+  description:
+    "Prepare for Electrical, Electronics and Instrumentation engineering exams with online courses, previous-year questions, mock tests and topic-wise practice from Electric Sine.",
+  keywords: [
+    "Electrical Engineering Courses",
+    "Electrical Engineering Mock Tests",
+    "Electronics Engineering Questions",
+    "Instrumentation Engineering",
+    "GATE Electrical Preparation",
+    "Previous Year Questions",
+  ],
+  alternates: { canonical: "/" },
+  openGraph: {
+    title: "Electrical Engineering Courses & Exam Preparation | Electric Sine",
+    description:
+      "Explore engineering courses, practice questions and mock tests for Electrical, Electronics and Instrumentation exams.",
+    url: "https://www.electricsine.com/",
+    siteName: "Electric Sine",
+    type: "website",
+    images: [{ url: "/assets/images/electicsignbg.png", alt: "Electric Sine engineering exam preparation" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Electrical Engineering Courses & Exam Preparation | Electric Sine",
+    description:
+      "Online engineering courses, previous-year questions and mock tests for Electrical and Electronics exams.",
+    images: ["/assets/images/electicsignbg.png"],
   },
 };
-// import './styles.css'
-// export default function Page() {
-//   return(
-//     // pages/index.js
 
+async function fetchHomepageCollection(resource) {
+  try {
+    const response = await fetch(`${API_URL}/${resource}`, {
+      next: { revalidate },
+    });
+    if (!response.ok) throw new Error(`Failed to load ${resource}: ${response.status}`);
+    const result = await response.json();
+    return Array.isArray(result?.data) ? result.data : [];
+  } catch (error) {
+    console.error(`Homepage ${resource} fetch error:`, error);
+    return [];
+  }
+}
 
-//     <div className='container'>
-//       <h1 className='title'>Coming Soon!</h1>
-//       <p className='description'>
-//         We’re working hard to bring you something amazing. Stay tuned!
-//       </p>
-//       <form className='subscribeForm'>
-//         <input
-//           type="email"
-//           placeholder="Enter your email..."
-//           className='emailInput'
-//         />
-//         <button type="submit" className='subscribeButton'>
-//           Notify Me
-//         </button>
-//       </form>
-//       {/* <footer className='footer'>
-//         <p>© {new Date().getFullYear()} Your Company. All rights reserved.</p>
-//       </footer> */}
-//     </div>
-//   );
-// }
+export default async function Home() {
+  const [subjects, articles] = await Promise.all([
+    fetchHomepageCollection("subjects"),
+    fetchHomepageCollection("blogs"),
+  ]);
+
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Electric Sine",
+    url: "https://www.electricsine.com/",
+    description: metadata.description,
+    publisher: {
+      "@type": "Organization",
+      name: "Electric Sine",
+      url: "https://www.electricsine.com/",
+    },
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(structuredData).replace(/</g, "\\u003c"),
+        }}
+      />
+      <Header />
+      <BannerCheck subjects={subjects} articles={articles} />
+    </>
+  );
+}

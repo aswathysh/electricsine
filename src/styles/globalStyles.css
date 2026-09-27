@@ -52,3 +52,6 @@ letter-spacing: 0em !important;
 .fullheight{
     height: 100vh !important;
 }
+.m-auto{
+    margin: auto !important;
+}

@@ -23,6 +23,7 @@ import AccountCircle from "@mui/icons-material/AccountCircle";
 import { useRouter } from "next/navigation";
 import { LogoutModal } from "./LogoutModal";
 import { stringAvatar } from "../sharables/HelperFunctions";
+import Link from "next/link";
 export const Header = () => {
   const router = useRouter();
   const { cart } = useCart();
@@ -178,7 +179,8 @@ export const Header = () => {
           <nav  className={["hide_for_small", "ims-src-components-sharables-Header-js-0005"].filter(Boolean).join(" ")}>
             {/* <a href="#" style={styles.navLink}> */}
             <MenuItem className="ims-src-components-sharables-Header-js-0006"
-              onClick={() => router.replace("/dashboard")}
+             href={"/"}
+              component={Link} 
 
             >
               <p className="ims-src-components-sharables-Header-js-0007" >Home</p>
@@ -214,21 +216,23 @@ export const Header = () => {
             {/* </a> */}
             {/* <a href="/courses" style={styles.navLink}> */}
              <MenuItem className="ims-src-components-sharables-Header-js-0008"
-              onClick={() => router.push("/aboutus")}
-
+             href="/aboutus"
+               component={Link} 
             >
               <p className="ims-src-components-sharables-Header-js-0009" >About</p>
             </MenuItem>
             <MenuItem className="ims-src-components-sharables-Header-js-0010"
-              onClick={() => router.push("/blog")}
+              href="/blog"
+                component={Link} 
 
             >
               <p className="ims-src-components-sharables-Header-js-0011" >Blog</p>
             </MenuItem>
             <MenuItem className="ims-src-components-sharables-Header-js-0012"
-            onClick={() => router.push(`${showLogin?'/courses':'/user/home'}`)}
-
-            >
+            href="/courses"
+              component={Link} 
+            > 
+            
               <p className="ims-src-components-sharables-Header-js-0013" >Courses</p>
             </MenuItem>
             {/* {showLogin ? <></> :
@@ -240,9 +244,9 @@ export const Header = () => {
             {/* <a href="/cart" style={{ ...styles.navLink }} suppressHydrationWarning> */}
             <MenuItem className="ims-src-components-sharables-Header-js-0014"
               sx={{ mt: -1 }}
-              onClick={() => router.replace(`${showLogin?'/cart':'/user/cart'}`)}
-
+              href={showLogin ? '/cart' : '/user/cart'}
               suppressHydrationWarning
+                component={Link} 
             >
               {/* /   <div size="large" aria-label={`show ${cart?.length} new mails`} color="inherit" suppressHydrationWarning>
               <>

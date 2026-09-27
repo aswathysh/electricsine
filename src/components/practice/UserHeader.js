@@ -124,21 +124,21 @@ export const UserHeader = () => {
         <Grid className="ims-src-components-practice-UserHeader-js-0001" item size={{ xs: 6, md: 8, lg: 8, sm: 6 }} >
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
 
-            <Button
+            <a
               // key={page}
-              onClick={handleUserHome}
+              href={"/"}
               sx={{ my: 2, color: 'white', display: 'block', textTransform: 'none', fontSize: '16px' }}
             >
               Home
 
-            </Button>
-            <Button
+            </a>
+            <a
               // key={page}
-              onClick={handleCourse}
+              href={"/courses"}
               sx={{ my: 2, color: 'white', display: 'block', textTransform: 'none', fontSize: '16px' }}
             >
               Courses
-            </Button>
+            </a>
            
             <IconButton
               // key={page}
