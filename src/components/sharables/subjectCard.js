@@ -22,15 +22,15 @@ export default function MediaCard({ handleCartItem, item, handleView, handlePurc
 
 }
   return (
-    <Card sx={{ height: "300px" }}
-      style={{ alignContent: "center", display: 'flex', flexDirection: 'column', justifyContent: 'center',marginBottom:'30px' }}>
+    <Card className="ims-src-components-sharables-subjectCard-js-0001" sx={{ height: "300px" }}
+      >
       <CardMedia
         className='product-new-label'
         sx={{ height: "100%" }}
         image={item.image ? `https://rubiksoftwares.com/electricsine-api/public/${item?.image}` : '/assets/images/logincoverpic.jpg'}
         title={item?.title}
       />
-      <CardContent style={{ alignContent: "center", display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+      <CardContent className="ims-src-components-sharables-subjectCard-js-0002" >
         <Grid container sx={{ alignContent: 'center', display: 'flex', justifyContent: 'center' }}>
           <Grid size={{ xs: 12, md: 12, lg: 12, sm: 12 }}>
             <Typography gutterBottom variant="h5" component="div" className='subject_card_title'>
@@ -51,7 +51,7 @@ export default function MediaCard({ handleCartItem, item, handleView, handlePurc
         {/* <Grid container className="fullwidth bordered-div " style={{display:'flex'}}>
 
         </Grid> */}
-        <Grid container className="fullwidth " style={{borderTop:'1px solid #1976d2',display:'flex',justifyContent:'center'}}>
+        <Grid container className={["fullwidth ", "ims-src-components-sharables-subjectCard-js-0003"].filter(Boolean).join(" ")} >
           <ButtonGroup variant="text" size="small" fullWidth aria-label="Basic button group"> 
 
             <Button size="small"

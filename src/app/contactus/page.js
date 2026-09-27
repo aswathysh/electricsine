@@ -48,53 +48,33 @@ export default function Home() {
         />
       </Head>
 
-      <div
-        style={{
-          backgroundColor: "white !important",
-          height: "100vh !important",
-        }}
+      <div className="ims-src-app-contactus-page-js-0001"
+
       >
         <Header />
         <Grid
           container
-          style={{
-            justifyContent: "center",
-            backgroundColor: "white !important",
-          }}
-          className="light_bg"
+
+          className={["light_bg", "ims-src-app-contactus-page-js-0002"].filter(Boolean).join(" ")}
         >
-          <Grid
+          <Grid className="ims-src-app-contactus-page-js-0003"
             item
             size={{ xs: 12, md: 11, lg: 11, sm: 12 }}
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              marginTop: "3%",
-              ...styles.fullwidth,
-            }}
+
           >
-            <main style={{ ...styles.fullwidth }}>
-              <div style={{ ...styles.center, ...styles.fullwidth }}>
-                <h1
-                  style={{
-                    ...styles.mainsubhead,
-                    ...styles.aboutheadpadding,
-                  }}
-                >
+            <main className="ims-src-app-contactus-page-js-0004" >
+              <div className="ims-src-app-contactus-page-js-0005" >
+                <h1 className="ims-page-heading-contact">
                   Contact Us
                 </h1>
               </div>
-              <div style={{ ...styles.center, ...styles.fullwidth }}>
-                <Grid
+              <div className="ims-src-app-contactus-page-js-0006" >
+                <Grid className="ims-src-app-contactus-page-js-0007"
                   item
                   size={{ xs: 12, md: 12, lg: 12, sm: 12 }}
-                  style={{
-                    ...styles.contentleft,
-                    ...styles.center,
-                    marginTop: "5%",
-                  }}
+
                 >
-                  <Grid container style={{ ...styles.center }}>
+                  <Grid className="ims-src-app-contactus-page-js-0008" container >
                     {/* Email */}
                     <Grid
                       item
@@ -125,10 +105,10 @@ export default function Home() {
                           Mail us on
                         </Typography>
                         <Typography
-                          className="contactfootertext"
+                          className={["contactfootertext", "ims-src-app-contactus-page-js-0009"].filter(Boolean).join(" ")}
                           component="a"
                           href="mailto:electricsine2024@gmail.com"
-                          style={{ color: "inherit", textDecoration: "none" }}
+
                         >
                           electricsine2024@gmail.com
                         </Typography>
@@ -145,7 +125,6 @@ export default function Home() {
                       <Grid
                         item
                         size={{ xs: 4, md: 2.5, lg: 2.5, sm: 4 }}
-                        style={{ ...styles.justifyContent }}
                         className="left"
                       >
                         <IconButton
@@ -166,10 +145,10 @@ export default function Home() {
                           Call us on
                         </Typography>
                         <Typography
-                          className="contactfootertext"
+                          className={["contactfootertext", "ims-src-app-contactus-page-js-0010"].filter(Boolean).join(" ")}
                           component="a"
                           href="tel:+917560884560"
-                          style={{ color: "inherit", textDecoration: "none" }}
+
                         >
                           +91 7560884560
                         </Typography>
@@ -206,7 +185,7 @@ export default function Home() {
                         <Typography className="contactfooterhead">
                           Our Address
                         </Typography>
-                        <address style={{ fontStyle: "normal" }}>
+                        <address className="ims-src-app-contactus-page-js-0011" >
                           <Typography className="contactfootertext">
                             Electricsine,Marwahills,
                           </Typography>

@@ -71,7 +71,7 @@ export default function CoursesClient({ subjects = [] }) {
   return (
     <div>
       <Header />
-      <Grid container style={{ justifyContent: 'center', backgroundColor: '#012967 !important', minHeight: '100vh' }} className="light_bg">
+      <Grid container  className={["light_bg", "ims-src-app-courses-CoursesClient-js-0001"].filter(Boolean).join(" ")}>
         <Snackbar
           open={showAlert}
           autoHideDuration={6000}
@@ -88,14 +88,14 @@ export default function CoursesClient({ subjects = [] }) {
           </Alert>
         </Snackbar>
 
-        <Grid container sx={{ pt: 0, pb: 2, pl: { sm: 3, lg: 15, xs: 3, md: 10 }, pr: { sm: 3, lg: 15, xs: 3, md: 10 } }}
-          style={{ justifyContent: 'center', alignItems: 'center', alignContent: 'center', backgroundColor: '#012967' }}
+        <Grid className="ims-src-app-courses-CoursesClient-js-0002" container sx={{ pt: 0, pb: 2, pl: { sm: 3, lg: 15, xs: 3, md: 10 }, pr: { sm: 3, lg: 15, xs: 3, md: 10 } }}
+
           rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3, lg: 5 }}
         >
           <CourseViewModal showViewModal={showViewModal} closeView={() => setShowViewModal(false)} item={viewItem} />
 
-          <Grid item size={{ xs: 12, md: 12, lg: 12, sm: 12 }} style={{ display: 'flex', justifyContent: 'center' }}>
-            <h1 style={styles.mainheading}>Our Courses</h1>
+          <Grid className="ims-src-app-courses-CoursesClient-js-0003" item size={{ xs: 12, md: 12, lg: 12, sm: 12 }} >
+            <h1 className="ims-src-app-courses-CoursesClient-js-0004" >Our Courses</h1>
           </Grid>
 
           {subjects.length > 0 ? (
@@ -110,8 +110,8 @@ export default function CoursesClient({ subjects = [] }) {
               </Grid>
             ))
           ) : (
-            <Grid item size={{ xs: 12, md: 12, lg: 12, sm: 12 }} style={{ textAlign: 'center' }}>
-              <p style={styles.emptyMessage}>No subjects available right now.</p>
+            <Grid className="ims-src-app-courses-CoursesClient-js-0005" item size={{ xs: 12, md: 12, lg: 12, sm: 12 }} >
+              <p className="ims-src-app-courses-CoursesClient-js-0006" >No subjects available right now.</p>
             </Grid>
           )}
         </Grid>

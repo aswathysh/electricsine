@@ -57,7 +57,7 @@ export const PracticeHeader = () => {
             {/* <h1 style={styles.logo}>ELECTRIC SINE TRAINING SOLUTIONS</h1> */}
           </div>
         </Grid>
-        <Grid item  size={{ xs: 6, md: 8, lg: 8, sm: 6 }}  style={{ ...styles.flex }}>
+        <Grid className="ims-src-components-practice-PracticeHeader-js-0001" item  size={{ xs: 6, md: 8, lg: 8, sm: 6 }}  >
           <IconButton onClick={handleMenu}>
             <AccountCircle sx={{ fontSize: 40, color: "white" }} />
           </IconButton>

@@ -4,7 +4,7 @@ import { UserHome } from "@/components/user/Home";
 
 export default function Home(){
     return(
-        <div style={{ backgroundColor: "white"}}>
+        <div className="ims-src-app-user-home-page-js-0001" >
              <Header/>
              <UserHome />
         </div>

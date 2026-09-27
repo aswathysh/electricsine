@@ -1,5 +1,6 @@
 import { Header } from "@/components/sharables/Header";
 import React from "react";
+import "./aboutus.css";
 
 export const metadata = {
   title: "About Electric Sine | Electrical Engineering Learning Platform",
@@ -288,36 +289,33 @@ function Icon({ name, size = 20 }) {
 
 function CheckRow({ text, dim }) {
   return (
-    <div style={styles.checkRow}>
-      <span style={{ ...styles.checkDot, opacity: dim ? 0.6 : 1 }}>
+    <div className="ims-src-app-aboutus-page-js-0001" >
+      <span className={`ims-about-check-dot${dim ? " ims-about-check-dot--dim" : ""}`}>
         <Icon name="check" size={11} />
       </span>
-      <span style={styles.checkText}>{text}</span>
+      <span className="ims-src-app-aboutus-page-js-0002" >{text}</span>
     </div>
   );
 }
-
-/* ---------------- page ---------------- */
-
 export default function Home() {
   return (
     <>
-      <div style={styles.page}>
+      <div className="ims-src-app-aboutus-page-js-0003" >
         <Header />
 
         {/* HERO */}
-        <section style={styles.hero}>
-          <div className="es-about-row-wrap" style={styles.heroInner}>
-            <div style={styles.heroText}>
-              <span style={styles.eyebrowLight}>— ABOUT ELECTRICSINE</span>
-              <h1 style={styles.h1}>
+        <section className="ims-src-app-aboutus-page-js-0004" >
+          <div className={["es-about-row-wrap", "ims-src-app-aboutus-page-js-0005"].filter(Boolean).join(" ")} >
+            <div className="ims-src-app-aboutus-page-js-0006" >
+              <span className="ims-src-app-aboutus-page-js-0007" >— ABOUT ELECTRICSINE</span>
+              <h1 className="ims-src-app-aboutus-page-js-0008" >
                 About ElectricSine
                 <br />
-                <span style={styles.accentText}>
+                <span className="ims-src-app-aboutus-page-js-0009" >
                   Electrical &amp; Electronics Engineering Learning Platform
                 </span>
               </h1>
-              <p style={styles.heroParagraph}>
+              <p className="ims-src-app-aboutus-page-js-0010" >
                 ElectricSine is an online learning platform dedicated to
                 Electrical Engineering, Electronics Engineering, Communication
                 Engineering, and Instrumentation. Our goal is to help students,
@@ -326,44 +324,44 @@ export default function Home() {
                 effectively for competitive examinations and technical
                 interviews.
               </p>
-              <div style={styles.pillarRow}>
+              <div className="ims-src-app-aboutus-page-js-0011" >
                 {heroPillars.map((p) => (
-                  <div key={p.title} style={styles.pillarItem}>
-                    <span style={styles.pillarIcon}>
+                  <div className="ims-src-app-aboutus-page-js-0012" key={p.title} >
+                    <span className="ims-src-app-aboutus-page-js-0013" >
                       <Icon name={p.icon} size={16} />
                     </span>
                     <div>
-                      <div style={styles.pillarTitle}>{p.title}</div>
-                      <div style={styles.pillarSub}>{p.sub}</div>
+                      <div className="ims-src-app-aboutus-page-js-0014" >{p.title}</div>
+                      <div className="ims-src-app-aboutus-page-js-0015" >{p.sub}</div>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
-            <div style={styles.heroImageWrap}>
-              <img
+            <div className="ims-src-app-aboutus-page-js-0016" >
+              <img className="ims-src-app-aboutus-page-js-0017"
                 src={HERO_IMAGE}
                 alt="img"
                 title="img"
-                style={styles.heroImage}
+
               />
             </div>
           </div>
         </section>
 
         {/* MORE THAN JUST COURSES */}
-        <section style={styles.moreSection}>
-          <div className="es-about-row-wrap" style={styles.moreInner}>
-            <div style={styles.heroText}>
-              <span style={styles.eyebrowDark}>ABOUT ELECTRICSINE</span>
-              <h2 style={styles.h2Dark}>More Than Just Courses</h2>
-              <p style={styles.darkParagraph}>
+        <section className="ims-src-app-aboutus-page-js-0018" >
+          <div className={["es-about-row-wrap", "ims-src-app-aboutus-page-js-0019"].filter(Boolean).join(" ")} >
+            <div className="ims-src-app-aboutus-page-js-0020" >
+              <span className="ims-src-app-aboutus-page-js-0021" >ABOUT ELECTRICSINE</span>
+              <h2 className="ims-src-app-aboutus-page-js-0022" >More Than Just Courses</h2>
+              <p className="ims-src-app-aboutus-page-js-0023" >
                 We go beyond traditional course materials by combining concept
                 learning, objective questions, MCQs, solved question papers,
                 mock tests, and topic-wise practice in one career-focused
                 learning platform.
               </p>
-              <p style={styles.darkParagraph}>
+              <p className="ims-src-app-aboutus-page-js-0024" >
                 Our approach helps bridge the gap between theoretical knowledge
                 and practical application, enabling learners to develop the
                 skills and confidence required for academic success, Electrical
@@ -371,62 +369,32 @@ export default function Home() {
               </p>
             </div>
 
-            <div style={styles.lavenderBox}>
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "row",
-                  alignItems: "center",
-                  gap: "clamp(14px, 3vw, 24px)",
-                  width: "100%",
-                  flexWrap: "wrap",
-                }}
+            <div className="ims-src-app-aboutus-page-js-0025" >
+              <div className="ims-src-app-aboutus-page-js-0026"
+
               >
-                <div
-                  style={{
-                    flex: "0 1 clamp(80px, 12vw, 110px)",
-                    minWidth: "80px",
-                    maxWidth: "110px",
-                  }}
+                <div className="ims-src-app-aboutus-page-js-0027"
+
                 >
-                  <img
+                  <img className="ims-src-app-aboutus-page-js-0028"
                     src={BULB_IMAGE}
                     alt="Electrical and Electronics Engineering"
                     title="Electrical and Electronics Engineering"
-                    style={{
-                      width: "100%",
-                      height: "auto",
-                      display: "block",
-                      objectFit: "contain",
-                    }}
+
                   />
                 </div>
 
-                <div
-                  style={{
-                    flex: "1 1 280px",
-                    minWidth: "0",
-                  }}
+                <div className="ims-src-app-aboutus-page-js-0029"
+
                 >
-                  <h3
-                    style={{
-                      margin: "0 0 10px",
-                      fontSize: "var(--fs-22)",
-                      lineHeight: "1.3",
-                      fontWeight: "700",
-                      color: "#222546",
-                    }}
+                  <h3 className="ims-src-app-aboutus-page-js-0030"
+
                   >
                     Electrical &amp; Electronics Engineering Learning Platform
                   </h3>
 
-                  <p
-                    style={{
-                      margin: 0,
-                      fontSize: "var(--fs-15)",
-                      lineHeight: "1.6",
-                      color: "#526080",
-                    }}
+                  <p className="ims-src-app-aboutus-page-js-0031"
+
                   >
                     ElectricSine provides structured learning resources for
                     students and professionals who want to strengthen their
@@ -435,10 +403,10 @@ export default function Home() {
                 </div>
               </div>
 
-              <p style={styles.boxLabel}>
+              <p className="ims-src-app-aboutus-page-js-0032" >
                 Our platform covers important areas such as:
               </p>
-              <div className="es-about-grid-2" style={styles.twoColCheck}>
+              <div className={["es-about-grid-2", "ims-src-app-aboutus-page-js-0033"].filter(Boolean).join(" ")} >
                 <div>
                   {platformAreasLeft.map((a) => (
                     <CheckRow key={a} text={a} />
@@ -454,43 +422,43 @@ export default function Home() {
           </div>
         </section>
 
-        <section style={styles.subjectsSection}>
-          <div className="es-about-row-wrap" style={styles.subjectsHeader}>
+        <section className="ims-src-app-aboutus-page-js-0034" >
+          <div className={["es-about-row-wrap", "ims-src-app-aboutus-page-js-0035"].filter(Boolean).join(" ")} >
             <div>
-              <span style={styles.eyebrowDark}>OUR LEARNING RESOURCES</span>
-              <h2 style={styles.h2Dark}>Explore Key Subjects</h2>
+              <span className="ims-src-app-aboutus-page-js-0036" >OUR LEARNING RESOURCES</span>
+              <h2 className="ims-src-app-aboutus-page-js-0037" >Explore Key Subjects</h2>
             </div>
-            <p style={styles.subjectsIntro}>
+            <p className="ims-src-app-aboutus-page-js-0038" >
               From basic concepts to advanced Electrical Engineering questions,
               we provide focused resources for every stage of your learning
               journey.
             </p>
           </div>
-          <div className="es-about-grid-3" style={styles.subjectGrid}>
+          <div className={["es-about-grid-3", "ims-src-app-aboutus-page-js-0039"].filter(Boolean).join(" ")} >
             {subjectCards.map((s) => (
-              <div key={s.title} style={styles.subjectCard}>
-                <span style={styles.subjectIconCircle}>
+              <div className="ims-src-app-aboutus-page-js-0040" key={s.title} >
+                <span className="ims-src-app-aboutus-page-js-0041" >
                   <Icon name={s.icon} size={18} />
                 </span>
-                <h3 style={styles.subjectTitle}>{s.title}</h3>
-                <p style={styles.subjectBody}>{s.body}</p>
+                <h3 className="ims-src-app-aboutus-page-js-0042" >{s.title}</h3>
+                <p className="ims-src-app-aboutus-page-js-0043" >{s.body}</p>
               </div>
             ))}
           </div>
         </section>
 
-        <section className="es-about-grid-3" style={styles.panelsRow}>
-          <div style={{ ...styles.panel, ...styles.panelDark }}>
-            <span style={styles.eyebrowLight}>— COMPETITIVE EXAMS</span>
-            <h3 style={styles.panelTitleLight}>
+        <section className={["es-about-grid-3", "ims-src-app-aboutus-page-js-0044"].filter(Boolean).join(" ")} >
+          <div className="ims-src-app-aboutus-page-js-0045" >
+            <span className="ims-src-app-aboutus-page-js-0046" >— COMPETITIVE EXAMS</span>
+            <h3 className="ims-src-app-aboutus-page-js-0047" >
               Prepare for Competitive Exams with MCQs
             </h3>
-            <p style={styles.panelBodyLight}>
+            <p className="ims-src-app-aboutus-page-js-0048" >
               Our extensive collection of Electrical Engineering MCQs,
               Electronics Engineering MCQs, and Instrumentation Engineering
               questions help you prepare for:
             </p>
-            <div className="es-about-grid-2" style={styles.twoColCheck}>
+            <div className={["es-about-grid-2", "ims-src-app-aboutus-page-js-0049"].filter(Boolean).join(" ")} >
               <div>
                 {examList.slice(0, 3).map((e) => (
                   <CheckRow key={e} text={e} />
@@ -502,17 +470,17 @@ export default function Home() {
                 ))}
               </div>
             </div>
-            <a href="/sample_questions/1" style={styles.primaryButton}>
+            <a className="ims-src-app-aboutus-page-js-0050" href="/sample_questions/1" >
               View MCQs <span aria-hidden="true">→</span>
             </a>
           </div>
 
-          <div style={styles.panel}>
-            <span style={styles.eyebrowDark}>PRACTICE &amp; IMPROVE</span>
-            <h3 style={styles.panelTitleDark}>
+          <div className="ims-src-app-aboutus-page-js-0051" >
+            <span className="ims-src-app-aboutus-page-js-0052" >PRACTICE &amp; IMPROVE</span>
+            <h3 className="ims-src-app-aboutus-page-js-0053" >
               Learn Through Practice, Not Just Memorization
             </h3>
-            <p style={styles.panelBodyDark}>ElectricSine helps you:</p>
+            <p className="ims-src-app-aboutus-page-js-0054" >ElectricSine helps you:</p>
             <div>
               {practiceList.map((p) => (
                 <CheckRow key={p} text={p} />
@@ -520,14 +488,14 @@ export default function Home() {
             </div>
           </div>
 
-          <div style={styles.panel}>
-            <span style={styles.eyebrowDark}>
+          <div className="ims-src-app-aboutus-page-js-0055" >
+            <span className="ims-src-app-aboutus-page-js-0056" >
               SOLVED PAPERS &amp; MOCK TESTS
             </span>
-            <h3 style={styles.panelTitleDark}>
+            <h3 className="ims-src-app-aboutus-page-js-0057" >
               Solved Question Papers &amp; Engineering Mock Tests
             </h3>
-            <p style={styles.panelBodyDark}>
+            <p className="ims-src-app-aboutus-page-js-0058" >
               Understand real exam patterns, difficulty levels, and commonly
               tested concepts. Our engineering mock tests help you evaluate your
               preparation, identify weak areas and improve time management.
@@ -540,29 +508,29 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="es-about-grid-3" style={styles.threeColSection}>
+        <section className={["es-about-grid-3", "ims-src-app-aboutus-page-js-0059"].filter(Boolean).join(" ")} >
           <div>
-            <span style={styles.eyebrowDark}>FOR EVERY LEARNER</span>
-            <h2 style={styles.h2DarkSm}>
+            <span className="ims-src-app-aboutus-page-js-0060" >FOR EVERY LEARNER</span>
+            <h2 className="ims-src-app-aboutus-page-js-0061" >
               For Students, Professionals and Job Seekers
             </h2>
-            <div style={styles.audienceList}>
+            <div className="ims-src-app-aboutus-page-js-0062" >
               {audiences.map((a) => (
-                <div key={a.title} style={styles.audienceItem}>
-                  <span style={styles.audienceIconCircle}>
+                <div key={a.title}>
+                  <span className="ims-src-app-aboutus-page-js-0063" >
                     <Icon name={a.icon} size={18} />
                   </span>
-                  <h4 style={styles.audienceTitle}>{a.title}</h4>
-                  <p style={styles.audienceBody}>{a.body}</p>
+                  <h4 className="ims-src-app-aboutus-page-js-0064" >{a.title}</h4>
+                  <p className="ims-src-app-aboutus-page-js-0065" >{a.body}</p>
                 </div>
               ))}
             </div>
           </div>
 
           <div>
-            <span style={styles.eyebrowDark}>WHY CHOOSE ELECTRICSINE</span>
-            <h2 style={styles.h2DarkSm}>Key Benefits</h2>
-            <div className="es-about-grid-2" style={styles.twoColCheck}>
+            <span className="ims-src-app-aboutus-page-js-0066" >WHY CHOOSE ELECTRICSINE</span>
+            <h2 className="ims-src-app-aboutus-page-js-0067" >Key Benefits</h2>
+            <div className={["es-about-grid-2", "ims-src-app-aboutus-page-js-0068"].filter(Boolean).join(" ")} >
               <div>
                 {benefitsLeft.map((b) => (
                   <CheckRow key={b} text={b} />
@@ -576,92 +544,44 @@ export default function Home() {
             </div>
           </div>
 
-          <div
-            style={{
-              ...styles.learnerCard,
-              backgroundImage: `linear-gradient(180deg, rgba(20,19,42,0.35), rgba(20,19,42,0.92)), url(${LEARNER_BG_IMAGE})`,
-            }}
+          <div className="ims-about-learner-card ims-src-app-aboutus-page-js-0069"
+
           >
-            <h3 style={styles.learnerTitle}>Built for Engineering Learners</h3>
-            <p style={styles.learnerBody}>
+            <h3 className="ims-src-app-aboutus-page-js-0070" >Built for Engineering Learners</h3>
+            <p className="ims-src-app-aboutus-page-js-0071" >
               ElectricSine is built around the needs of Electrical, Electronics,
               Communication and Instrumentation engineering learners. Our
               objective is simple: to make Electrical Engineering online
               learning more structured, practice-oriented, and career-focused.
             </p>
-            <p style={styles.learnerTagline}>
+            <p className="ims-src-app-aboutus-page-js-0072" >
               Learn. Practice. Understand. Improve.
             </p>
           </div>
         </section>
 
-        <section className="es-about-row-wrap" style={styles.ctaBar}>
-          <div style={styles.ctaBarLeft}>
-            <span style={styles.eyebrowLight}>— TAKE THE NEXT STEP</span>
-            <h2 style={styles.ctaBarTitle}>Your Goals. Our Support.</h2>
-            <p style={styles.ctaBarBody}>
+        <section className={["es-about-row-wrap", "ims-src-app-aboutus-page-js-0073"].filter(Boolean).join(" ")} >
+          <div className="ims-src-app-aboutus-page-js-0074" >
+            <span className="ims-src-app-aboutus-page-js-0075" >— TAKE THE NEXT STEP</span>
+            <h2 className="ims-src-app-aboutus-page-js-0076" >Your Goals. Our Support.</h2>
+            <p className="ims-src-app-aboutus-page-js-0077" >
               Explore ElectricSine and take the next step toward stronger
               knowledge and career preparation.
             </p>
           </div>
-          <div style={styles.ctaBarRight}>
+          <div className="ims-src-app-aboutus-page-js-0078" >
             {ctaPillars.map((p) => (
-              <div key={p.label} style={styles.ctaPillarItem}>
-                <span style={styles.ctaPillarIcon}>
+              <div className="ims-src-app-aboutus-page-js-0079" key={p.label} >
+                <span className="ims-src-app-aboutus-page-js-0080" >
                   <Icon name={p.icon} size={18} />
                 </span>
-                <span style={styles.ctaPillarLabel}>{p.label}</span>
+                <span className="ims-src-app-aboutus-page-js-0081" >{p.label}</span>
               </div>
             ))}
           </div>
         </section>
       </div>
 
-      <style>{`
-        :root {
-          --fs-35: 35px;
-          --fs-25: 25px;
-          --fs-22: 22px;
-          --fs-18: 18px;
-          --fs-15: 15px;
-          --fs-14: 14px;
-        }
-        @media (max-width: 640px) {
-          :root {
-            --fs-35: 33px;
-            --fs-25: 23px;
-            --fs-22: 20px;
-            --fs-18: 16px;
-            --fs-15: 13px;
-            --fs-14: 12px;
-          }
-        }
-        .es-about-grid-3 {
-          display: grid;
-          grid-template-columns: repeat(3, minmax(0, 1fr));
-        }
-        .es-about-grid-2 {
-          display: grid;
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-        .es-about-row-wrap {
-          display: flex;
-          flex-wrap: wrap;
-        }
-        @media (max-width: 900px) {
-          .es-about-grid-3 {
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-          }
-        }
-        @media (max-width: 640px) {
-          .es-about-grid-3 {
-            grid-template-columns: 1fr;
-          }
-          .es-about-grid-2 {
-            grid-template-columns: 1fr;
-          }
-        }
-      `}</style>
     </>
   );
 }

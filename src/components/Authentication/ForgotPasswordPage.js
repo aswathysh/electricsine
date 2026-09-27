@@ -29,7 +29,7 @@ export const ForgotPasswordPage = () => {
             console.log("User email sended successfully:", data);
             toast.success('New Password sended to your email. Please check your email.', {
               autoClose: 5000,
-              style: { fontSize: '16px', fontWeight: 600 }
+              className: "ims-toast-text"
             });
             setTimeout(() => {
               window.location.href = '/auth/login';
@@ -39,7 +39,7 @@ export const ForgotPasswordPage = () => {
             console.error("Error  while loggin:", error.response?.data?.error);
             toast.error(error.response?.data?.messages.error || 'Something went wrong', {
               autoClose: 5000,
-              style: { fontSize: '16px', fontWeight: 600 }
+              className: "ims-toast-text"
             });
         },
     });
@@ -62,8 +62,8 @@ export const ForgotPasswordPage = () => {
     return (
         <Grid
             container
-            style={{ display: "flex", justifyContent: "right" }}
-            className="light_bg login"
+
+            className={["light_bg login", "ims-src-components-Authentication-ForgotPasswordPage-js-0001"].filter(Boolean).join(" ")}
         >
 
 
@@ -78,23 +78,19 @@ export const ForgotPasswordPage = () => {
                 item
                 size={{ xs: 12, md: 6, lg: 6, sm: 12 }}
 
-                className="bg_grey "
+                className={["bg_grey ", "ims-src-components-Authentication-ForgotPasswordPage-js-0002"].filter(Boolean).join(" ")}
                 // style={{ justifyContent: 'center' }}
-                style={{
-                    display: "flex",
-                    //  justifyContent: "center",
-                    height: "100%", flexDirection: 'column'
-                }}
+
             >
-                <Grid
-                    style={{ display: "flex", justifyContent: 'flex-end' }}
+                <Grid className="ims-src-components-Authentication-ForgotPasswordPage-js-0003"
+
                     size={{ xs: 12, md: 12, lg: 12, sm: 12 }}>
                     <IconButton onClick={() => { router.push('/dashboard') }}>
                         <HomeIcon sx={{ color: "white", fontSize: "30px" }} />
                     </IconButton>
                 </Grid>
-                <Grid
-                    style={{ display: "flex", justifyContent: 'center' }}
+                <Grid className="ims-src-components-Authentication-ForgotPasswordPage-js-0004"
+
                     size={{ xs: 12, md: 12, lg: 12, sm: 12 }}>
                     <Grid item
                         size={{ xs: 12, md: 12, lg: 8, sm: 8 }}

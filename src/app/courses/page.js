@@ -1,11 +1,12 @@
 // import CoursesClient from "./CoursesClient";
 import CoursesPage from "./CoursesClientNew";
 const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://rubiksoftwares.com/electricsine-api/public/api";
+export const revalidate = 3600;
 
 async function fetchSubjects() {
   try {
     const response = await fetch(`${API_URL}/subjects`, {
-      cache: "no-store",
+      next: { revalidate },
       headers: {
         "User-Agent": "Next.js-Server",
       },

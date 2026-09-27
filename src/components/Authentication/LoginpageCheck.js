@@ -64,7 +64,7 @@ export default function LoginPage() {
 
       toast.error(errorMsg, {
         autoClose: 5000,
-        style: { fontSize: "16px", fontWeight: 600 },
+        className: "ims-toast-text",
       });
     },
   });
@@ -77,7 +77,7 @@ export default function LoginPage() {
         "New Password sended to your email. Please check your email.",
         {
           autoClose: 5000,
-          style: { fontSize: "16px", fontWeight: 600 },
+          className: "ims-toast-text",
         },
       );
       setTimeout(() => {
@@ -95,7 +95,7 @@ export default function LoginPage() {
 
       toast.error(errorMsg, {
         autoClose: 5000,
-        style: { fontSize: "16px", fontWeight: 600 },
+        className: "ims-toast-text",
       });
     },
   });
@@ -315,7 +315,7 @@ export default function LoginPage() {
               </div>
 
               {registerMutation?.isError && (
-                <p style={{ color: "red", fontSize: "14px" }}>
+                <p className="ims-src-components-Authentication-LoginpageCheck-js-0001" >
                   {registerMutation?.error?.response?.data?.messages?.error ||
                     registerMutation?.error?.response?.data?.messages ||
                     "Something went wrong"}

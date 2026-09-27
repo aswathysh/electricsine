@@ -28,30 +28,24 @@ export const DemoPracticeSidebar = ({
   // const numRows = Math.ceil(200 / 3); // Adjust the number of columns as needed
 
   return (
-    <div style={styles.sidebar} className=" sidebar_min_height_"
+    <div  className={[" sidebar_min_height_", "ims-src-components-demoPractice-DemoPracticeSidebar-js-0001"].filter(Boolean).join(" ")}
     >
-      <Typography variant="h6" style={styles.title}>
+      <Typography className="ims-src-components-demoPractice-DemoPracticeSidebar-js-0002" variant="h6" >
         Questions
       </Typography>
       <div className="practice-scrollable-sidebar "
         onScroll={handleScroll} // Trigger handleScroll on scroll
       >
-        <Grid container spacing={2} style={styles.gridContainer}>
+        <Grid className="ims-src-components-demoPractice-DemoPracticeSidebar-js-0003" container spacing={2} >
           {Array.from({ length: totalQuestions }, (_, index) => (
             <Grid item
               size={{ xs: 4, md: 4, lg: 4, sm: 4 }}
               key={index + 1}>
               <Paper
+                className={`ims-question-number ${currentQuestion === index + 1 ? "ims-question-number--current" : "ims-question-number--idle"} ${!sample && index < lastIndex ? "ims-question-number--locked" : ""}`}
                 onClick={() => handleSideBarClick(index+1)}
               
                 elevation={currentQuestion === index + 1 ? 4 : 1}
-                style={{
-                  ...styles.paper,
-                  backgroundColor:
-                    currentQuestion === index + 1 ? "#204d77" : "#fff",
-                  color: currentQuestion === index + 1 ? "#fff" : "#000",
-                  cursor: sample ? 'pointer' :index >= lastIndex  ? 'not-allowed' : 'pointer',
-                }}
               // onClick={() => handleQuestionClick(index + 1)}
               >
                 <Typography variant="body2">{index + 1}</Typography>

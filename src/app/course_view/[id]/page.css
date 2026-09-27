@@ -174,6 +174,15 @@
   background: #f1f5f9;
   margin-bottom: 28px;
 }
+.cm-image-frame-detail {
+  height: 350px;
+}
+.cm-image-frame .cm-image-skeleton {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  background-color: rgba(0, 0, 0, 0.05) !important;
+}
 .cm-scaled-image {
   object-fit: cover;
 }
@@ -291,6 +300,15 @@
   min-height: 60vh;
   gap: 16px;
   color: #64748b;
+}
+.cm-course-alert {
+  width: auto;
+}
+.cm-course-alert-success {
+  background-color: #e2fdcb !important;
+}
+.cm-course-alert-warning {
+  background-color: #fcdfdf !important;
 }
 .cm-btn-ghost-back {
   background: #f1f5f9;

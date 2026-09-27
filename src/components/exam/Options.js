@@ -42,11 +42,11 @@ export const Options = ({currentQuestion,handleAnswerChange,selectedAnswer}) => 
       onChange={(e)=>handleAnswerChange(e.target.value)}
 
     >        
-    <Grid container style={{ ...styles.spacearound }} sx={{mt:3}}>
+    <Grid className="ims-src-components-exam-Options-js-0001" container  sx={{mt:3}}>
 
-        <Grid item
+        <Grid className="ims-src-components-exam-Options-js-0002" item
           size={{ xs: 12, md: 12, lg: 12, sm: 12 }}
-          style={{ ...styles.optionItem }}
+
           onClick={() => handleGridClick('a')}>
           <FormControlLabel value="a"
             control={<Radio
@@ -62,9 +62,9 @@ export const Options = ({currentQuestion,handleAnswerChange,selectedAnswer}) => 
 
 
         </Grid>
-        <Grid item
+        <Grid className="ims-src-components-exam-Options-js-0003" item
           size={{ xs: 12, md: 12, lg: 12, sm: 12 }}
-          style={{ ...styles.optionItem }}
+
           onClick={() => handleGridClick('b')}>
           <FormControlLabel value="b"
             control={<Radio
@@ -79,10 +79,10 @@ export const Options = ({currentQuestion,handleAnswerChange,selectedAnswer}) => 
             />} label={currentQuestion?.option2} />
 
         </Grid>
-        <Grid item
+        <Grid className="ims-src-components-exam-Options-js-0004" item
           size={{ xs: 12, md: 12, lg: 12, sm: 12 }}
 
-          style={{ ...styles.optionItem }}
+
           onClick={() => handleGridClick('c')}>
           <FormControlLabel value="c"
             control={<Radio
@@ -97,8 +97,8 @@ export const Options = ({currentQuestion,handleAnswerChange,selectedAnswer}) => 
             />} label={currentQuestion?.option3} />
 
         </Grid>
-        <Grid item size={{ xs: 12, md: 12, lg: 12, sm: 12 }}
-          style={{ ...styles.optionItem }}
+        <Grid className="ims-src-components-exam-Options-js-0005" item size={{ xs: 12, md: 12, lg: 12, sm: 12 }}
+
           onClick={() => handleGridClick('d')}>
           <FormControlLabel value="d"
             control={<Radio

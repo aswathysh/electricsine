@@ -104,10 +104,7 @@ export const Header = () => {
   };
   return (
     <header
-      style={{
-        ...styles.header,
-        padding: isMobile ? "10px 0px 10px 0px" : "20px 0px 25px 0px",
-      }}
+      className={`ims-app-header${isMobile ? " ims-app-header--mobile" : ""}`}
       suppressHydrationWarning
     >
       <LogoutModal
@@ -115,12 +112,12 @@ export const Header = () => {
         openLogOutModal={openLogOutModal}
         onLogoutModalClose={onLogoutModalClose}
       />
-      <Grid container style={styles.headerContent}>
+      <Grid className="ims-src-components-sharables-Header-js-0001" container >
         <Grid
           item
           size={{ xs: 2, md: 2, sm: 2 }}
-          style={{ display: "flex" }}
-          className="hide_for_large"
+
+          className={["hide_for_large", "ims-src-components-sharables-Header-js-0002"].filter(Boolean).join(" ")}
         >
           <IconButton onClick={handleDrawerToggle}>
             <MenuIcon sx={{ color: "white" }} />
@@ -155,8 +152,8 @@ export const Header = () => {
           item
           size={{ xs: 2, md: 2, lg: 0, sm: 2 }}
           sx={{ pr: 2 }}
-          style={{ display: "flex", justifyContent: "flex-end" }}
-          className="hide_for_large"
+
+          className={["hide_for_large", "ims-src-components-sharables-Header-js-0003"].filter(Boolean).join(" ")}
         >
           <IconButton
             size="large"
@@ -173,18 +170,18 @@ export const Header = () => {
             )}
           </IconButton>
         </Grid>
-        <Grid
+        <Grid className="ims-src-components-sharables-Header-js-0004"
           item
           size={{ xs: 0, md: 7, lg: 9, sm: 0 }}
-          style={{ display: "flex", justifyContent: "flex-end" }}
+
         >
-          <nav style={styles.nav} className="hide_for_small">
+          <nav  className={["hide_for_small", "ims-src-components-sharables-Header-js-0005"].filter(Boolean).join(" ")}>
             {/* <a href="#" style={styles.navLink}> */}
-            <MenuItem
+            <MenuItem className="ims-src-components-sharables-Header-js-0006"
               onClick={() => router.replace("/dashboard")}
-              style={styles.navLink}
+
             >
-              <p style={{ ...styles.navLinkLabel }}>Home</p>
+              <p className="ims-src-components-sharables-Header-js-0007" >Home</p>
             </MenuItem>
             {/* </a> */}
             {/* <a href="/aboutus" style={styles.navLink}> */}
@@ -216,23 +213,23 @@ export const Header = () => {
             </MenuItem> */}
             {/* </a> */}
             {/* <a href="/courses" style={styles.navLink}> */}
-             <MenuItem
+             <MenuItem className="ims-src-components-sharables-Header-js-0008"
               onClick={() => router.push("/aboutus")}
-              style={styles.navLink}
+
             >
-              <p style={{ ...styles.navLinkLabel }}>About</p>
+              <p className="ims-src-components-sharables-Header-js-0009" >About</p>
             </MenuItem>
-            <MenuItem
+            <MenuItem className="ims-src-components-sharables-Header-js-0010"
               onClick={() => router.push("/blog")}
-              style={styles.navLink}
+
             >
-              <p style={{ ...styles.navLinkLabel }}>Blog</p>
+              <p className="ims-src-components-sharables-Header-js-0011" >Blog</p>
             </MenuItem>
-            <MenuItem
+            <MenuItem className="ims-src-components-sharables-Header-js-0012"
             onClick={() => router.push(`${showLogin?'/courses':'/user/home'}`)}
-              style={styles.navLink}
+
             >
-              <p style={{ ...styles.navLinkLabel }}>Courses</p>
+              <p className="ims-src-components-sharables-Header-js-0013" >Courses</p>
             </MenuItem>
             {/* {showLogin ? <></> :
               <MenuItem onClick={() => router.push('/orders')} style={styles.navLink}>
@@ -241,10 +238,10 @@ export const Header = () => {
 
             {/* </a> */}
             {/* <a href="/cart" style={{ ...styles.navLink }} suppressHydrationWarning> */}
-            <MenuItem
+            <MenuItem className="ims-src-components-sharables-Header-js-0014"
               sx={{ mt: -1 }}
               onClick={() => router.replace(`${showLogin?'/cart':'/user/cart'}`)}
-              style={styles.navLink}
+
               suppressHydrationWarning
             >
               {/* /   <div size="large" aria-label={`show ${cart?.length} new mails`} color="inherit" suppressHydrationWarning>
@@ -274,19 +271,19 @@ export const Header = () => {
             {/* </a> */}
             {
               showLogin ? (
-                <MenuItem
+                <MenuItem className="ims-src-components-sharables-Header-js-0015"
                   onClick={() => router.replace("/auth/login")}
-                  style={styles.navLink}
+
                 >
-                  <p style={{ ...styles.navLinkLabel }}>Login</p>
+                  <p className="ims-src-components-sharables-Header-js-0016" >Login</p>
                 </MenuItem>
               ) : (
                 <>
-                  <MenuItem
+                  <MenuItem className="ims-src-components-sharables-Header-js-0017"
                     sx={{ mt: 0 }}
                     suppressHydrationWarning
                     onClick={handleMenu}
-                    style={styles.navLink}
+
                   >
                     <Avatar {...stringAvatar(userName)} />
                   </MenuItem>
@@ -354,9 +351,9 @@ export const Header = () => {
           {showLogin ? (
             <></>
           ) : (
-            <MenuItem
+            <MenuItem className="ims-src-components-sharables-Header-js-0018"
               disabled
-              style={{ pointerEvents: "none", opacity: 1, cursor: "default" }}
+
             >
               {/* <a href="/dashboard" style={{ textDecoration: 'none', color: 'inherit' }}> */}
               Welcome <p className="header_name">{userName}</p>

@@ -20,7 +20,7 @@ export const ExamScoreModal = ({ showScoreModal, closeScoreCard, scoreData }) =>
             aria-labelledby="modal-modal-title"
             aria-describedby="modal-modal-description"
         >
-            <Box style={{}} sx={{ ...styles.modal }}>
+            <Box sx={{ ...styles.modal }}>
                 <Grid container sx={{ display: 'flex', justifyContent: 'right', width: '100% !important' }}>
                     <Grid item size={{ xs: 12, md: 12, lg: 12, sm: 12 }} sx={{ display: 'flex', justifyContent: 'flex-end' }}>
                         <IconButton onClick={closeScoreCard}>
@@ -37,23 +37,23 @@ export const ExamScoreModal = ({ showScoreModal, closeScoreCard, scoreData }) =>
                     </Grid>
                     <Grid item size={{ xs: 12, md: 12, lg: 12, sm: 12 }} sx={{ display: 'flex', justifyContent: 'center' }}>
 
-                        <Typography
-                        style={{...styles.scoreFont}}
+                        <Typography className="ims-src-components-exam-ExamScoreModal-js-0001"
+
                         >{`Your Score :`}
-                            <span style={{ ...styles.valuestyle }}>{`${scoreData.score_percentage}`}</span>
+                            <span className="ims-src-components-exam-ExamScoreModal-js-0002" >{`${scoreData.score_percentage}`}</span>
                         </Typography><br></br>
                     </Grid>
                     <Grid item size={{ xs: 12, md: 12, lg: 12, sm: 12 }} sx={{ display: 'flex', justifyContent: 'center' }}>
 
                         <Typography>{`Total Attended Questions :`}
-                            <span style={{ ...styles.valuestyle }}>{` ${scoreData.total_questions}`}</span>
+                            <span className="ims-src-components-exam-ExamScoreModal-js-0003" >{` ${scoreData.total_questions}`}</span>
 
                         </Typography>
 
                     </Grid>
                     <Grid item size={{ xs: 12, md: 12, lg: 12, sm: 12 }} sx={{ display: 'flex', justifyContent: 'center', justifyContent: 'center' }}>
-                        <Typography style={{ ...styles.greenlabel }}>{`Correct Answers : `}
-                            <span style={{ ...styles.valuestyle }}>{`${scoreData.correct_answers}`}</span></Typography><br></br>
+                        <Typography className="ims-src-components-exam-ExamScoreModal-js-0004" >{`Correct Answers : `}
+                            <span className="ims-src-components-exam-ExamScoreModal-js-0005" >{`${scoreData.correct_answers}`}</span></Typography><br></br>
                     </Grid>
                 </Grid>
             </Box>

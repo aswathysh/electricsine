@@ -24,7 +24,7 @@ export default function Home({ params }) {
   }
 
   return (
-    <div style={{ ...styles.mainheight }}>
+    <div className="ims-src-app-user-practice-id-page-js-0001" >
       <PracticeHeader />
       {/* <Grid item container> */}
       <IconButton sx={{ color: 'white', fontSize: '15px' }} onClick={handleBack}>

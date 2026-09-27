@@ -3,38 +3,7 @@ import BlogClient from "./BlogClient";
 const API_URL =
   process.env.NEXT_PUBLIC_API_URL || "https://rubiksoftwares.com/electricsine-api/public/api";
 
-export const dynamic = "force-dynamic";
-
-export const metadata = {
-  title: "Electrical Engineering Blog | Electric Sine",
-  description:
-    "Read Electrical Engineering, Electronics, Instrumentation and competitive exam preparation articles, study tips, mock test guides and career insights from Electric Sine.",
-  keywords: [
-    "Electrical Engineering Blog",
-    "Electronics Blog",
-    "Instrumentation",
-    "Engineering Articles",
-    "Study Tips",
-    "Mock Test",
-    "Electric Sine",
-  ],
-  alternates: {
-    canonical: "https://www.electricsine.com/blog",
-  },
-  openGraph: {
-    title: "Electrical Engineering Blog | Electric Sine",
-    description:
-      "Engineering articles, exam preparation guides and study resources.",
-    url: "https://www.electricsine.com/blog",
-    siteName: "Electric Sine",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Electrical Engineering Blog | Electric Sine",
-    description: "Electrical Engineering study guides and career articles.",
-  },
-};
+const BLOG_REVALIDATE_SECONDS = 3600;
 
 function formatDate(dateString) {
   const date = new Date(dateString);
@@ -70,7 +39,7 @@ function timeAgo(dateString) {
 async function fetchBlogs() {
   try {
     const response = await fetch(`${API_URL}/blogs`, {
-      cache: "no-store",
+      next: { revalidate: BLOG_REVALIDATE_SECONDS },
     });
 
     if (!response.ok) {

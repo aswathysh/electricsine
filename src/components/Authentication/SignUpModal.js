@@ -55,7 +55,7 @@ export const SignUpModal = ({ openSignUpModal, handleModal }) => {
 
       toast.error(error.response.data.messages || "Something went wrong", {
         autoClose: 5000,
-        style: { fontSize: "18px", fontWeight: 600 },
+        className: "ims-toast-text-large",
       });
     },
   });
@@ -153,7 +153,7 @@ export const SignUpModal = ({ openSignUpModal, handleModal }) => {
             </Typography>
           )}
 
-          <form style={TagModalstyle.fullWidth} onSubmit={handleSubmit}>
+          <form className="ims-src-components-Authentication-SignUpModal-js-0001"  onSubmit={handleSubmit}>
             <Grid container sx={{ mt: 1 }} spacing={2.5}>
               {/* Username Field */}
               <Grid item size={{ xs: 12, sm: 6, md: 6, lg: 6 }}>

@@ -12,7 +12,7 @@ export const AttendExam =({})=>{
                     
                     </Grid>
                 <div className="question_padding">
-                <Grid item lg={12} md={12} sm={12} xs={12} style={{display:'flex',flexDirection:'column',justifyContent:'center'}}>
+                <Grid className="ims-src-components-exam-AttendScreen-js-0001" item lg={12} md={12} sm={12} xs={12} >
                     <Question />
                     <Options />
                     {/* <Grid item lg={12} md={12} sm={12} xs={12} sx={{mt:5}} > */}

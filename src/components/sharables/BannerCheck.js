@@ -150,7 +150,6 @@ export const BannerCheck = () => {
 
   const cardsSecure = [
     {
-      bg: "linear-gradient(135deg, #00b09b, #22c97a, #00d4aa)",
       badge: "MASTERY",
       title: "EE Fundamentals",
       desc: "Build strong fundamentals with topic-wise Electrical and Electronics Engineering questions,helping you master concepts and improve accuracy for competitive exams.",
@@ -171,7 +170,6 @@ export const BannerCheck = () => {
       ),
     },
     {
-      bg: "linear-gradient(135deg, #f7971e, #e9c000, #f7971e)",
       badge: "SIMULATION",
       title: "Mock Test Mastery",
       desc: "Experience real exam conditions with online mock tests, time tracking, and ranking systems to boost speed, accuracy, and confidence.",
@@ -193,7 +191,6 @@ export const BannerCheck = () => {
       ),
     },
     {
-      bg: "linear-gradient(135deg, #1e3c72, #2a69c8, #4a90d9)",
       badge: "CAREERS",
       title: "Job Prep Focus",
       desc: "Prepare for government jobs, competitive exams, and GCC engineering careers with job-focused practice and industry-relevant questions.",
@@ -301,7 +298,7 @@ export const BannerCheck = () => {
           </div>
           <p className="quiz-question">{q.text}</p>
 
-          <fieldset style={{ border: "none", padding: 0, margin: 0 }}>
+          <fieldset className="ims-src-components-sharables-BannerCheck-js-0001" >
             {q.options.map((opt) => (
               <div
                 key={opt.id}
@@ -344,7 +341,7 @@ export const BannerCheck = () => {
             aria-valuemax={100}
             aria-label="Quiz progress 35 percent"
           >
-            <div className="progress-bar-fill" style={{ width: "35%" }} />
+            <div className={["progress-bar-fill", "ims-src-components-sharables-BannerCheck-js-0002"].filter(Boolean).join(" ")}  />
           </div>
 
           <div className="nav-btn-grid">
@@ -554,11 +551,10 @@ export const BannerCheck = () => {
         </div>
 
         <div className="sec-cards" role="list">
-          {cardsSecure.map((c) => (
+          {cardsSecure.map((c, index) => (
             <article
-              className="sec-card"
+              className={`sec-card ims-security-card-${index + 1}`}
               key={c.badge}
-              style={{ background: c.bg }}
               role="listitem"
             >
               <div className="sec-icon" aria-hidden="true">
@@ -597,7 +593,7 @@ export const BannerCheck = () => {
 
         <div className="gr-right" aria-label="Subject performance chart">
           <div className="perf-title">SUBJECT PERFORMANCE</div>
-          {subjects.map((s) => (
+          {subjects.map((s, index) => (
             <div className="perf-row" key={s.label}>
               <div className="perf-label">{s.label}</div>
               <div
@@ -608,10 +604,7 @@ export const BannerCheck = () => {
                 aria-valuemax={100}
                 aria-label={`${s.label} performance ${s.pct} percent`}
               >
-                <div
-                  className="perf-bar"
-                  style={{ width: `${s.pct}%`, background: s.color }}
-                />
+                <div className={`perf-bar ims-progress-width-${s.pct} ims-performance-color-${index + 1}`} />
               </div>
               <div className="perf-pct" aria-hidden="true">
                 {s.pct}%
@@ -723,8 +716,8 @@ export const BannerCheck = () => {
           <div className="ft-col">
             <h3>Contact</h3>
             <address
-              className="ft-contact-cards"
-              style={{ fontStyle: "normal" }}
+              className={["ft-contact-cards", "ims-src-components-sharables-BannerCheck-js-0003"].filter(Boolean).join(" ")}
+
             >
               <div className="ft-info-card">
                 {/* <span className="ft-info-label">Call Us</span> */}

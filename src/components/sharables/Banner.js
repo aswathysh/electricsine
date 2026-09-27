@@ -8,29 +8,19 @@ import zIndex from '@mui/material/styles/zIndex.js';
 export const Banner = () => {
   return (
     <div>
-      <Grid container style={styles.container}>
-        <div style={styles.main}>
-          <div
-            style={{
-              ...styles.featureItembox,
-              ...styles.center,
-              ...styles.fullwidth,
-              ...styles.darkshade,
-            }}
+      <Grid className="ims-src-components-sharables-Banner-js-0001" container >
+        <div className="ims-src-components-sharables-Banner-js-0002" >
+          <div className="ims-src-components-sharables-Banner-js-0003"
+
           >
             <div
-              style={{
-                ...styles.content,
-                ...styles.flexend,
-                ...styles.dirColumn,
 
-              }}
-              className='contentBox'
+              className={["contentBox", "ims-src-components-sharables-Banner-js-0004"].filter(Boolean).join(" ")}
             >
               <h1 className='mainheading'>
                 Electric Sine: Online Examination System
               </h1>
-              <p style={styles.mainsubhead}>
+              <p className="ims-src-components-sharables-Banner-js-0005" >
                 Effortless exams for a brighter future
               </p>
             </div>
@@ -39,49 +29,34 @@ export const Banner = () => {
       </Grid>
 
       {/*  */}
-      <Grid
+      <Grid className="ims-src-components-sharables-Banner-js-0006"
         container
-        style={{
-          ...styles.aboutcontainer,
-          ...styles.darkshade,
-          ...styles.bluebg
-        }}
+
       >
-        <Grid
+        <Grid className="ims-src-components-sharables-Banner-js-0007"
           item
           lg={8}
           md={8}
-          style={{ paddingLeft: "2%" }}
+
         >
-          <div style={{ ...styles.content, ...styles.dirColumn }}>
-            <h1
-              style={{
-                ...styles.heading,
-                ...styles.aboutheadpadding,
-                ...styles.pt3,
-                ...styles.aboutHead,
-              }}
+          <div className="ims-src-components-sharables-Banner-js-0008" >
+            <h1 className="ims-src-components-sharables-Banner-js-0009"
+
             >
               About Us
             </h1>
-            <p style={styles.subheading}>
+            <p className="ims-src-components-sharables-Banner-js-0010" >
               We are a team of passionate educators and tech experts dedicated
               to revolutionizing online assessments.
             </p>
           </div>
         </Grid>
-        <Grid
+        <Grid className="ims-src-components-sharables-Banner-js-0011"
           item
           size={{ lg: 8, md: 8 }}
           columnGap={2}
           rowSpacing={3}
-          style={{
-            ...styles.featureItembox,
-            ...styles.spacearound,
-            ...styles.pl3,
-            paddingLeft: 6,
-            paddingRight: 6
-          }}
+
         >
           <Grid
             item
@@ -94,8 +69,8 @@ export const Banner = () => {
             // }}
             className="bluebox"
           >
-            <h1 style={{ ...styles.blueboxhead }}>Mission</h1>
-            <p style={styles.subheading}>
+            <h1 className="ims-src-components-sharables-Banner-js-0012" >Mission</h1>
+            <p className="ims-src-components-sharables-Banner-js-0013" >
               Empower the next generation of engineers with exam-ready knowledge that bridges theory and practical application.
             </p>
           </Grid>
@@ -107,8 +82,8 @@ export const Banner = () => {
             xs={12}
             className="bluebox"
           >
-            <h1 style={{ ...styles.blueboxhead }}>Vision</h1>
-            <p style={styles.subheading}>
+            <h1 className="ims-src-components-sharables-Banner-js-0014" >Vision</h1>
+            <p className="ims-src-components-sharables-Banner-js-0015" >
               Become the world’s most trusted platform for electrical, electronics, and instrumentation engineering, helping every engineer succeed in exams, interviews, and real-world projects.
             </p>
           </Grid>
@@ -120,8 +95,8 @@ export const Banner = () => {
             xs={12}
             className="bluebox"
           >
-            <h1 style={{ ...styles.blueboxhead }}>Goal</h1>
-            <p style={styles.subheading}>
+            <h1 className="ims-src-components-sharables-Banner-js-0016" >Goal</h1>
+            <p className="ims-src-components-sharables-Banner-js-0017" >
               To become the leading provider of innovative and accessible
               online assessment solutions.
             </p>
@@ -129,111 +104,106 @@ export const Banner = () => {
         </Grid>
       </Grid>
 
-      <Grid container style={{ ...styles.center, ...styles.lightbluebg }} className='featureContainer'>
-        <div style={{ ...styles.featurebox, ...styles.gridbox }}>
+      <Grid container  className={["featureContainer", "ims-src-components-sharables-Banner-js-0018"].filter(Boolean).join(" ")}>
+        <div className="ims-src-components-sharables-Banner-js-0019" >
           <Grid item lg={11} md={11}>
-            <div style={{ ...styles.content, ...styles.dirColumn }}>
-              <h1
-                style={{
-                  ...styles.heading,
-                  ...styles.aboutheadpadding,
-                  ...styles.pt3,
-                  ...styles.aboutHead,
-                }}
+            <div className="ims-src-components-sharables-Banner-js-0020" >
+              <h1 className="ims-src-components-sharables-Banner-js-0021"
+
               >
                 Our Features
               </h1>
-              <p style={styles.subheading}>
+              <p className="ims-src-components-sharables-Banner-js-0022" >
                 Our system is packed with features designed to enhance the exam
                 experience for both educators and students.
               </p>
             </div>
           </Grid>
-          <Grid
+          <Grid className="ims-src-components-sharables-Banner-js-0023"
             item
             lg={11}
             md={11}
-            style={{ ...styles.featureItembox }}
+
             sx={{ p: "2%" }}
           >
             <Grid container>
-              <Grid
+              <Grid className="ims-src-components-sharables-Banner-js-0024"
                 item
                 lg={6}
                 md={6}
                 sm={12}
                 xs={12}
-                style={{ ...styles.featureItembox }}
+
               >
                 <Grid item lg={2} md={2}>
                   <div className="gridItems">
-                    <h1 style={{ fontSize: "18px", color: 'white' }}>1.</h1>
+                    <h1 className="ims-src-components-sharables-Banner-js-0025" >1.</h1>
                   </div>
                 </Grid>
                 <Grid item lg={8} md={8} className="mob-10 tab-pl5">
-                  <h1 style={{ ...styles.blueboxhead }}
-                    className=''> Solved Question Papers</h1>
-                  <p style={styles.subheading}>
+                  <h1
+                    className={["", "ims-src-components-sharables-Banner-js-0026"].filter(Boolean).join(" ")}> Solved Question Papers</h1>
+                  <p className="ims-src-components-sharables-Banner-js-0027" >
                  Solved papers help users understand exam patterns, build confidence, and improve problem-solving speed for timed tests and interviews in Electrical, Electronics, Communication, and Instrumentation engineering.
                   </p>
                 </Grid>
               </Grid>
-              <Grid
+              <Grid className="ims-src-components-sharables-Banner-js-0028"
                 item
                 lg={6}
                 md={6}
                 sm={12}
                 xs={12}
-                style={{ ...styles.featureItembox }}
+
               >
                 <Grid item lg={2} md={2}>
                   <div className="gridItems">
-                    <h1 style={{ fontSize: "18px", color: 'white' }}>2.</h1>
+                    <h1 className="ims-src-components-sharables-Banner-js-0029" >2.</h1>
                   </div>
                 </Grid>
                 <Grid item lg={8} md={8} className="mob-10 tab-pl5">
-                  <h1 style={{ ...styles.blueboxhead }} className=''>Objective Type Questions & MCQs</h1>
-                  <p style={styles.subheading}>
+                  <h1  className={["", "ims-src-components-sharables-Banner-js-0030"].filter(Boolean).join(" ")}>Objective Type Questions & MCQs</h1>
+                  <p className="ims-src-components-sharables-Banner-js-0031" >
                     For students preparing for exams and job seekers preparing for interviews, as it directly improves test-taking skills and knowledge recall in Electrical, Electronics, Communication, and Instrumentation engineering.
                   </p>
                 </Grid>
               </Grid>
-              <Grid
+              <Grid className="ims-src-components-sharables-Banner-js-0032"
                 item
                 lg={6}
                 md={6}
                 sm={12}
                 xs={12}
-                style={{ ...styles.featureItembox }}
+
               >
                 <Grid item lg={2} md={2}>
                   <div className="gridItems">
-                    <h1 style={{ fontSize: "18px", color: 'white' }}>3.</h1>
+                    <h1 className="ims-src-components-sharables-Banner-js-0033" >3.</h1>
                   </div>
                 </Grid>
                 <Grid item lg={8} md={8} className="mob-10 tab-pl5">
-                  <h1 style={{ ...styles.blueboxhead }} className='mobpl5 '>Industry-Relevant Know-How</h1>
-                  <p style={styles.subheading}>
+                  <h1  className={["mobpl5 ", "ims-src-components-sharables-Banner-js-0034"].filter(Boolean).join(" ")}>Industry-Relevant Know-How</h1>
+                  <p className="ims-src-components-sharables-Banner-js-0035" >
                    It covers practical applications, case studies, and modern technologies like AI and automation, essential for becoming a competent professional in the field.
                   </p>
                 </Grid>
               </Grid>
-              <Grid
+              <Grid className="ims-src-components-sharables-Banner-js-0036"
                 item
                 lg={6}
                 md={6}
                 sm={12}
                 xs={12}
-                style={{ ...styles.featureItembox }}
+
               >
                 <Grid item lg={2} md={2}>
                   <div className="gridItems">
-                    <h1 style={{ fontSize: "18px", color: 'white' }}>4.</h1>
+                    <h1 className="ims-src-components-sharables-Banner-js-0037" >4.</h1>
                   </div>
                 </Grid>
                 <Grid item lg={8} md={8} className='mob-10 tab-pl5'>
-                  <h1 style={{ ...styles.blueboxhead }} className='mobpl5'>Mock Tests</h1>
-                  <p style={styles.subheading}>
+                  <h1  className={["mobpl5", "ims-src-components-sharables-Banner-js-0038"].filter(Boolean).join(" ")}>Mock Tests</h1>
+                  <p className="ims-src-components-sharables-Banner-js-0039" >
                    Taking full-length mock tests helps familiarize with exam format and difficulty, crucial for competitive exams like Diploma, B.Tech, GATE, or IES in Electrical, Electronics, Communication, and Instrumentation engineering.
                   </p>
                 </Grid>
@@ -245,46 +215,33 @@ export const Banner = () => {
 
       <Grid
         container
-        style={{
-          ...styles.aboutcontainer,
-          ...styles.darkshade,
-          ...styles.bluebg
-        }}
-        className='mobrl10'
+
+        className={["mobrl10", "ims-src-components-sharables-Banner-js-0040"].filter(Boolean).join(" ")}
       >
-        <Grid
+        <Grid className="ims-src-components-sharables-Banner-js-0041"
           item
           lg={8}
           md={8}
-          style={{ paddingLeft: "2%" }}
+
         >
-          <div style={{ ...styles.content, ...styles.dirColumn }}>
-            <h1
-              style={{
-                ...styles.heading,
-                ...styles.aboutheadpadding,
-                ...styles.pt3,
-                ...styles.aboutHead,
-              }}
+          <div className="ims-src-components-sharables-Banner-js-0042" >
+            <h1 className="ims-src-components-sharables-Banner-js-0043"
+
             >
               Secure Exam Delivery
             </h1>
-            <p style={styles.subheading}>
+            <p className="ims-src-components-sharables-Banner-js-0044" >
               We are a team of passionate educators and tech experts dedicated
               to revolutionizing online assessments.
             </p>
           </div>
         </Grid>
-        <Grid
+        <Grid className="ims-src-components-sharables-Banner-js-0045"
           item
           size={{ lg: 8, md: 8 }}
           columnGap={2}
           rowSpacing={3}
-          style={{
-            ...styles.featureItembox,
-            ...styles.spacearound,
-            ...styles.pl3,
-          }}
+
         >
           <Grid
             item
@@ -294,8 +251,8 @@ export const Banner = () => {
             xs={12}
             className='securebox'>
 
-            <h1 style={{ ...styles.blueboxhead }}>Encryption</h1>
-            <p style={styles.subheading}>
+            <h1 className="ims-src-components-sharables-Banner-js-0046" >Encryption</h1>
+            <p className="ims-src-components-sharables-Banner-js-0047" >
               All exam data is encrypted during transmission and storage, protecting sensitive information from unauthorized access.
             </p>
           </Grid>
@@ -307,8 +264,8 @@ export const Banner = () => {
             xs={12}
             className='securebox'>
 
-            <h1 style={{ ...styles.blueboxhead }}>Redundancy</h1>
-            <p style={styles.subheading}>
+            <h1 className="ims-src-components-sharables-Banner-js-0048" >Redundancy</h1>
+            <p className="ims-src-components-sharables-Banner-js-0049" >
               Our servers are designed with redundancy, ensuring uninterrupted service even in case of hardware failures.
             </p>
           </Grid>
@@ -319,58 +276,43 @@ export const Banner = () => {
             sm={12}
             xs={12}
             className='securebox'>
-            <h1 style={{ ...styles.blueboxhead }}>Authentication</h1>
-            <p style={styles.subheading}>
+            <h1 className="ims-src-components-sharables-Banner-js-0050" >Authentication</h1>
+            <p className="ims-src-components-sharables-Banner-js-0051" >
               We use multi-factor authentication to verify user identities, ensuring only authorized individuals can access the platform.
             </p>
           </Grid>
         </Grid>
       </Grid>
-      <Grid container style={{ ...styles.center, ...styles.lightbluebg }} className="featureContainer">
-        <div style={{ ...styles.featurebox, ...styles.gridbox }}>
+      <Grid container  className={["featureContainer", "ims-src-components-sharables-Banner-js-0052"].filter(Boolean).join(" ")}>
+        <div className="ims-src-components-sharables-Banner-js-0053" >
           <Grid item lg={11} md={11} sm={11} xs={11}>
-            <div style={{ ...styles.content, ...styles.dirColumn }}>
-              <h1
-                style={{
-                  ...styles.heading,
-                  ...styles.aboutheadpadding,
-                  ...styles.pt3,
-                  ...styles.aboutHead,
-                }}
+            <div className="ims-src-components-sharables-Banner-js-0054" >
+              <h1 className="ims-src-components-sharables-Banner-js-0055"
+
               >
                 Grading and Reporting
               </h1>
-              <p style={styles.subheading}>
+              <p className="ims-src-components-sharables-Banner-js-0056" >
                 Our system automates grading and provides comprehensive
                 reporting features, saving you time and effort while offering
                 valuable insights into student progress.
               </p>
               <ul className="triangle-list">
-                <li style={styles.subheading}>Automated Grading</li>
-                <li style={styles.subheading}>Detailed Reports</li>
+                <li className="ims-src-components-sharables-Banner-js-0057" >Automated Grading</li>
+                <li className="ims-src-components-sharables-Banner-js-0058" >Detailed Reports</li>
               </ul>
             </div>
           </Grid>
         </div>
       </Grid>
 
-      <div style={styles.footer} className='pb-1 footer'>
-        <div className='footer-content-container pb-1' style={{ ...styles.dirColumn }}>
-          <div style={styles.overlay}></div>
+      <div className='pb-1 footer'>
+        <div className={["footer-content-container pb-1", "ims-src-components-sharables-Banner-js-0059"].filter(Boolean).join(" ")} >
+          <div className="ims-src-components-sharables-Banner-js-0060" ></div>
 
-          <Grid
+          <Grid className="ims-src-components-sharables-Banner-js-0061"
             container
-            style={{
-              ...styles.footerCotent,
-              ...styles.footerbox,
-              ...styles.featureItembox,
-              ...styles.darkshade,
-              ...styles.center,
-              ...styles.fullwidth,
-              ...styles.fullHeight,
-              ...styles.pt7,
 
-            }}
           >
 
             <Grid
@@ -387,51 +329,45 @@ export const Banner = () => {
               className="footer-row-grid"
 
             >
-              <Grid container
+              <Grid className="ims-src-components-sharables-Banner-js-0062" container
                 // className="footer-grid"
-                style={{
-                  ...styles.footerbox,
-                  ...styles.featureItembox,
-                  // ...styles.darkshade,
-                  ...styles.center,
-                  ...styles.fullwidth
-                }}>
-                <Grid
+                >
+                <Grid className="ims-src-components-sharables-Banner-js-0063"
                   item
                   size={{ xs: 12, md: 4, lg: 4, sm: 12 }}
-                  style={{ ...styles.featureItembox, ...styles.dirColumn }}
+
 
                 >
                   <div><FiPhone color="#609dff" size="50px" /></div>
-                  <h1 style={{ ...styles.blueboxhead }}>Phone</h1>
-                  <p style={styles.subheading}>
+                  <h1 className="ims-src-components-sharables-Banner-js-0064" >Phone</h1>
+                  <p className="ims-src-components-sharables-Banner-js-0065" >
                     +91 7560884560
                   </p>
                 </Grid>
-                <Grid
+                <Grid className="ims-src-components-sharables-Banner-js-0066"
                   item
                   size={{ xs: 12, md: 4, lg: 4, sm: 12 }}
-                  style={{ ...styles.featureItembox, ...styles.dirColumn }}
+
                 // className='pr-2'
 
                 >
                   <div><FiMail color="#609dff" size="50px" /></div>
 
-                  <h1 style={{ ...styles.blueboxhead }}>Email</h1>
-                  <p style={styles.subheading}>
+                  <h1 className="ims-src-components-sharables-Banner-js-0067" >Email</h1>
+                  <p className="ims-src-components-sharables-Banner-js-0068" >
                     electricsine2024@gmail.com
                   </p>
                 </Grid>
                 <Grid
                   item
-                  className='pl-2'
+                  className={["pl-2", "ims-src-components-sharables-Banner-js-0069"].filter(Boolean).join(" ")}
                   size={{ xs: 12, md: 4, lg: 4, sm: 12 }}
-                  style={{ ...styles.featureItembox, ...styles.dirColumn }}
+
                 >
                   <div><IoEarthSharp color="#609dff" size="50px" /></div>
 
-                  <h1 style={{ ...styles.blueboxhead }}>Website</h1>
-                  <p style={styles.subheading}>
+                  <h1 className="ims-src-components-sharables-Banner-js-0070" >Website</h1>
+                  <p className="ims-src-components-sharables-Banner-js-0071" >
                     electricsine.com
                   </p>
                 </Grid>
@@ -439,7 +375,7 @@ export const Banner = () => {
 
             </Grid>
           </Grid>
-          <div style={{ ...styles.footerCotent }}>
+          <div className="ims-src-components-sharables-Banner-js-0072" >
             <Footer />
 
           </div>

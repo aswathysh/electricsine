@@ -60,7 +60,7 @@ export default function Home() {
   //       };
 
   return (
-    <div style={{ ...styles.mainheight }}>
+    <div className="ims-src-app-exam-page-js-0001" >
       <PracticeHeader />
       <Grid container spacing={2} className="main_padding">
         <Grid item size={{ xs: 12, md: 12, lg: 12, sm: 12 }} className="hide_above_mob">

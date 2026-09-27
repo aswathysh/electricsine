@@ -4,8 +4,8 @@ import { blue } from '@mui/material/colors';
 import React from 'react';
 export const PracticeQuestion = () => {
     return (
-        <div style={{ ...styles.main }}>
-        <div style={{ ...styles.hexagon }}>
+        <div className="ims-src-components-practice-PracticeQuestion-js-0001" >
+        <div className="ims-src-components-practice-PracticeQuestion-js-0002" >
         <Typography className="subhead light_text " sx={{ mt: 1 }}>
                 What is the main objective of a CT Polarity Test?
             </Typography>

@@ -26,17 +26,12 @@ export const Dashboard = () => {
     
   }
   return (
-    <div style={{ backgroundColor: "lightgray" }}>
+    <div className="ims-src-components-home-Dashboard-js-0001" >
       <PracticeHeader />
-      <Grid container style={styles.container}>
-        <div style={styles.main}>
-          <div
-            style={{
-              ...styles.featureItembox,
-              ...styles.center,
-              ...styles.fullwidth,
-              ...styles.darkshade,
-            }}
+      <Grid className="ims-src-components-home-Dashboard-js-0002" container >
+        <div className="ims-src-components-home-Dashboard-js-0003" >
+          <div className="ims-src-components-home-Dashboard-js-0004"
+
           >
             <div
             className="main_div_width main_div center_column"
@@ -44,7 +39,7 @@ export const Dashboard = () => {
             >
               <h1 className="home_header home_header_size" >Welcome To Dashboard</h1>
               <div  className="main_div_width main_div ">
-                <p style={styles.mainsubhead}>Want to take a test?</p>
+                <p className="ims-src-components-home-Dashboard-js-0005" >Want to take a test?</p>
                 <StyledGreyButton
                   onClick={handleGetStarted}
                   sx={{ ml: "10px !important", width: "200px !important" }}
@@ -59,14 +54,11 @@ export const Dashboard = () => {
           </div>
         </div>
       </Grid>
-      <Grid container sx={{ paddingTop: 2, pb: 2 ,pl:1,pr:1}} style={{
-        // justifyContent: 'space-around',
-        alignItems: "center", alignContent: 'center', backgroundColor: "#012967"
-      }} spacing={2}>
+      <Grid className="ims-src-components-home-Dashboard-js-0006" container sx={{ paddingTop: 2, pb: 2 ,pl:1,pr:1}}  spacing={2}>
            
 
-        <Grid item size={{ xs: 12, md: 12, lg: 12, sm: 12 }}
-          style={{ display: 'flex', justifyContent: 'center' }}>
+        <Grid className="ims-src-components-home-Dashboard-js-0007" item size={{ xs: 12, md: 12, lg: 12, sm: 12 }}
+          >
           <h1 className="home_header home_header_size">Our Subjects</h1>
 
         </Grid>

@@ -121,7 +121,7 @@ export const UserHeader = () => {
         </Grid>
 
 
-        <Grid item size={{ xs: 6, md: 8, lg: 8, sm: 6 }} style={{ ...styles.flex }}>
+        <Grid className="ims-src-components-practice-UserHeader-js-0001" item size={{ xs: 6, md: 8, lg: 8, sm: 6 }} >
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
 
             <Button

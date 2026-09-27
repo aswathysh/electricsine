@@ -6,19 +6,19 @@ import React from "react";
 export const Question = ({ currentQuestion, currentIndex, maxTimeInMinutes,handleTimer,timer}) => {
   // console.log("currentQuestion", currentQuestion)
   return (
-    <div style={{ ...styles.columndiv }}>
-      <Grid container style={{ display: "flex" }}>
+    <div className="ims-src-components-exam-Question-js-0001" >
+      <Grid className="ims-src-components-exam-Question-js-0002" container >
         <Grid item size={{ xs: 6, md: 6, lg: 6, sm: 6 }}>
           <Typography
-            className="subhead light_text "
-            style={{ ...styles.numberblock }}
+            className={["subhead light_text ", "ims-src-components-exam-Question-js-0003"].filter(Boolean).join(" ")}
+
           >
             {`Q${currentIndex}`}
           </Typography>
         </Grid>
-        <Grid item
+        <Grid className="ims-src-components-exam-Question-js-0004" item
           size={{ xs: 6, md: 6, lg: 6, sm: 6 }}
-          style={{ display: 'flex', justifyContent: 'flex-end' }}>
+          >
           <Timer
           handleTimer={handleTimer}
           timer={timer}
@@ -40,8 +40,7 @@ export const Question = ({ currentQuestion, currentIndex, maxTimeInMinutes,handl
       <Typography className='whiteTexthint'
         sx={{ display: currentQuestion?.hint == null ? 'none' : 'flex', justifyContent: 'left' }}
       >{`Hint:${currentQuestion?.hint}`}</Typography>
-      <div className="question_img_div"
-        style={{ display: currentQuestion?.image == null ? 'none' : 'flex', justifyContent: 'center' }}>
+      <div className={`question_img_div ims-exam-question-image${currentQuestion?.image == null ? " ims-exam-question-image--hidden" : ""}`}>
         <Image
           src="/assets/questionImages/samplequstion1.png"
           alt="sample Image"

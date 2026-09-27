@@ -41,12 +41,8 @@ export default function OrdersPage() {
   const renderContent = () => {
     if (isLoading) {
       return (
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            marginTop: "20%",
-          }}
+        <div className="ims-src-app-orders-page-js-0001"
+
         >
           <CircularProgress sx={{ color: "#012967" }} />
         </div>
@@ -186,12 +182,12 @@ export default function OrdersPage() {
                               boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
                             }}
                           >
-                            <Image
+                            <Image className="ims-src-app-orders-page-js-0002"
                               src={`https://rubiksoftwares.com/electricsine-api/public/${item.image}`}
                               alt={item.title}
                               width={60}
                               height={40}
-                              style={{ objectFit: "cover", display: "block" }}
+
                             />
                           </Box>
                         )}
@@ -248,12 +244,8 @@ export default function OrdersPage() {
       <Header />
       <Grid
         container
-        style={{
-          justifyContent: "center",
-          backgroundColor: "#ffffff",
-          minHeight: "100vh",
-        }}
-        className="light_bg"
+
+        className={["light_bg", "ims-src-app-orders-page-js-0003"].filter(Boolean).join(" ")}
       >
         <Grid
           item

@@ -33,20 +33,20 @@ export const PracticeSection = ({ currentQuestion, currentIndex, handleAnswerCha
         setSelectedOption(event.target.value);
 
     };
-    const getOptionBgColor = (optionValue) => {
+    const getOptionBgClass = (optionValue) => {
         const correctAnswer = currentQuestion?.answer?.trim().toLowerCase();
         if (selectedAnswer === optionValue) {
-            return correctAnswer === optionValue ? green[600] : red[600];
+            return correctAnswer === optionValue ? "ims-practice-option--correct" : "ims-practice-option--wrong";
         }
-        return '#204d77'; // Default background
+        return "ims-practice-option--default";
     };
     return (
         <div>
             <Grid
                 item
-                className="fullwidth min_height"
+                className={["fullwidth min_height", "ims-src-components-demoPractice-PracticeSection-js-0001"].filter(Boolean).join(" ")}
                 size={{ xs: 12, md: 12, lg: 12, sm: 12 }}
-                style={{ ...styles.questionbox }}
+
             >
                 <Grid contaniner className="center min_height " >
 
@@ -90,9 +90,8 @@ export const PracticeSection = ({ currentQuestion, currentIndex, handleAnswerCha
                         value={answer}
                         onChange={handleAnswerChange}
                     >
-                        <Grid container style={{ display: 'flex', flexDirection: 'row !important', justifyContent: 'space-around' }}>
-                            <Grid item size={{ xs: 12, md: 5.5, lg: 5.5, sm: 12 }} className="option_box1"
-                                style={{ backgroundColor: getOptionBgColor('a') }}
+                        <Grid className="ims-src-components-demoPractice-PracticeSection-js-0002" container >
+                            <Grid item size={{ xs: 12, md: 5.5, lg: 5.5, sm: 12 }} className={`option_box1 ${getOptionBgClass('a')}`}
 
                                 onClick={() => handleGridClick('a')}                             >
 
@@ -114,10 +113,8 @@ export const PracticeSection = ({ currentQuestion, currentIndex, handleAnswerCha
 
                             </Grid>
                             <Grid item size={{ xs: 12, md: 5.5, lg: 5.5, sm: 12 }}
-                                style={{ backgroundColor: getOptionBgColor('b') }}
-
                                 onClick={() => handleGridClick('b')}
-                                className="option_box1">
+                                className={`option_box1 ${getOptionBgClass('b')}`}>
 
                                 <FormControlLabel value="b"
                                     control={<Radio
@@ -136,10 +133,8 @@ export const PracticeSection = ({ currentQuestion, currentIndex, handleAnswerCha
 
                             </Grid>
                             <Grid item size={{ xs: 12, md: 5.5, lg: 5.5, sm: 12 }}
-                                style={{ backgroundColor: getOptionBgColor('c') }}
-
                                 onClick={() => handleGridClick('c')}
-                                className="option_box1">
+                                className={`option_box1 ${getOptionBgClass('c')}`}>
 
                                 <FormControlLabel value="c"
                                     control={<Radio
@@ -158,10 +153,8 @@ export const PracticeSection = ({ currentQuestion, currentIndex, handleAnswerCha
 
                             </Grid>
                             <Grid item size={{ xs: 12, md: 5.5, lg: 5.5, sm: 12 }}
-                                style={{ backgroundColor: getOptionBgColor('d') }}
-
                                 onClick={() => handleGridClick('d')}
-                                className="option_box1">
+                                className={`option_box1 ${getOptionBgClass('d')}`}>
 
                                 <FormControlLabel value="d"
                                     control={<Radio
@@ -182,10 +175,10 @@ export const PracticeSection = ({ currentQuestion, currentIndex, handleAnswerCha
                             </Grid>
                         </Grid>
                     </RadioGroup>
-                    <Grid
+                    <Grid className="ims-src-components-demoPractice-PracticeSection-js-0003"
                         item
                         size={{ xs: 12, md: 12, lg: 12, sm: 12 }}
-                        style={{ ...styles.center }}
+
                         sx={{ mt: 2, mb: 4 }}>
                         {/* <Button variant="contained" sx={{ backgroundColor: "#21507c" }}
                         onClick={handlePrevQuestion}>

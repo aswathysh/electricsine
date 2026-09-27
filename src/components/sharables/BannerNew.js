@@ -246,7 +246,7 @@ export const BannerNew = () => {
             <span className="progress-count">Sample Question</span>
           </div>
           <div className="progress-bar-bg">
-            <div className="progress-bar-fill" style={{ width: "35%" }} />
+            <div className={["progress-bar-fill", "ims-src-components-sharables-BannerNew-js-0001"].filter(Boolean).join(" ")}  />
           </div>
 
           <div className="stats-grid">
@@ -352,14 +352,11 @@ export const BannerNew = () => {
         <div className="gr-right">
           <div className="perf-title">SUBJECT PERFORMANCE</div>
 
-          {subjects.map((s) => (
+          {subjects.map((s, index) => (
             <div className="perf-row" key={s.label}>
               <div className="perf-label">{s.label}</div>
               <div className="perf-bar-bg">
-                <div
-                  className="perf-bar"
-                  style={{ width: `${s.pct}%`, background: s.color }}
-                />
+                <div className={`perf-bar ims-progress-width-${s.pct} ims-performance-color-${index + 1}`} />
               </div>
               <div className="perf-pct">{s.pct}%</div>
             </div>

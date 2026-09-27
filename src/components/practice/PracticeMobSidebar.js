@@ -10,29 +10,23 @@ export const PracticeMobSidebar = ({
   handleQuestionClick,
   handleScroll,
 }) => {
-    const sidebarWidth = totalQuestions === 1 ? "100px" : `${totalQuestions * 60}px`;
-
   return (
     <div 
     className="practice_mob_sidebar"
     // style={{ ...styles.sidebar }}
     >
-      <Typography variant="h6" style={styles.title}>
+      <Typography className="ims-src-components-practice-PracticeMobSidebar-js-0001" variant="h6" >
         Questions
       </Typography>
-      <div className="scrollable-sidebar" style={{...styles.scrollableContainer,width:sidebarWidth}}>
-        <Grid container spacing={2} style={styles.gridContainer}>
+      <div className={`scrollable-sidebar ims-demo-practice-scroll ims-question-count-${totalQuestions}`}>
+        <Grid className="ims-src-components-practice-PracticeMobSidebar-js-0002" container spacing={2} >
           {Array.from({ length: totalQuestions }, (_, index) => (
-            <Grid item style={{ display: 'inline-block' }}
+            <Grid className="ims-src-components-practice-PracticeMobSidebar-js-0003" item
             size={{ xs: 2, md: 2, lg: 2, sm: 2 }}
             key={index + 1}>
               <Paper
+                className={`ims-question-number ${currentQuestion === index + 1 ? "ims-question-number--current" : "ims-question-number--idle"}`}
                 elevation={currentQuestion === index + 1 ? 4 : 1}
-                style={{
-                  ...styles.paper,
-                  backgroundColor: currentQuestion === index + 1 ? "#1976d2" : "#fff",
-                  color: currentQuestion === index + 1 ? "#fff" : "#000",
-                }}
                 onClick={() => handleQuestionClick(index + 1)}
               >
                 <Typography variant="body2">{index + 1}</Typography>
@@ -41,7 +35,7 @@ export const PracticeMobSidebar = ({
           ))}
         </Grid>
       </div>
-      <Grid container style={{ ...styles.overalldiv }}></Grid>
+      <Grid className="ims-src-components-practice-PracticeMobSidebar-js-0004" container ></Grid>
     </div>
   );
 };

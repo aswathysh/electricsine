@@ -15,32 +15,21 @@ export const PracticeSidebar = ({
 
 }) => {
   return (
-    <div style={styles.sidebar}>
-      <Typography variant="h6" style={styles.title}>
+    <div className="ims-src-components-practice-PracticeSidebar-js-0001" >
+      <Typography className="ims-src-components-practice-PracticeSidebar-js-0002" variant="h6" >
         Questions{currentQuestion}
       </Typography>
       <div className="scrollable-sidebar"
       // onScroll={handleScroll}
       >
-        <Grid container spacing={2} style={styles.gridContainer}>
+        <Grid className="ims-src-components-practice-PracticeSidebar-js-0003" container spacing={2} >
           {Array.from({ length: totalQuestions }, (_, index) => (
             <Grid item
               size={{ xs: 2, md: 2, lg: 2, sm: 2 }}
               key={index }>
               <Paper
+                className={`ims-question-number ${currentQuestion - 1 === index ? "ims-practice-question--current" : skippedQuestions.has(index + 1) ? "ims-practice-question--skipped" : answeredQuestions.has(index + 1) ? "ims-practice-question--answered" : "ims-practice-question--idle"}`}
                 elevation={currentQuestion-1 == index  ? 4 : 1}
-                style={{
-                  ...styles.paper,
-                  backgroundColor:currentQuestion-1 == index ? 'blue' : 
-                  skippedQuestions.has(index+1) ? 'red' : 
-                  answeredQuestions.has(index+1) ? 'green' : 
-                  'transparent',
-                color: currentQuestion-1 == index ? 'white' : 'black', // Text color for current question
-              
-                  // backgroundColor:
-                  //   currentQuestion === index + 1 ? "#1976d2" : "#fff",
-                  // color: currentQuestion === index + 1 ? "#fff" : "#000",
-                }}
                 onClick={() => handleSideBarClick(index+1)}
               >
                 <Typography variant="body2">{index +1}</Typography>
@@ -83,7 +72,7 @@ export const PracticeSidebar = ({
                 )} */}
         </Grid>
       </div>
-      <Grid container style={{ ...styles.overalldiv }} sx={{ mt: 2,justifyContent:'space-around' }} >
+      <Grid className="ims-src-components-practice-PracticeSidebar-js-0004" container  sx={{ mt: 2,justifyContent:'space-around' }} >
       {/* <Grid item size={{ xs: 12, md: 6, lg: 6, sm: 12 }}>
           <Box display="flex" alignItems="center">
             <Paper
@@ -102,14 +91,9 @@ export const PracticeSidebar = ({
         </Grid> */}
       <Grid item size={{ xs: 12, md: 6, lg: 6, sm: 12 }}>
       <Box display="flex" alignItems="center">
-            <Paper
+            <Paper className="ims-src-components-practice-PracticeSidebar-js-0005"
               elevation={1}
-              style={{
-                ...styles.paper,
-                backgroundColor: "#53c158",
-                color: "#000",
-                marginRight: 8, // Adds some space between Paper and Typography
-              }}
+
             >
               <Typography variant="body2">{totalAnswered}</Typography>
             </Paper>
@@ -118,14 +102,9 @@ export const PracticeSidebar = ({
         </Grid>
         <Grid item size={{ xs: 12, md: 6, lg: 6, sm: 12 }}>
           <Box display="flex" alignItems="center">
-            <Paper
+            <Paper className="ims-src-components-practice-PracticeSidebar-js-0006"
               elevation={1}
-              style={{
-                ...styles.paper,
-                backgroundColor: "#fff",
-                color: "#000",
-                marginRight: 8, // Adds some space between Paper and Typography
-              }}
+
             >
               <Typography variant="body2">{totalSkipped}</Typography>
             </Paper>

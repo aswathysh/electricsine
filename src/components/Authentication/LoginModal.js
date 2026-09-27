@@ -160,7 +160,7 @@ export const LoginModal = ({
             Welcome back — enter your details to continue.
           </Typography>
 
-          <form style={TagModalstyle.fullWidth} onSubmit={handleSubmit}>
+          <form className="ims-src-components-Authentication-LoginModal-js-0001"  onSubmit={handleSubmit}>
             <Grid
               container
               sx={{ mt: 1, display: "flex", justifyContent: "center" }}

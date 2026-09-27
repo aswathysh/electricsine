@@ -6,7 +6,7 @@ import { Header } from '@/components/sharables/Header';
 
 export default function Home({ params }) {
   return (
-    <div style={{ ...styles.mainheight }}>
+    <div className="ims-src-app-sample-questions-id-page-js-0001" >
       <Header/>
       {/* <SampleQuestionHome params={params} /> */}
       <QuizPageNew params={params}/>

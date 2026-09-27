@@ -1,10 +1,14 @@
 import Link from "next/link";
 import { cache } from 'react';
+import { notFound } from "next/navigation";
 import "./slug.css";
 import { Header } from "@/components/sharables/Header";
 import BlogProgress from "./BlogProgress";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL;
+const API_URL =
+    process.env.NEXT_PUBLIC_API_URL ||
+    "https://rubiksoftwares.com/electricsine-api/public/api";
+export const revalidate = 3600;
 
 // -----------------------------
 // Helpers
@@ -93,10 +97,8 @@ const readTime = (text = "") => {
     const response = await fetch(
         `${API_URL}/blog/${encodeURIComponent(slug)}`,
         {
-            // Choose the caching strategy you want.
-            // See explanation below.
             next: {
-                revalidate: 60,
+                revalidate,
             },
         }
     );
@@ -117,7 +119,7 @@ const readTime = (text = "") => {
 async function getBlogs() {
     const response = await fetch(`${API_URL}/blogs`, {
         next: {
-            revalidate: 60,
+            revalidate,
         },
     });
 
@@ -149,19 +151,23 @@ export async function generateMetadata({ params }) {
         };
     }
 
-    const title =
-        article.meta_title ||
-        article.title ||
-        "Electric Sine";
+    const title = article.meta_title || article.title || "Electrical Engineering Blog";
 
-    const description =
+    const rawDescription =
         article.meta_description ||
         article.short_description ||
-        "";
+        article.description ||
+        `Read ${article.title || "this article"} on the Electric Sine engineering blog.`;
+    const description = rawDescription
+        .replace(/<[^>]*>/g, " ")
+        .replace(/&nbsp;/g, " ")
+        .replace(/\s+/g, " ")
+        .trim()
+        .slice(0, 160);
 
     const canonicalUrl =
         article.canonical_url ||
-        `https://electricsine.com/blog/${article.slug}`;
+        `https://www.electricsine.com/blog/${article.slug}`;
 
     const ogTitle =
         article.og_title ||
@@ -312,9 +318,7 @@ export default async function BlogDetailPage({
         getBlogs(),
     ]);
 
-    if (!article) {
-        //   notFound();
-    }
+    if (!article) notFound();
 
     const related = allBlogs.filter(
         (blog) => blog.slug !== slug

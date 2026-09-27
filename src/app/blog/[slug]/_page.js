@@ -116,7 +116,12 @@ export default function BlogDetailPage() {
       const d = document.documentElement;
       const pct = (d.scrollTop / (d.scrollHeight - d.clientHeight)) * 100;
       if (progressRef.current) {
-        progressRef.current.style.width = `${Math.min(pct, 100)}%`;
+        const progress = Math.max(0, Math.min(100, Math.round(pct)));
+        const previousClasses = Array.from(progressRef.current.classList).filter(
+          (name) => name.startsWith("ims-progress-width-"),
+        );
+        progressRef.current.classList.remove(...previousClasses);
+        progressRef.current.classList.add(`ims-progress-width-${progress}`);
       }
     };
     window.addEventListener("scroll", onScroll);
@@ -150,7 +155,7 @@ export default function BlogDetailPage() {
   return (
     <>
       <Header />
-      <div className="es-progress" ref={progressRef} style={{ width: "0%" }} />
+      <div className={["es-progress", "ims-src-app-blog-slug-page-js-0001"].filter(Boolean).join(" ")} ref={progressRef}  />
 
       <div className="es-hero">
         <div className="es-hero__inner">

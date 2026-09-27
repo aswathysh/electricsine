@@ -25,13 +25,13 @@ export const PracticeMain = ({ currentQuestion, currentIndex, maxTimeInMinutes,
       <div
       // className="question_padding"
       >
-        <Grid
+        <Grid className="ims-src-components-practice-PracticeMain-js-0001"
           item
           size={{ xs: 12, md: 12, lg: 12, sm: 12 }}
 
-          style={{ ...styles.questionbox }}
+
         >
-          <div style={{ ...styles.questionpadding }}>
+          <div className="ims-src-components-practice-PracticeMain-js-0002" >
             <Question
             handleTimer={handleTimer}
             timer={timer}
@@ -46,10 +46,10 @@ export const PracticeMain = ({ currentQuestion, currentIndex, maxTimeInMinutes,
 
             />
             {/* <Grid item lg={12} md={12} sm={12} xs={12} sx={{mt:5}} > */}
-            <Grid
+            <Grid className="ims-src-components-practice-PracticeMain-js-0003"
               item
               size={{ xs: 12, md: 12, lg: 12, sm: 12 }}
-              style={{ ...styles.center }}
+
               sx={{ mt: 2, mb: 4 }}>
               <Button
                 variant="contained"
@@ -62,7 +62,7 @@ export const PracticeMain = ({ currentQuestion, currentIndex, maxTimeInMinutes,
             </Grid>
           </div>
 
-          <div style={{ ...styles.footerbg }}>
+          <div className="ims-src-components-practice-PracticeMain-js-0004" >
             <QuestionButtonFooter
               handleSkip={handleSkip}
               handleFinished={handleFinished}

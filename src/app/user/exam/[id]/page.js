@@ -42,7 +42,7 @@ export default function Home({ params }) {
       //       router.push(`attend/${id}`);
       // }
       return (
-            <div style={{ backgroundColor: "rgb(1 41 103)", alignItems: 'center' }} >
+            <div className="ims-src-app-user-exam-id-page-js-0001"  >
                   <UserHeader />
                   {/* <Grid container
                         className="main"

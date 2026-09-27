@@ -118,8 +118,8 @@ export const LoginPage = ({ }) => {
   return (
     <Grid
       container
-      style={{ display: "flex", justifyContent: "right" }}
-      className="light_bg login"
+
+      className={["light_bg login", "ims-src-components-Authentication-LoginPage-js-0001"].filter(Boolean).join(" ")}
     >
 
 
@@ -134,18 +134,18 @@ export const LoginPage = ({ }) => {
         item
         size={{ xs: 12, md: 6, lg: 6, sm: 12 }}
 
-        className="bg_grey "
+        className={["bg_grey ", "ims-src-components-Authentication-LoginPage-js-0002"].filter(Boolean).join(" ")}
         // style={{ justifyContent: 'center' }}
-        style={{ display: "flex", justifyContent: "center", height: "100%", flexDirection: 'column' }}
-      >    <Grid
-        style={{ display: "flex", justifyContent: 'flex-end' }}
+
+      >    <Grid className="ims-src-components-Authentication-LoginPage-js-0003"
+
         size={{ xs: 12, md: 12, lg: 12, sm: 12 }}>
           <IconButton onClick={() => { router.push('/dashboard') }}>
             <HomeIcon sx={{ color: "white", fontSize: "30px" }} />
           </IconButton>
         </Grid>
-        <Grid
-          style={{ display: "flex", justifyContent: 'center' }}
+        <Grid className="ims-src-components-Authentication-LoginPage-js-0004"
+
           size={{ xs: 12, md: 12, lg: 12, sm: 12 }}>
           <Grid item
             size={{ xs: 12, md: 12, lg: 8, sm: 8 }}
@@ -190,7 +190,7 @@ export const LoginPage = ({ }) => {
                   // helperText={validationErrors.username}
                   />
                   {errors.username && (
-                    <div style={{ color: "red" }}>{errors.username}</div>
+                    <div className="ims-src-components-Authentication-LoginPage-js-0005" >{errors.username}</div>
                   )}
                 </div>
                 <div>
@@ -233,7 +233,7 @@ export const LoginPage = ({ }) => {
                     }}
                   />
                   {errors.password && (
-                    <div style={{ color: "red" }}>{errors.password}</div>
+                    <div className="ims-src-components-Authentication-LoginPage-js-0006" >{errors.password}</div>
                   )}
                 </div>
 
@@ -241,12 +241,8 @@ export const LoginPage = ({ }) => {
                   <Button
                     variant="text"
                     onClick={handleForgot}
-                    className="forgotlabel"
-                    style={{
-                      textTransform: "capitalize",
-                      color: "#E28909",
-                      fontWeight: 700,
-                    }}
+                    className={["forgotlabel", "ims-src-components-Authentication-LoginPage-js-0007"].filter(Boolean).join(" ")}
+
                   >
                     Forgot Password
                   </Button>
@@ -276,12 +272,8 @@ export const LoginPage = ({ }) => {
                   <Button
                     variant="text"
                     onClick={handleSignup}
-                    className="forgotlabel"
-                    style={{
-                      textTransform: "none",
-                      color: "#ffffff !important",
-                      fontWeight: '500px !important',
-                    }}
+                    className={["forgotlabel", "ims-src-components-Authentication-LoginPage-js-0008"].filter(Boolean).join(" ")}
+
                   >
                     Create an account
                   </Button>

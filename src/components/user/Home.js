@@ -14,12 +14,12 @@ import { Alert, Snackbar } from "@mui/material";
 
 function IconEye() {
   return (
-    <svg
+    <svg className="ims-src-components-user-Home-js-0001"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
       strokeWidth="2"
-      style={{ width: "20px", height: "20px" }}
+
     >
       <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z" />
       <circle cx="12" cy="12" r="3" />
@@ -29,10 +29,10 @@ function IconEye() {
 
 function IconPlay() {
   return (
-    <svg
+    <svg className="ims-src-components-user-Home-js-0002"
       viewBox="0 0 24 24"
       fill="currentColor"
-      style={{ width: "20px", height: "20px" }}
+
     >
       <path d="M8 5v14l11-7z" />
     </svg>
@@ -41,12 +41,12 @@ function IconPlay() {
 
 function IconCart() {
   return (
-    <svg
+    <svg className="ims-src-components-user-Home-js-0003"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
       strokeWidth="2"
-      style={{ width: "20px", height: "20px" }}
+
     >
       <circle cx="9" cy="21" r="1" />
       <circle cx="20" cy="21" r="1" />
@@ -57,12 +57,12 @@ function IconCart() {
 
 function IconPractice() {
   return (
-    <svg
+    <svg className="ims-src-components-user-Home-js-0004"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
       strokeWidth="2"
-      style={{ width: "20px", height: "20px" }}
+
     >
       <path d="M12 20h9" />
       <path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4 12.5-12.5z" />
@@ -72,12 +72,12 @@ function IconPractice() {
 
 function IconExam() {
   return (
-    <svg
+    <svg className="ims-src-components-user-Home-js-0005"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
       strokeWidth="2"
-      style={{ width: "20px", height: "20px" }}
+
     >
       <path d="M9 11l3 3L22 4" />
       <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11" />
@@ -97,10 +97,9 @@ function SubjectCard({
 
   return (
     <div className="course-card">
-      <div style={{ position: "relative", width: "100%", height: "200px" }}>
+      <div className="ims-src-components-user-Home-js-0006" >
         {isLoading && <div className="subject-image-skeleton" />}
         <Image
-          className="responsive-image"
           width={300}
           height={300}
           objectFit="cover"
@@ -111,11 +110,7 @@ function SubjectCard({
           }
           alt="courseimg"
           onLoad={() => setIsLoading(false)}
-          style={{
-            opacity: isLoading ? 0 : 1,
-            transition: "opacity 0.3s ease-in-out",
-            position: "relative",
-          }}
+          className={`responsive-image${isLoading ? " responsive-image--loading" : " responsive-image--loaded"}`}
         />
       </div>
 

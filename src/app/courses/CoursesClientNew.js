@@ -10,7 +10,7 @@ import Image from "next/image";
 
 function IconEye() {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ width: "22px", height: "22px" }}>
+    <svg className="ims-src-app-courses-CoursesClientNew-js-0001" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" >
       <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z" />
       <circle cx="12" cy="12" r="3" />
     </svg>
@@ -19,7 +19,7 @@ function IconEye() {
 
 function IconPlay() {
   return (
-    <svg viewBox="0 0 24 24" fill="currentColor" style={{ width: "22px", height: "22px" }}>
+    <svg className="ims-src-app-courses-CoursesClientNew-js-0002" viewBox="0 0 24 24" fill="currentColor" >
       <path d="M8 5v14l11-7z" />
     </svg>
   );
@@ -27,7 +27,7 @@ function IconPlay() {
 
 function IconCart() {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ width: "22px", height: "22px" }}>
+    <svg className="ims-src-app-courses-CoursesClientNew-js-0003" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" >
       <circle cx="9" cy="21" r="1" />
       <circle cx="20" cy="21" r="1" />
       <path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6" />
@@ -37,7 +37,7 @@ function IconCart() {
 
 function IconClock() {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ width: "18px", height: "18px", opacity: 0.6 }}>
+    <svg className="ims-src-app-courses-CoursesClientNew-js-0004" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" >
       <circle cx="12" cy="12" r="10" />
       <polyline points="12 6 12 12 16 14" />
     </svg>
@@ -46,7 +46,7 @@ function IconClock() {
 
 function IconBook() {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ width: "18px", height: "18px", opacity: 0.6 }}>
+    <svg className="ims-src-app-courses-CoursesClientNew-js-0005" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" >
       <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
       <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
     </svg>
@@ -58,7 +58,7 @@ function CourseCard({ course, handleCartItem }) {
   const [isLoading, setIsLoading] = useState(true);
 
   const handleView = (item) => {
-    router.push(`/course_view/${item.id}`);
+    router.push(`/course/${item.url}`);
   };
 
   const handleTryItOut = (item) => {
@@ -72,18 +72,19 @@ function CourseCard({ course, handleCartItem }) {
 
   return (
     <div className="course-card">
-      <div style={{ position: "relative", width: "100%", height: "300px" }}>
+      <div className="ims-src-app-courses-CoursesClientNew-js-0006" >
         {isLoading && (
-          <Skeleton
+          <Skeleton className="ims-src-app-courses-CoursesClientNew-js-0007"
             variant="rectangular"
             width="100%"
             height="100%"
             animation="wave"
-            style={{ position: "absolute", top: 0, left: 0, zIndex: 2 }}
+
           />
         )}
 
         <Image
+          className={`ims-course-detail-image ${isLoading ? "ims-course-detail-image--loading" : "ims-course-detail-image--loaded"}`}
           src={
             course?.image
               ? `https://rubiksoftwares.com/electricsine-api/public/${course.image}`
@@ -93,14 +94,6 @@ function CourseCard({ course, handleCartItem }) {
           height={300}
           alt={course?.title || "Course Image"}
           priority={true}
-          style={{ 
-            opacity: isLoading ? 0 : 1, 
-            transition: "opacity 0.3s ease-in-out",
-            height: "300px",
-            margin: "0 auto",
-            position: "relative",
-            minWidth: "100%",
-          }}
           onLoad={() => setIsLoading(false)}
         />
       </div>
@@ -129,10 +122,10 @@ function CourseCard({ course, handleCartItem }) {
 
       <div className="card-actions-wrapper">
         <div className="secondary-actions-row">
-          <button onClick={() => handleView(course)} type="button" className="action-btn-split">
+          <a href={`/courses/${course.url}`} type="button" className="action-btn-split">
             <IconEye />
             <span>View</span>
-          </button>
+          </a>
           <button onClick={() => handleTryItOut(course)} type="button" className="action-btn-split">
             <IconPlay />
             <span>Try it</span>

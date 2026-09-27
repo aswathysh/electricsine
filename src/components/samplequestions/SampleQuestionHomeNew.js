@@ -118,12 +118,7 @@ export default function QuizPageNew({ params }) {
             </div>
           </div>
         </div>
-        <div
-          style={{
-            display: q?.image ? "flex" : "none",
-            justifyContent: "center",
-          }}
-        >
+        <div className={`ims-sample-question-image${q?.image ? "" : " ims-sample-question-image--hidden"}`}>
           <Image
             src="/assets/questionImages/samplequstion1.png"
             alt="sample Image"
@@ -188,7 +183,7 @@ export default function QuizPageNew({ params }) {
               <span>{progress}%</span>
             </div>
             <div className="qz-track">
-              <div className="qz-fill" style={{ width: `${progress}%` }} />
+              <div className={`qz-fill ims-progress-width-${Math.max(0, Math.min(100, progress))}`} />
             </div>
           </div>
           <div className="qz-actions">

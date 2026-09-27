@@ -21,10 +21,12 @@ export default function BlogProgress() {
           : 0;
 
       if (progressRef.current) {
-        progressRef.current.style.width = `${Math.min(
-          percentage,
-          100
-        )}%`;
+        const progress = Math.max(0, Math.min(100, Math.round(percentage)));
+        const previousClasses = Array.from(progressRef.current.classList).filter(
+          (name) => name.startsWith("ims-progress-width-"),
+        );
+        progressRef.current.classList.remove(...previousClasses);
+        progressRef.current.classList.add(`ims-progress-width-${progress}`);
       }
     };
 
@@ -46,9 +48,9 @@ export default function BlogProgress() {
 
   return (
     <div
-      className="es-progress"
+      className={["es-progress", "ims-src-app-blog-slug-BlogProgress-js-0001"].filter(Boolean).join(" ")}
       ref={progressRef}
-      style={{ width: "0%" }}
+
     />
   );
 }

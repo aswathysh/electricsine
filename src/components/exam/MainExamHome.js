@@ -39,30 +39,19 @@ if(params.id != null){
     }
     return (
         <Grid container
-            className="main"
-            style={{
-                ...styles.center,
+            className={["main", "ims-src-components-exam-MainExamHome-js-0001"].filter(Boolean).join(" ")}
 
-                ...styles.fullheight, backgroundColor: "rgb(1 41 103)"
-            }}
             rowSpacing={1}
             columnSpacing={{ xs: 1, sm: 2, md: 3, lg: 5 }}
             sx={{ mt: 3 }}>
 
             {examSectionList.map((item, index) =>
                 <Grid item key={index} size={{ xs: 12, md: 3, lg: 3, sm: 12 }}
-                    style={{ ...styles.center }}
-                    className="exam_background "
+
+                    className={["exam_background ", "ims-src-components-exam-MainExamHome-js-0002"].filter(Boolean).join(" ")}
                     onClick={() => handleClick(item)}
                 >
-                    <h1
-                        style={{
-                            ...styles.subheading,
-                            ...styles.aboutheadpadding,
-                            // ...styles.pt3,
-                            // ...styles.aboutHead,
-                        }}
-                    >
+                    <h1 className="ims-exam-card-heading">
                         {`Exam${index + 1}`}
                     </h1>
                 </Grid>

@@ -6,21 +6,17 @@ import { Grid } from "@mui/material";
 import { Directions } from "@mui/icons-material";
 export const Banner = () => {
   return (
-    <div style={styles.mainbg}>
-      <Grid container style={styles.container}>
-        <div style={styles.main}>
-          <div style={styles.overlay}>
-            <div
-              style={{
-                ...styles.content,
-                ...styles.center,
-                ...styles.dirColumn,
-              }}
+    <div className="ims-src-components-sharables-bancopy-js-0001" >
+      <Grid className="ims-src-components-sharables-bancopy-js-0002" container >
+        <div className="ims-src-components-sharables-bancopy-js-0003" >
+          <div className="ims-src-components-sharables-bancopy-js-0004" >
+            <div className="ims-src-components-sharables-bancopy-js-0005"
+
             >
-              <h1 style={styles.heading}>
+              <h1 className="ims-src-components-sharables-bancopy-js-0006" >
                 Electric Sine: Online Examination System
               </h1>
-              <p style={styles.subheading}>
+              <p className="ims-src-components-sharables-bancopy-js-0007" >
                 Effortless exams for a brighter future
               </p>
             </div>
@@ -89,113 +85,108 @@ export const Banner = () => {
           </div>
         </div>
       </Grid> */}
-      <Grid container style={{ ...styles.featureContainer, ...styles.center }}>
-        <div style={{ ...styles.featurebox, ...styles.gridbox }}>
+      <Grid className="ims-src-components-sharables-bancopy-js-0008" container >
+        <div className="ims-src-components-sharables-bancopy-js-0009" >
           <Grid item lg={11} md={11}>
-            <div style={{ ...styles.content, ...styles.dirColumn }}>
-              <h1
-                style={{
-                  ...styles.heading,
-                  ...styles.aboutheadpadding,
-                  ...styles.pt3,
-                  ...styles.aboutHead,
-                }}
+            <div className="ims-src-components-sharables-bancopy-js-0010" >
+              <h1 className="ims-src-components-sharables-bancopy-js-0011"
+
               >
                 Our Features
               </h1>
-              <p style={styles.subheading}>
+              <p className="ims-src-components-sharables-bancopy-js-0012" >
                 Our system is packed with features designed to enhance the exam
                 experience for both educators and students.
               </p>
             </div>
           </Grid>
-          <Grid
+          <Grid className="ims-src-components-sharables-bancopy-js-0013"
             item
             lg={11}
             md={11}
-            style={{ ...styles.featureItembox }}
+
             sx={{ p: "2%" }}
           >
             <Grid container>
-              <Grid
+              <Grid className="ims-src-components-sharables-bancopy-js-0014"
                 item
                 lg={6}
                 md={6}
                 sm={12}
                 xs={12}
-                style={{ ...styles.featureItembox }}
+
               >
                 <Grid item lg={2} md={2}>
                   <div className="gridItems">
-                    <h1 style={{ fontSize: "25px" }}>1</h1>
+                    <h1 className="ims-src-components-sharables-bancopy-js-0015" >1</h1>
                   </div>
                 </Grid>
                 <Grid item lg={8} md={8}>
-                  <h1 style={{ ...styles.blueboxhead }}>Customizable Exams</h1>
-                  <p style={styles.subheading}>
+                  <h1 className="ims-src-components-sharables-bancopy-js-0016" >Customizable Exams</h1>
+                  <p className="ims-src-components-sharables-bancopy-js-0017" >
                     Create exams tailored to your specific needs with a wide
                     array of question types, difficulty levels, and time limits.
                   </p>
                 </Grid>
               </Grid>
-              <Grid
+              <Grid className="ims-src-components-sharables-bancopy-js-0018"
                 item
                 lg={6}
                 md={6}
                 sm={12}
                 xs={12}
-                style={{ ...styles.featureItembox }}
+
               >
                 <Grid item lg={2} md={2}>
                   <div className="gridItems">
-                    <h1 style={{ fontSize: "25px" }}>2</h1>
+                    <h1 className="ims-src-components-sharables-bancopy-js-0019" >2</h1>
                   </div>
                 </Grid>
                 <Grid item lg={8} md={8}>
-                  <h1 style={{ ...styles.blueboxhead }}>Customizable Exams</h1>
-                  <p style={styles.subheading}>
+                  <h1 className="ims-src-components-sharables-bancopy-js-0020" >Customizable Exams</h1>
+                  <p className="ims-src-components-sharables-bancopy-js-0021" >
                     Create exams tailored to your specific needs with a wide
                     array of question types, difficulty levels, and time limits.
                   </p>
                 </Grid>
               </Grid>
-              <Grid
+              <Grid className="ims-src-components-sharables-bancopy-js-0022"
                 item
                 lg={6}
                 md={6}
                 sm={12}
                 xs={12}
-                style={{ ...styles.featureItembox }}
+
               >
                 <Grid item lg={2} md={2}>
                   <div className="gridItems">
-                    <h1 style={{ fontSize: "25px" }}>3</h1>
+                    <h1 className="ims-src-components-sharables-bancopy-js-0023" >3</h1>
                   </div>
                 </Grid>
                 <Grid item lg={8} md={8}>
-                  <h1 style={{ ...styles.blueboxhead }}>Customizable Exams</h1>
-                  <p style={styles.subheading}>
+                  <h1 className="ims-src-components-sharables-bancopy-js-0024" >Customizable Exams</h1>
+                  <p className="ims-src-components-sharables-bancopy-js-0025" >
                     Create exams tailored to your specific needs with a wide
                     array of question types, difficulty levels, and time limits.
                   </p>
                 </Grid>
               </Grid>
-              <Grid
+              <Grid className="ims-src-components-sharables-bancopy-js-0026"
                 item
                 lg={6}
                 md={6}
                 sm={12}
                 xs={12}
-                style={{ ...styles.featureItembox }}
+
               >
                 <Grid item lg={2} md={2}>
                   <div className="gridItems">
-                    <h1 style={{ fontSize: "25px" }}>4</h1>
+                    <h1 className="ims-src-components-sharables-bancopy-js-0027" >4</h1>
                   </div>
                 </Grid>
                 <Grid item lg={8} md={8}>
-                  <h1 style={{ ...styles.blueboxhead }}>Customizable Exams</h1>
-                  <p style={styles.subheading}>
+                  <h1 className="ims-src-components-sharables-bancopy-js-0028" >Customizable Exams</h1>
+                  <p className="ims-src-components-sharables-bancopy-js-0029" >
                     Create exams tailored to your specific needs with a wide
                     array of question types, difficulty levels, and time limits.
                   </p>
@@ -257,102 +248,92 @@ export const Banner = () => {
           </div> */}
         </div>
       </Grid>
-      <Grid
+      <Grid className="ims-src-components-sharables-bancopy-js-0030"
         container
-        style={{ ...styles.aboutcontainer, ...styles.gridbox }}
+
         sx={{ backgroundColor: "blue" }}
       >
         <Grid item lg={8} md={8}>
-          <div style={{ ...styles.content, ...styles.dirColumn }}>
-            <h1
-              style={{
-                ...styles.heading,
-                ...styles.aboutheadpadding,
-                ...styles.pt3,
-                ...styles.aboutHead,
-              }}
+          <div className="ims-src-components-sharables-bancopy-js-0031" >
+            <h1 className="ims-src-components-sharables-bancopy-js-0032"
+
             >
               Secure Exam Delivery
             </h1>
-            <p style={styles.subheading}>
+            <p className="ims-src-components-sharables-bancopy-js-0033" >
               We understand the importance of secure and reliable exam delivery.
               Our platform utilizes advanced security measures to ensure data
               integrity and prevent unauthorized access.
             </p>
           </div>
         </Grid>
-        <Grid
+        <Grid className="ims-src-components-sharables-bancopy-js-0034"
           item
           lg={8}
           md={8}
-          style={{ ...styles.featureItembox, ...styles.spacearound }}
+
         >
-          <Grid
+          <Grid className="ims-src-components-sharables-bancopy-js-0035"
             item
             lg={3}
             md={3}
             sm={12}
             xs={12}
-            style={{ ...styles.featureItembox, ...styles.dirColumn }}
+
           >
-            <h1 style={{ ...styles.blueboxhead }}>Encryption</h1>
-            <p style={styles.subheading}>
+            <h1 className="ims-src-components-sharables-bancopy-js-0036" >Encryption</h1>
+            <p className="ims-src-components-sharables-bancopy-js-0037" >
               All exam data is encrypted during transmission and storage,
               protecting sensitive information from unauthorized access.
             </p>
           </Grid>
-          <Grid
+          <Grid className="ims-src-components-sharables-bancopy-js-0038"
             item
             lg={3}
             md={3}
             sm={12}
             xs={12}
-            style={{ ...styles.featureItembox, ...styles.dirColumn }}
+
           >
-            <h1 style={{ ...styles.blueboxhead }}>Redundancy</h1>
-            <p style={styles.subheading}>
+            <h1 className="ims-src-components-sharables-bancopy-js-0039" >Redundancy</h1>
+            <p className="ims-src-components-sharables-bancopy-js-0040" >
               Our servers are designed with redundancy, ensuring uninterrupted
               service even in case of hardware failures.
             </p>
           </Grid>
-          <Grid
+          <Grid className="ims-src-components-sharables-bancopy-js-0041"
             item
             lg={3}
             md={3}
             sm={12}
             xs={12}
-            style={{ ...styles.featureItembox, ...styles.dirColumn }}
+
           >
-            <h1 style={{ ...styles.blueboxhead }}>Authentication</h1>
-            <p style={styles.subheading}>
+            <h1 className="ims-src-components-sharables-bancopy-js-0042" >Authentication</h1>
+            <p className="ims-src-components-sharables-bancopy-js-0043" >
               We use multi-factor authentication to verify user identities,
               ensuring only authorized individuals can access the platform.
             </p>
           </Grid>
         </Grid>
       </Grid>
-      <Grid container style={{ ...styles.featureContainer, ...styles.center }}>
-        <div style={{ ...styles.featurebox, ...styles.gridbox }}>
+      <Grid className="ims-src-components-sharables-bancopy-js-0044" container >
+        <div className="ims-src-components-sharables-bancopy-js-0045" >
           <Grid item lg={11} md={11}>
-            <div style={{ ...styles.content, ...styles.dirColumn }}>
-              <h1
-                style={{
-                  ...styles.heading,
-                  ...styles.aboutheadpadding,
-                  ...styles.pt3,
-                  ...styles.aboutHead,
-                }}
+            <div className="ims-src-components-sharables-bancopy-js-0046" >
+              <h1 className="ims-src-components-sharables-bancopy-js-0047"
+
               >
                 Grading and Reporting
               </h1>
-              <p style={styles.subheading}>
+              <p className="ims-src-components-sharables-bancopy-js-0048" >
                 Our system automates grading and provides comprehensive
                 reporting features, saving you time and effort while offering
                 valuable insights into student progress.
               </p>
               <ul className="triangle-list">
       
-        <li style={styles.subheading}>Automated Grading</li>
+        <li className="ims-src-components-sharables-bancopy-js-0049" >Automated Grading</li>
         <li ></li>
 
     </ul>

@@ -147,11 +147,11 @@ function ArticleCard({ article, onClick }) {
       <div className="article-thumb">
         {article.image ? (
           <Link href={`/blog/${article.slug}`} className="article-link">
-          <Image
+          <Image className="ims-src-app-blog-BlogClient-js-0001"
             src={article.image}
             alt={"image"}
             fill
-            style={{ objectFit: "cover" }}
+
             loading="lazy"
           />
           </Link>
@@ -165,7 +165,7 @@ function ArticleCard({ article, onClick }) {
           <span className="article-time">{article.readTime}</span>
         </div>
         <Link href={`/blog/${article.slug}`} className="article-link">
-        <h3 className="article-title" style={{ textDecoration: "none" }}>
+        <h3 className={["article-title", "ims-src-app-blog-BlogClient-js-0002"].filter(Boolean).join(" ")} >
           {article.title}
         </h3>
         </Link>

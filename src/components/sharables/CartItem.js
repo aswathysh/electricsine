@@ -28,8 +28,8 @@ export const CartItem = ({ title, image, description, price, index, removeItem }
                 </Grid>
                 <Grid item
                     size={{ xs: 0, md: 2.6, lg: 2.6, sm: 0 }}
-                    className="hide"
-                    style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end' }}>
+                    className={["hide", "ims-src-components-sharables-CartItem-js-0001"].filter(Boolean).join(" ")}
+                    >
                     <Button size="small"
                         // sx={{ width: "200px !important" }}
                         variant="text"
@@ -49,8 +49,8 @@ export const CartItem = ({ title, image, description, price, index, removeItem }
                         {price}
                     </Typography>
                 </Grid>
-                <Grid item size={{ xs: 12, md: 12, lg: 12, sm: 12 }} className="hide_above_mob"
-                    style={{ ...styles.contentleft, ...styles.padding,display:'flex',justifyContent:'flex-end' }}>
+                <Grid item size={{ xs: 12, md: 12, lg: 12, sm: 12 }} className={["hide_above_mob", "ims-src-components-sharables-CartItem-js-0002"].filter(Boolean).join(" ")}
+                    >
                     <Button size="small"
                         // sx={{ width: "200px !important" }}
                         variant="text"

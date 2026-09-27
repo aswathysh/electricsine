@@ -24,7 +24,7 @@ export const LogoutModal = ({ openLogOutModal, onLogoutModalClose }) => {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box style={TagModalstyle.modal}>
+        <Box className="ims-src-components-sharables-LogoutModal-js-0001" >
           <IconButton>
             <LogoutOutlinedIcon
               sx={{ fontSize: "32px", mr: "5px", color: "#00007f" }}
@@ -34,7 +34,7 @@ export const LogoutModal = ({ openLogOutModal, onLogoutModalClose }) => {
           <Typography className="modalBody modallight" sx={{ mt: 2 }}>
             Are you sure you want to Sign Out?
           </Typography>
-          <div style={{ display: "flex" }}>
+          <div className="ims-src-components-sharables-LogoutModal-js-0002" >
             <StyledGreyButton
               sx={{ mr: 2, mt: 3 }}
               variant="contained"

@@ -17,7 +17,7 @@ export default function Home() {
   const [totalQuestions, setTotalQuestions] = useState(200); // Example total
  
   return (
-    <div style={{ ...styles.mainheight }}>
+    <div className="ims-src-app-practice-page-js-0001" >
       <PracticeHeader />
       <Grid container spacing={2} className="main_padding" sx={{display:'flex',justifyContent:'center'}}>
       {/* <Grid item size={{ xs: 12, md: 12, lg: 12, sm: 12 }} className="hide_above_mob">

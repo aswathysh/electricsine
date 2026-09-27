@@ -15,9 +15,9 @@ export const DemoPracticeSection = ({currentQuestion,currentIndex,handleAnswerCh
         <div>
             <Grid
                 item
-                className="fullwidth"
+                className={["fullwidth", "ims-src-components-demoPractice-DemoPracticeSection-js-0001"].filter(Boolean).join(" ")}
                 size={{ xs: 12, md: 12, lg: 12, sm: 12 }}
-                style={{ ...styles.questionbox }}
+
             >
                 <Grid contaniner className="center fullwidth" >
                     <Grid item size={{ xs: 12, md: 6, lg: 6, sm: 12 }} sx={{ mb: 2, mt: 2 }}
@@ -52,7 +52,7 @@ export const DemoPracticeSection = ({currentQuestion,currentIndex,handleAnswerCh
                         value={selectedAnswer}
                         onChange={handleAnswerChange}
                     >
-                        <Grid container style={{ display: 'flex', flexDirection: 'row !important', justifyContent: 'space-around' }}>
+                        <Grid className="ims-src-components-demoPractice-DemoPracticeSection-js-0002" container >
                             <Grid item size={{ xs: 12, md: 5.5, lg: 5.5, sm: 12 }} className="option_box1">
 
                                 <FormControlLabel value="a"
@@ -120,10 +120,10 @@ export const DemoPracticeSection = ({currentQuestion,currentIndex,handleAnswerCh
                             </Grid>
                         </Grid>
                     </RadioGroup>
-                    <Grid
+                    <Grid className="ims-src-components-demoPractice-DemoPracticeSection-js-0003"
                         item
                         size={{ xs: 12, md: 12, lg: 12, sm: 12 }}
-                        style={{ ...styles.center }}
+
                         sx={{ mt: 2, mb: 4 }}>
                         {/* <Button variant="contained" sx={{ backgroundColor: "#21507c" }}
                         onClick={handlePrevQuestion}>

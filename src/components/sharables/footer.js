@@ -8,20 +8,16 @@ export const Footer = () => {
     return (
         <Grid >
             <Grid item size={{ xs: 10, md: 8, lg: 8, sm: 10 }}
-                style={{ display: 'flex',justifyContent:'center' }}
+
                 // sx={{ backgroundColor: '#00277e' }}
-                className="center">
+                className={["center", "ims-src-components-sharables-footer-js-0001"].filter(Boolean).join(" ")}>
                 <div className="mob-show column">
                     <div className="row pb">
                         <div
                             variant="text"
                             onClick={() => router.push('/privacypolicy')}
-                            className="footer-link mob-show"
-                            style={{
-                                textTransform: "none",
-                                color: "#ffffff !important",
-                                fontWeight: '500px !important',
-                            }}
+                            className={["footer-link mob-show", "ims-src-components-sharables-footer-js-0002"].filter(Boolean).join(" ")}
+
                         >
                             <Typography className="apx_watermark" sx={{ color: 'white' }}>
                                 Privacy Policy
@@ -31,12 +27,8 @@ export const Footer = () => {
                         <div
                             variant="text"
                             onClick={() => router.push('/terms-and-conditions')}
-                            className="footer-link mob-show"
-                            style={{
-                                textTransform: "none",
-                                color: "#ffffff !important",
-                                fontWeight: '500px !important',
-                            }}
+                            className={["footer-link mob-show", "ims-src-components-sharables-footer-js-0003"].filter(Boolean).join(" ")}
+
                         >
                             <Typography className="apx_watermark" sx={{ color: 'white' }}>
                                 Terms and Conditions
@@ -49,12 +41,8 @@ export const Footer = () => {
                         <div
                             variant="text"
                             onClick={() => router.push('/aboutus')}
-                            className="footer-link mob-show"
-                            style={{
-                                textTransform: "none",
-                                color: "#ffffff !important",
-                                fontWeight: '500px !important',
-                            }}
+                            className={["footer-link mob-show", "ims-src-components-sharables-footer-js-0004"].filter(Boolean).join(" ")}
+
                         >
                             <Typography className="apx_watermark" sx={{ color: 'white' }}>
                                 About Us
@@ -63,12 +51,8 @@ export const Footer = () => {
                         <div
                             variant="text"
                             onClick={() => router.push('/contactus')}
-                            className="footer-link mob-show"
-                            style={{
-                                textTransform: "none",
-                                color: "#ffffff !important",
-                                fontWeight: '500px !important',
-                            }}
+                            className={["footer-link mob-show", "ims-src-components-sharables-footer-js-0005"].filter(Boolean).join(" ")}
+
                         >
                             <Typography className="apx_watermark" sx={{ color: 'white' }}>
                                 Contact
@@ -92,13 +76,8 @@ export const Footer = () => {
                 <div
                     variant="text"
                     onClick={() => router.push('/privacypolicy')}
-                    className="footer-link mob-hide"
-                    style={{
-                        textTransform: "none",
-                        color: "#ffffff !important",
-                        fontWeight: '500px !important',
-                        cursor: 'pointer'
-                    }}
+                    className={["footer-link mob-hide", "ims-src-components-sharables-footer-js-0006"].filter(Boolean).join(" ")}
+
                 >
                     <Typography className="apx_watermark" sx={{ color: 'white' }}>
                         Privacy Policy
@@ -108,13 +87,8 @@ export const Footer = () => {
                 <div
                     variant="text"
                     onClick={() => router.push('/terms-and-conditions')}
-                    className="footer-link mob-hide"
-                    style={{
-                        textTransform: "none",
-                        color: "#ffffff !important",
-                        fontWeight: '500px !important',
-                        cursor: 'pointer'
-                    }}
+                    className={["footer-link mob-hide", "ims-src-components-sharables-footer-js-0007"].filter(Boolean).join(" ")}
+
                 >
                     <Typography className="apx_watermark" sx={{ color: 'white' }}>
                         Terms and Conditions
@@ -124,13 +98,8 @@ export const Footer = () => {
                 <div
                     variant="text"
                     onClick={() => router.push('/aboutus')}
-                    className="footer-link mob-hide"
-                    style={{
-                        textTransform: "none",
-                        color: "#ffffff !important",
-                        fontWeight: '500px !important',
-                        cursor: 'pointer'
-                    }}
+                    className={["footer-link mob-hide", "ims-src-components-sharables-footer-js-0008"].filter(Boolean).join(" ")}
+
                 >
                     <Typography className="apx_watermark" sx={{ color: 'white' }}>
                         About Us
@@ -139,13 +108,8 @@ export const Footer = () => {
                 <div
                     variant="text"
                     onClick={() => router.push('/contactus')}
-                    className="footer-link mob-hide"
-                    style={{
-                        textTransform: "none",
-                        color: "#ffffff !important",
-                        fontWeight: '500px !important',
-                        cursor: 'pointer'
-                    }}
+                    className={["footer-link mob-hide", "ims-src-components-sharables-footer-js-0009"].filter(Boolean).join(" ")}
+
                 >
                     <Typography className="apx_watermark" sx={{ color: 'white' }}>
                         Contact

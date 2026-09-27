@@ -10,11 +10,11 @@ import StyledGreyButton from '@/styles/ButtonStyles';
 export const DemoPracticeMain = () => {
     return (
         <div>
-            <Grid
+            <Grid className="ims-src-components-demoPractice-DemoPracticeMain-js-0001"
                 item
                 size={{ xs: 12, md: 12, lg: 12, sm: 12 }}
 
-                style={{ ...styles.questionbox }}
+
             >
                 <Grid contaniner>
                     <Grid item size={{ xs: 12, md: 6, lg: 6, sm: 12 }}>
@@ -46,7 +46,7 @@ export const DemoPracticeMain = () => {
                         defaultValue="female"
                         name="radio-buttons-group"
                     >
-                        <Grid container style={{ display: 'flex', justifyContent: 'space-around' }}>
+                        <Grid className="ims-src-components-demoPractice-DemoPracticeMain-js-0002" container >
                             <Grid item size={{ xs: 6, md: 6, lg: 6, sm: 6 }} className="option_box1">
                                 <div className="option_background">
                                     <div className="option_border"></div>
@@ -130,10 +130,10 @@ export const DemoPracticeMain = () => {
                             </Grid>
                         </Grid>
                     </RadioGroup>
-                    <Grid
+                    <Grid className="ims-src-components-demoPractice-DemoPracticeMain-js-0003"
                         item
                         size={{ xs: 12, md: 12, lg: 12, sm: 12 }}
-                        style={{ ...styles.center }}
+
                         sx={{ mt: 2, mb: 4 }}>
                         <Button variant="contained" sx={{ backgroundColor: "#21507c" }}>
                              Next

@@ -23,14 +23,14 @@ export default function CartItemCard({ item, index, removeItem }) {
       <div className="cart-main">
         <div className="cart-thumb">
           {item?.image ? (
-            <Image
+            <Image className="ims-src-components-sharables-CartItemUpdared-js-0001"
               src={`https://rubiksoftwares.com/electricsine-api/public/${item?.image}`}
               alt={
                  "Img"
               }
               itemProp="image"
               fill
-              style={{ objectFit: "cover" }}
+
               sizes="96px"
             />
           ) : (
@@ -205,12 +205,12 @@ function TrashIcon() {
 
 function IconEye() {
   return (
-    <svg
+    <svg className="ims-src-components-sharables-CartItemUpdared-js-0002"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
       strokeWidth="2"
-      style={{ width: "18px", height: "18px" }}
+
       aria-hidden="true"
     >
       <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z" />

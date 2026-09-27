@@ -31,7 +31,7 @@ import { fetchExamSectionsParam, fetchExamSectionsParams } from "@/services/Prac
 export default function Home({ params }) {
  
   return (
-    <div style={{ ...styles.mainheight }}>
+    <div className="ims-src-app-user-exam-attend-id-page-js-0001" >
       <PracticeHeader />
       {/* <Grid container spacing={2} className="main_padding">
         <Grid item size={{ xs: 12, md: 12, lg: 12, sm: 12 }} className="hide_above_mob">

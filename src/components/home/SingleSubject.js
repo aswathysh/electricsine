@@ -7,10 +7,10 @@ export const SingleSubject =()=>{
         <Grid container >
             <Grid  item lg={6} md={6} sm={12} sx={12}>
                 <Grid item lg={4} md={4} sm={12} sx={12}>
-                <Image
+                <Image className="ims-src-components-home-SingleSubject-js-0001"
                 src="/assets/images/sub1.jpg"
                 alt="Subject 1"
-                style={styles.subjectImg}
+
                 />  
                    <Typography>
 
@@ -23,10 +23,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec convallis mi veli
             </Grid>
             <Grid item lg={6} md={6} sm={12} sx={12}>
             <Grid item lg={4} md={4} sm={12} sx={12}>
-                <Image
+                <Image className="ims-src-components-home-SingleSubject-js-0002"
                 src="/assets/images/sub2.jpg"
                 alt="Subject 1"
-                style={styles.subjectImg}
+
                 />  
                    <Typography>
 

@@ -5,6 +5,7 @@ import Providers from "./provider";
 import { CartProvider } from "@/context/CartContext";
 import ToastProvider from "./ToastContainer";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import "./inline-style-migration.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -66,7 +67,7 @@ export default function RootLayout({ children }) {
         </Script>
       </head>
 
-      <body className={inter.className} style={styles.nomargin}>
+      <body className={[inter.className, "ims-src-app-layout-js-0001"].filter(Boolean).join(" ")} >
         <Providers>
           <CartProvider>
             <ToastProvider />

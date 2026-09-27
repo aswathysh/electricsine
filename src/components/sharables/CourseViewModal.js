@@ -12,7 +12,7 @@ export const CourseViewModal = ({ showViewModal, closeView, item }) => {
             aria-labelledby="modal-modal-title"
             aria-describedby="modal-modal-description"
         >
-            <Box style={{}} sx={{ ...styles.modal }}>
+            <Box sx={{ ...styles.modal }}>
                 <Grid container sx={{ display: 'flex', justifyContent: 'flex-end',                 
                 width:{ lg:'100%',sm:'100%',xs:'100%',md:'100%' }}}>
                     <Grid item size={{ xs: 12, md: 12, lg: 12, sm: 12 }} 
@@ -24,12 +24,9 @@ export const CourseViewModal = ({ showViewModal, closeView, item }) => {
                         </IconButton>
                     </Grid>
                 </Grid>
-                <Card sx={{ height: { lg:'300px',sm:'400px',xs:'400px',md:'300px' },
+                <Card className="ims-src-components-sharables-CourseViewModal-js-0001" sx={{ height: { lg:'300px',sm:'400px',xs:'400px',md:'300px' },
                  width:{  lg:'100%',sm:'100%',xs:'100%',md:'100%' }}}
-                    style={{
-                        alignContent: "center", display: 'flex', flexDirection: 'column',
-                        justifyContent: 'center'
-                    }}>
+                    >
 
                     <CardMedia
                         className='product-new-label'
@@ -37,8 +34,8 @@ export const CourseViewModal = ({ showViewModal, closeView, item }) => {
                         image={item.image ? `https://rubiksoftwares.com/electricsine-api/public/${item?.image}` : '/assets/images/logincoverpic.jpg'}
                         title={item?.title}
                     />
-                    <CardContent style={{ alignContent: "center", display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                        <Grid container style={{ alignContent: "center", display: 'flex', justifyContent: 'center' }}>
+                    <CardContent className="ims-src-components-sharables-CourseViewModal-js-0002" >
+                        <Grid className="ims-src-components-sharables-CourseViewModal-js-0003" container >
                             <Grid item size={{ xs: 12, md: 12, lg: 12, sm: 12 }}>
                                 <Typography gutterBottom variant="h5" component="div" className='subject_card_title'>
                                     {item?.title}
@@ -50,15 +47,15 @@ export const CourseViewModal = ({ showViewModal, closeView, item }) => {
                                 </Typography>
                             </Grid>
                             <Grid container className="fullwidth " sx={{mt:2}}>
-                                <Grid item
+                                <Grid className="ims-src-components-sharables-CourseViewModal-js-0004" item
                                     size={{ xs: 6, md: 6, lg: 6, sm: 6 }}
-                                    style={{ display: 'flex', justifyContent: 'left' }}>
+                                    >
                                     <Typography variant="body2" sx={{ color: "#000000" }}>
                                         {`Validity:${item?.validity} days`}
                                     </Typography>
                                 </Grid>
-                                <Grid item size={{ xs: 6, md: 6, lg: 6, sm: 6 }}
-                                    style={{ display: 'flex', justifyContent: 'right' }}>
+                                <Grid className="ims-src-components-sharables-CourseViewModal-js-0005" item size={{ xs: 6, md: 6, lg: 6, sm: 6 }}
+                                    >
                                     <Typography variant="body2" sx={{ marginLeft: 1, color: "#000000" }}>
                                         {`Price:${item?.price}₹`}
                                     </Typography>

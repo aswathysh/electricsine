@@ -17,7 +17,7 @@ export const Profile = () => {
         onSuccess: (data) => {
             toast.success('Password Reseted Sucessfully', {
                 autoClose: 5000,
-                style: { fontSize: '16px', fontWeight: 600 }
+                className: "ims-toast-text"
             });
             setTimeout(() => {
                 window.location.href = '/auth/login';
@@ -27,7 +27,7 @@ export const Profile = () => {
             console.error("Error  while loggin:", error.response?.data?.error);
             toast.error(error.response?.data?.error || 'Something went wrong', {
                 autoClose: 5000,
-                style: { fontSize: '16px', fontWeight: 600 }
+                className: "ims-toast-text"
             });
         },
     });
@@ -69,7 +69,7 @@ export const Profile = () => {
     let content;
     if (isLoading) {
         content = (
-            <div style={{ display: 'flex', justifyContent: 'center', marginTop: '20%' }}>
+            <div className="ims-src-components-user-Profile-js-0001" >
                 <CircularProgress />
             </div>
         );
@@ -108,8 +108,8 @@ export const Profile = () => {
     return (
         <Grid
             container
-            style={{ justifyContent: 'center', backgroundColor: '#012967 !important', minHeight: '100vh' }}
-            className="light_bg"
+
+            className={["light_bg", "ims-src-components-user-Profile-js-0002"].filter(Boolean).join(" ")}
         >
             <Grid
                 item

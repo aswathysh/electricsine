@@ -1,5 +1,8 @@
 export const metadata = {
-  title: "Electrical Engineering Courses | Electric Sine",
+  title: {
+    default: "Electrical Engineering Courses",
+    template: "%s | Electric Sine",
+  },
   description:
     "Explore Electrical Engineering, Electronics, Instrumentation and Automation online courses with practice questions, mock tests and industry-focused learning.",
   keywords: [

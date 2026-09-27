@@ -11,8 +11,8 @@ export const QuestionButtonFooter = ({handleSkip,handleFinished}) => {
       spacing={2}
       sx={{ pt: 2,pl:3,pr:3,pb:2 }}
     >
-      <Grid item 
-      size={{ xs: 12, md: 8, lg: 8, sm: 12 }} style={{...styles.left}}>
+      <Grid className="ims-src-components-exam-QuestionButtonFooter-js-0001" item
+      size={{ xs: 12, md: 8, lg: 8, sm: 12 }} >
         <StyledGreyButton
           className="full_width"
           variant="contained"
@@ -34,7 +34,7 @@ export const QuestionButtonFooter = ({handleSkip,handleFinished}) => {
       {/* <Grid item lg={6} md={6} sm={6} xs={6} style={{...styles.left}}>
         
       </Grid> */}
-      <Grid item size={{ xs: 12, md: 4, lg: 4, sm: 12 }} style={{...styles.right}}>
+      <Grid className="ims-src-components-exam-QuestionButtonFooter-js-0002" item size={{ xs: 12, md: 4, lg: 4, sm: 12 }} >
         <StyledGreyButton
           // className="full_width"
           variant="contained"

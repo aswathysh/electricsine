@@ -270,60 +270,45 @@ export default function Home() {
     setOpenSignupMpdal(false);
   };
   return (
-    <div
-      style={{
-        backgroundColor: "white !important",
-        height: "100vh !important",
-      }}
+    <div className="ims-src-app-user-cart-page-js-0001"
+
     >
       <Header />
       <Grid
         container
-        style={{
-          justifyContent: "center",
-          backgroundColor: "white !important",
-        }}
-        className="light_bg"
+
+        className={["light_bg", "ims-src-app-user-cart-page-js-0002"].filter(Boolean).join(" ")}
       >
-        <Grid
+        <Grid className="ims-src-app-user-cart-page-js-0003"
           item
           size={{ xs: 12, md: 12, lg: 12, sm: 12 }}
-          style={{ display: "flex", justifyContent: "center" }}
+
         >
-          <div style={{ ...styles.fullwidth }}>
-            <div style={{ ...styles.center, ...styles.fullwidth }}>
-              <h1
-                style={{
-                  ...styles.mainsubhead,
-                  ...styles.aboutheadpadding,
-                }}
-              >
+          <div className="ims-src-app-user-cart-page-js-0004" >
+            <div className="ims-src-app-user-cart-page-js-0005" >
+              <h1 className="ims-page-heading-cart">
                 Shopping Cart
               </h1>
             </div>
-            <Grid container style={{ ...styles.center, ...styles.fullwidth }}>
+            <Grid className="ims-src-app-user-cart-page-js-0006" container >
               {/* Mobile Total Price Display */}
               <Grid
                 item
                 size={{ xs: 12, md: 12, lg: 12, sm: 12 }}
-                className="hide_above_mob"
-                style={{ ...styles.contentleft, ...styles.padding }}
+                className={["hide_above_mob", "ims-src-app-user-cart-page-js-0007"].filter(Boolean).join(" ")}
+
               >
-                <p style={styles.subheading}>Total: {totalPrice}₹</p>
+                <p className="ims-src-app-user-cart-page-js-0008" >Total: {totalPrice}₹</p>
               </Grid>
 
               {/* Left Column: Cart Items */}
-              <Grid
+              <Grid className="ims-src-app-user-cart-page-js-0009"
                 item
                 size={{ xs: 12, md: 8, lg: 8, sm: 12 }}
-                style={{
-                  ...styles.contentleft,
-                  ...styles.padding,
-                  ...styles.column,
-                }}
+
               >
                 {/* Dynamically counts courses */}
-                <p style={styles.subheading}>
+                <p className="ims-src-app-user-cart-page-js-0010" >
                   {cartItems?.length || 0}{" "}
                   {cartItems?.length === 1 ? "Course" : "Courses"} in Cart
                 </p>
@@ -352,14 +337,10 @@ export default function Home() {
               <Grid
                 item
                 size={{ xs: 0, md: 4, lg: 4, sm: 0 }}
-                className="hide"
-                style={{
-                  ...styles.contentleft,
-                  ...styles.padding,
-                  ...styles.column,
-                }}
+                className={["hide", "ims-src-app-user-cart-page-js-0011"].filter(Boolean).join(" ")}
+
               >
-                <p style={styles.subheading}>Total</p>
+                <p className="ims-src-app-user-cart-page-js-0012" >Total</p>
                 <div className="cart-price-col">
                   <div>
                     <span className="cart-discount-dec">

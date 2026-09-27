@@ -7,7 +7,7 @@ import { Header } from "@/components/sharables/Header";
 import "../styles/authStyles.css";
 export default function Home() {
   return (
-    <div style={{ ...styles.mainbg }}>
+    <div className="ims-src-app-page-js-0001" >
       <Header />
 
       <BannerCheck />
