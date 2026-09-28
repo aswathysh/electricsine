@@ -546,7 +546,7 @@ export const BannerCheck = ({ subjects = [], articles = [] }) => {
         <div className="cta-btns">
             <Link
               href="/blog"
-              className="cta-btn-primary"
+              className="cta-btn-primary m-auto p-10 blog-link-btn"
               aria-label="View all engineering courses"
             >
               View All Posts <span aria-hidden="true">↗</span>
