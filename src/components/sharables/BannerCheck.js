@@ -543,6 +543,15 @@ export const BannerCheck = ({ subjects = [], articles = [] }) => {
         ) : (
           <p className="home-content-empty">New engineering articles will appear here.</p>
         )}
+        <div className="cta-btns">
+            <Link
+              href="/blog"
+              className="cta-btn-primary"
+              aria-label="View all engineering courses"
+            >
+              View All Posts <span aria-hidden="true">↗</span>
+            </Link>
+          </div>
       </section>
 
       <section className="cta-outer" aria-labelledby="cta-heading">
@@ -589,15 +598,17 @@ export const BannerCheck = ({ subjects = [], articles = [] }) => {
 
             <div className="ft-socials">
               {[
-                { icon: "𝕏", label: "Twitter" },
-                { icon: "f", label: "Facebook" },
-                { icon: "in", label: "Instagram" },
-                { icon: "S", label: "Skype" },
-                { icon: "in", label: "LinkedIn" },
+              //  { icon: "𝕏", label: "Twitter" , link: "#" },
+                { icon: "f", label: "Facebook" , link: "https://www.facebook.com/Electricsine" },
+             //   { icon: "in", label: "Instagram" , link: "#" },
+                { icon: "P", label: "Pinterest" , link: "https://in.pinterest.com/electricsine2024/" },
+                { icon: "in", label: "LinkedIn" , link: "https://www.linkedin.com/company/143903964/" },
               ].map((s, i) => (
                 <a
                   key={i}
-                  href="#"
+                  href={s.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="ft-soc-btn"
                   aria-label={`Follow us on ${s.label}`}
                 >
