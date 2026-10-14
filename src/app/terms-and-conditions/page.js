@@ -111,7 +111,7 @@ export default function Home() {
                                     5.	Shipping and Delivery:
                                 </p>
                                 <p className="ims-src-app-terms-and-conditions-page-js-0029" >
-                                    We do not sell any item through shipping. The product are simulations and online product. We do not sell any item through shipping. As the product is for educational and learning purposes, we deliver the product through our Website (https://www.electricsine.com) and access by streaming against subscription and purchase. So not applicable.                                </p>
+                                    We do not sell any item through shipping. The product are simulations and online product. We do not sell any item through shipping. As the product is for educational and learning purposes, we deliver the product through our Website (https://electricsine.com) and access by streaming against subscription and purchase. So not applicable.                                </p>
 
                             </Grid>
 

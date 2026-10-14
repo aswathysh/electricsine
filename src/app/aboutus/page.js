@@ -18,14 +18,14 @@ export const metadata = {
     "Online Learning",
   ],
   alternates: {
-    canonical: "https://www.electricsine.com/aboutus",
+    canonical: "https://electricsine.com/aboutus",
   },
   openGraph: {
     title:
       "ElectricSine | Electrical & Electronics Engineering Learning Platform",
     description:
       "Learn Electrical, Electronics, Communication and Instrumentation Engineering through MCQs, mock tests, solved papers and interview preparation with ElectricSine.",
-    url: "https://www.electricsine.com/aboutus",
+    url: "https://electricsine.com/aboutus",
     images: [
       "/images/electricsine-electrical-engineering-learning-platform.webp",
     ],

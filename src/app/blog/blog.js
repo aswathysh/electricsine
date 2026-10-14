@@ -87,7 +87,7 @@ export default async function BlogPage() {
             "@context": "https://schema.org",
             "@type": "Blog",
             name: "Electric Sine Blog",
-            url: "https://www.electricsine.com/blog",
+            url: "https://electricsine.com/blog",
           }),
         }}
       />

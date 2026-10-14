@@ -25,7 +25,7 @@ export const metadata = {
     title: "Electrical Engineering Courses & Exam Preparation | Electric Sine",
     description:
       "Explore engineering courses, practice questions and mock tests for Electrical, Electronics and Instrumentation exams.",
-    url: "https://www.electricsine.com/",
+    url: "https://electricsine.com/",
     siteName: "Electric Sine",
     type: "website",
     images: [{ url: "/assets/images/electicsignbg.png", alt: "Electric Sine engineering exam preparation" }],
@@ -63,12 +63,12 @@ export default async function Home() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: "Electric Sine",
-    url: "https://www.electricsine.com/",
+    url: "https://electricsine.com/",
     description: metadata.description,
     publisher: {
       "@type": "Organization",
       name: "Electric Sine",
-      url: "https://www.electricsine.com/",
+      url: "https://electricsine.com/",
     },
   };
 

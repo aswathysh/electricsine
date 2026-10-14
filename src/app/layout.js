@@ -10,7 +10,7 @@ import "./inline-style-migration.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  metadataBase: new URL("https://www.electricsine.com"),
+  metadataBase: new URL("https://electricsine.com"),
 
   title: {
     default: "Electric Sine",

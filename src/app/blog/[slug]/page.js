@@ -167,7 +167,7 @@ export async function generateMetadata({ params }) {
 
     const canonicalUrl =
         article.canonical_url ||
-        `https://www.electricsine.com/blog/${article.slug}`;
+        `https://electricsine.com/blog/${article.slug}`;
 
     const ogTitle =
         article.og_title ||

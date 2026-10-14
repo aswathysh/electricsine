@@ -5,7 +5,7 @@ import CourseDetailClient from "./CourseDetailClient";
 const API_URL =
   process.env.NEXT_PUBLIC_API_URL ||
   "https://rubiksoftwares.com/electricsine-api/public/api";
-const SITE_URL = "https://www.electricsine.com";
+const SITE_URL = "https://electricsine.com";
 const COURSE_IMAGE_BASE = "https://rubiksoftwares.com/electricsine-api/public/";
 export const revalidate = 3600;
 

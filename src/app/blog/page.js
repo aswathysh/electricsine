@@ -15,13 +15,13 @@ export const metadata = {
 		"Electric Sine",
 	],
 	alternates: {
-		canonical: "https://www.electricsine.com/blog",
+		canonical: "https://electricsine.com/blog",
 	},
 	openGraph: {
 		title: "Electrical Engineering Blog | Electric Sine",
 		description:
 			"Engineering articles, exam-preparation guides and study resources for electrical and electronics learners.",
-		url: "https://www.electricsine.com/blog",
+		url: "https://electricsine.com/blog",
 		siteName: "Electric Sine",
 		type: "website",
 	},

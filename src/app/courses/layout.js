@@ -15,13 +15,13 @@ export const metadata = {
     "Practice Questions",
   ],
   alternates: {
-    canonical: "https://www.electricsine.com/courses",
+    canonical: "https://electricsine.com/courses",
   },
   openGraph: {
     title: "Electrical Engineering Courses | Electric Sine",
     description:
       "Learn Electrical Engineering, Electronics and Instrumentation through online courses.",
-    url: "https://www.electricsine.com/courses",
+    url: "https://electricsine.com/courses",
     siteName: "Electric Sine",
     type: "website",
   },

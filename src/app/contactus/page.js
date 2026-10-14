@@ -16,7 +16,7 @@ export default function Home() {
           name="description"
           content="Get in touch with Electricsine, Punnala, Kollam, Kerala. Call us, email us, or visit our address for enquiries and support."
         />
-        <link rel="canonical" href="https://www.electricsine.com/contactus" />
+        <link rel="canonical" href="https://electricsine.com/contactus" />
         <meta property="og:title" content="Contact Us | Electricsine" />
         <meta
           property="og:description"
@@ -25,7 +25,7 @@ export default function Home() {
         <meta property="og:type" content="website" />
         <meta
           property="og:url"
-          content="https://www.electricsine.com/contactus"
+          content="https://electricsine.com/contactus"
         />
         <script
           type="application/ld+json"
