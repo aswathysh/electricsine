@@ -87,10 +87,10 @@
 }
 
 .qz-card {
-  background: #fff;
+  background: #05349c;
   border: 0.5px solid #dbeafe;
   border-radius: 14px;
-  border-left: 4px solid #3b82f6;
+  border-left: 4px solid #35507c;
   padding: 1.25rem 1.5rem;
 }
 .qz-card-inner {
@@ -117,7 +117,7 @@
 .qz-question {
   font-size: var(--font-xll);
   font-weight: 500;
-  color: #1e3a8a;
+  color: #fff;
   line-height: 1.65;
   margin-bottom: 12px;
 }
@@ -159,7 +159,7 @@
   gap: 12px;
 }
 .opt {
-  background: #fff;
+  background: #05349c;
   border: 1.5px solid #e2e8f0;
   border-radius: 14px;
   padding: 16px 18px;
@@ -170,16 +170,20 @@
   transition: all 0.18s;
 }
 .opt:hover {
+  color:#05349c!important;
   border-color: #3b82f6;
   background: #eff6ff;
 }
+.opt-text-home:hover {
+  color:#05349c!important;
+}
 .opt-correct {
   border-color: #22c55e !important;
-  background: #f0fdf4 !important;
+  background: #1e9242 !important;
 }
 .opt-wrong {
   border-color: #ef4444 !important;
-  background: #fef2f2 !important;
+  background: #ef4444 !important;
 }
 .opt-key {
   width: 34px;
@@ -213,16 +217,16 @@
 }
 .opt-text-home {
   font-size: var(--font-xl);
-  color: #334155;
+  color: #fff;
   line-height: 1.5;
   flex: 1;
 }
 .opt-correct .opt-text-home {
-  color: #15803d;
+  color: #fff;
   font-weight: 500;
 }
 .opt-wrong .opt-text-home {
-  color: #b91c1c;
+  color: #fff;
 }
 .opt-icon {
   margin-left: auto;
@@ -255,7 +259,7 @@
 }
 
 .qz-stats {
-  background: #fff;
+  background: #222546;
   border: 0.5px solid #dbeafe;
   border-radius: 14px;
   padding: 16px 24px;
@@ -298,7 +302,7 @@
   display: flex;
   align-items: center;
   gap: 14px;
-  background: #fff;
+  background: #222546;
   border: 0.5px solid #dbeafe;
   border-radius: 14px;
   padding: 14px 18px;
@@ -365,7 +369,7 @@
   gap: 14px;
 }
 .qz-sidebar-card {
-  background: #fff;
+  background: #222546;
   border: 0.5px solid #dbeafe;
   border-radius: 14px;
   padding: 1.1rem;
@@ -393,7 +397,7 @@
   justify-content: center;
   font-size: var(--font-lx);
   font-weight: 600;
-  color: #94a3b8;
+  color: #222546;
   cursor: pointer;
   transition: all 0.18s;
 }
@@ -503,7 +507,9 @@
     padding: 14px;
   }
 }
-
+.qz-root {
+  background: #222546!important;
+}
 @media (max-width: 640px) {
   .qz-timer {
     font-size: 14px;
