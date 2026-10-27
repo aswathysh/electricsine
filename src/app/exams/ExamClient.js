@@ -1,0 +1,247 @@
+"use client";
+
+import { useState } from "react";
+import Image from "next/image";
+import { useRouter } from "next/navigation";
+import { Header } from "@/components/sharables/Header";
+import "./exam.css";
+import Link from "next/link";
+
+const CATEGORIES = [
+  "All Articles",
+  "Exam Strategy",
+  "Mock Tests",
+  "GMAT / GRE",
+  "IELTS / TOEFL",
+  "Professional Certs",
+  "Study Science",
+  "Time Management",
+];
+
+const STATS = [
+  { number: "2.4M", label: "Students helped" },
+  { number: "840+", label: "Study articles" },
+  { number: "96%", label: "Pass rate improvement" },
+  { number: "120+", label: "Exams covered" },
+];
+
+function Navbar() {
+  return (
+    <nav className="navbar">
+      <Header />
+    </nav>
+  );
+}
+
+
+
+function StatsStrip() {
+  return (
+    <div className="stats-strip">
+      {STATS.map((s) => (
+        <div key={s.label} className="stat-item">
+          <span className="stat-number">{s.number}</span>
+          <span className="stat-label">{s.label}</span>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function FeaturedCard({ article }) {
+  if (!article) return null;
+
+  return (
+    <div className="featured-card">
+      <div className="featured-content">
+        <div>
+          <div className="featured-meta">
+            <span className="tag tag-ink">Featured</span>
+            <span className="featured-time">12 min read · {article.date}</span>
+          </div>
+          <h2 className="featured-title">{article.title}</h2>
+        </div>
+        <div>
+          <div className="featured-author">
+            <div className="author-avatar avatar-a">DR</div>
+            <div>
+              <div className="author-name-white">{article.author}</div>
+            </div>
+          </div>
+          <a href={article.link} className="read-btn">
+            Read article →
+          </a>
+        </div>
+      </div>
+      <div className="featured-visual">
+        <div className="feat-deco">
+          <div className="ring ring-1" />
+          <div className="ring ring-2" />
+          <div className="ring ring-3" />
+        </div>
+        <div className="feat-badge">
+          <div className="badge-circle">🧠</div>
+          <div className="badge-label">Memory Mastery</div>
+          <div className="badge-sub">
+            Practice Smarter. Perform Better. Succeed Faster.
+          </div>
+        </div>
+        <div className="feat-pills">
+          <span className="feat-pill">Electrical</span>
+          <span className="feat-pill">Electonics</span>
+          <span className="feat-pill">Instrumentation</span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function CategoryFilter({ active, onChange }) {
+  return (
+    <div className="categories">
+      {CATEGORIES.map((cat) => (
+        <button
+          key={cat}
+          type="button"
+          className={`cat-btn${active === cat ? " active" : ""}`}
+          onClick={() => onChange(cat)}
+        >
+          {cat}
+        </button>
+      ))}
+    </div>
+  );
+}
+
+function ArticleCard({ article, onClick }) {
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      onClick();
+    }
+  };
+
+  return (
+    <div
+      role="button"
+      tabIndex={0}
+      onClick={onClick}
+      onKeyDown={handleKeyDown}
+      className={`article-card${article.wide ? " wide" : ""}`}
+    >
+      <div className="article-thumb">
+        {article.image ? (
+          <Link href={`/exams/${article.slug}`} className="article-link">
+          <Image className="ims-src-app-blog-BlogClient-js-0001"
+            src={article.image}
+            alt={"image"}
+            fill
+            loading="lazy"
+          />
+          </Link>
+        ) : (
+          <span>{article.emoji}</span>
+        )}
+      </div>
+      <div className="article-body">
+        <div className="article-tag-row">
+          <span className={`tag ${article.tagClass}`}>{article.tag}</span>
+          <span className="article-time">{article.readTime}</span>
+        </div>
+        <Link href={`/exams/${article.slug}`} className="article-link">
+        <h3 className={["article-title", "ims-src-app-blog-BlogClient-js-0002"].filter(Boolean).join(" ")} >
+          {article.title}
+        </h3>
+        </Link>
+        <div
+          className={`article-excerpt ${article.wide ? "blob-wide" : "blob-nonWide"}`}
+          dangerouslySetInnerHTML={{ __html: article.description }}
+        />
+        <div className="article-footer">
+          <div className="article-author-row">
+            <div className={`small-avatar ${article.authorClass}`}>
+              {article.authorInitials}
+            </div>
+            <span className="article-author-name">{article.author}</span>
+          </div>
+          <span className="article-time">{article.date}</span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function Newsletter() {
+  const [email, setEmail] = useState("");
+
+  return (
+    <div className="newsletter">
+      <div className="newsletter-left">
+        <h2>
+          Weekly prep tips.
+          <br />
+          Zero noise.
+        </h2>
+        <p>One high-signal email every Sunday. Join 1400 students.</p>
+      </div>
+      <div className="newsletter-form">
+        <input
+          type="email"
+          className="newsletter-input"
+          placeholder="your@email.com"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <button type="button" className="newsletter-btn">
+          Subscribe →
+        </button>
+      </div>
+    </div>
+  );
+}
+
+function SiteFooter() {
+  return (
+    <footer className="site-footer">
+      <span>© 2026 Electric Sine.</span>
+      <span className="footer-dot">·</span>
+      <span>Built for students</span>
+    </footer>
+  );
+}
+
+export default function ExamClient({ articles }) {
+  const [activeCategory, setActiveCategory] = useState("All Articles");
+  const router = useRouter();
+
+  const handleBlogDetail = (slug) => {
+    router.push(`/exams/${slug}`);
+  };
+
+  return (
+    <div className="app">
+      <Navbar />
+      <div className="section">
+        <h1>Exams</h1>
+        <div className="article-left">
+        <div className="articles-grid">
+          {articles?.map((article) => (
+            <ArticleCard
+              key={article.id}
+              article={article}
+              onClick={() => handleBlogDetail(article.slug)}
+            />
+          ))}
+          </div>
+          <div className="article-right">
+
+          </div>
+        </div>
+      </div>
+      <div className="section">
+        <Newsletter />
+      </div>
+      <SiteFooter />
+    </div>
+  );
+}

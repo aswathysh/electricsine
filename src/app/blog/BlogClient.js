@@ -142,7 +142,7 @@ function ArticleCard({ article, onClick }) {
       tabIndex={0}
       onClick={onClick}
       onKeyDown={handleKeyDown}
-      className={`article-card${article.wide ? " wide" : ""}`}
+      className={`article-card${article.wide ? "  " : ""}`}
     >
       <div className="article-thumb">
         {article.image ? (
