@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, useRef } from "react";
 import "./QuizPage.css";
 import Image from "next/image";
 
@@ -7,12 +7,19 @@ import { useSampleQuestionSections } from "@/services/PracticeQueris";
 
 const KEYS = ["A", "B", "C", "D"];
 const TOTAL_SECS = 30 * 60;
+const MAX_GUEST_QUESTIONS = 5;
 
 export default function QuizPageNew({ params }) {
   const [current, setCurrent] = useState(0);
   const [answers, setAnswers] = useState({});
   const [skipped, setSkipped] = useState(new Set());
+  const [savedAttendedQuestions, setSavedAttendedQuestions] = useState(new Set());
+  const [attendanceReady, setAttendanceReady] = useState(false);
   const [secs, setSecs] = useState(TOTAL_SECS);
+  const [showAccountPrompt, setShowAccountPrompt] = useState(false);
+  const [hasShownAccountPrompt, setHasShownAccountPrompt] = useState(false);
+  const accountDialogRef = useRef(null);
+  const attendanceStorageKey = `sample_questions_attended_${params.id}`;
   const {
     data: data,
     isLoading,
@@ -53,6 +60,70 @@ export default function QuizPageNew({ params }) {
     return () => clearInterval(t);
   }, []);
 
+  useEffect(() => {
+    const storedAttendance = JSON.parse(
+      sessionStorage.getItem(attendanceStorageKey) || "[]",
+    );
+    const restoredQuestions = Array.isArray(storedAttendance)
+      ? new Set(
+          storedAttendance.filter(
+            (questionIndex) =>
+              Number.isInteger(questionIndex) && questionIndex >= 0,
+          ),
+        )
+      : new Set();
+
+    setSavedAttendedQuestions(restoredQuestions);
+    setAttendanceReady(true);
+    if (
+      restoredQuestions.size >= MAX_GUEST_QUESTIONS &&
+      !sessionStorage.getItem("token")
+    ) {
+      setShowAccountPrompt(true);
+      setHasShownAccountPrompt(true);
+    }
+  }, [attendanceStorageKey]);
+
+  useEffect(() => {
+    if (!showAccountPrompt) return undefined;
+
+    const previousOverflow = document.body.style.overflow;
+    const handleKeyDown = (event) => {
+      if (event.key === "Tab") {
+        const focusableElements =
+          accountDialogRef.current?.querySelectorAll(
+            'a[href], button:not([disabled])',
+          );
+        if (!focusableElements?.length) return;
+
+        const firstElement = focusableElements[0];
+        const lastElement = focusableElements[focusableElements.length - 1];
+        const focusIsOutsideDialog =
+          !accountDialogRef.current.contains(document.activeElement);
+
+        if (
+          (event.shiftKey &&
+            (document.activeElement === firstElement || focusIsOutsideDialog)) ||
+          (!event.shiftKey &&
+            (document.activeElement === lastElement || focusIsOutsideDialog))
+        ) {
+          event.preventDefault();
+          (event.shiftKey ? lastElement : firstElement).focus();
+        }
+      }
+    };
+
+    const previouslyFocusedElement = document.activeElement;
+    document.body.style.overflow = "hidden";
+    accountDialogRef.current?.querySelector("a[href]")?.focus();
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", handleKeyDown);
+      previouslyFocusedElement?.focus();
+    };
+  }, [showAccountPrompt]);
+
   const mm = String(Math.floor(secs / 60)).padStart(2, "0");
   const ss = String(secs % 60).padStart(2, "0");
 
@@ -65,10 +136,37 @@ export default function QuizPageNew({ params }) {
   const wrong = Object.keys(answers).length - correct;
   const pct = Math.round((correct / samplequestions?.length) * 100);
   const progress = Math.round(((current + 1) / samplequestions?.length) * 100);
+  const attendedQuestions = new Set([
+    ...savedAttendedQuestions,
+    ...Object.keys(answers).map(Number),
+    ...skipped,
+  ]);
+
+  const recordAttendance = (questionIndex) => {
+    const updatedQuestions = new Set(attendedQuestions);
+    updatedQuestions.add(questionIndex);
+    setSavedAttendedQuestions(updatedQuestions);
+    if (!sessionStorage.getItem("token")) {
+      sessionStorage.setItem(
+        attendanceStorageKey,
+        JSON.stringify([...updatedQuestions]),
+      );
+    }
+    return updatedQuestions.size;
+  };
 
   const handleSelect = (i) => {
-    if (sel !== null) return;
+    if (!attendanceReady || sel !== null) return;
+    const nextAttendedCount = recordAttendance(current);
     setAnswers((prev) => ({ ...prev, [current]: i }));
+    if (
+      !hasShownAccountPrompt &&
+      nextAttendedCount >= MAX_GUEST_QUESTIONS &&
+      !sessionStorage.getItem("token")
+    ) {
+      setShowAccountPrompt(true);
+      setHasShownAccountPrompt(true);
+    }
     setSkipped((prev) => {
       const s = new Set(prev);
       s.delete(current);
@@ -77,6 +175,16 @@ export default function QuizPageNew({ params }) {
   };
 
   const handleSkip = () => {
+    if (!attendanceReady) return;
+    const nextAttendedCount = recordAttendance(current);
+    if (
+      !hasShownAccountPrompt &&
+      nextAttendedCount >= MAX_GUEST_QUESTIONS &&
+      !sessionStorage.getItem("token")
+    ) {
+      setShowAccountPrompt(true);
+      setHasShownAccountPrompt(true);
+    }
     setSkipped((prev) => new Set(prev).add(current));
     if (current < samplequestions?.length - 1) setCurrent((c) => c + 1);
   };
@@ -275,6 +383,43 @@ export default function QuizPageNew({ params }) {
           </div>
         </div>
       </div>
+
+      {showAccountPrompt && (
+        <div className="sample-account-overlay">
+          <section
+            ref={accountDialogRef}
+            className="sample-account-dialog"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="sample-account-title"
+            aria-describedby="sample-account-description"
+          >
+            <div className="sample-account-icon" aria-hidden="true">
+              <span>{MAX_GUEST_QUESTIONS}</span>
+              <span className="sample-account-icon-check">✓</span>
+            </div>
+            <p className="sample-account-eyebrow">Free questions completed</p>
+            <h2 id="sample-account-title">
+              Log in to continue the exam
+            </h2>
+            <p id="sample-account-description" className="sample-account-copy">
+              You&apos;ve attended {MAX_GUEST_QUESTIONS} questions. Create an
+              account or log in to answer more questions.
+            </p>
+            <div className="sample-account-actions">
+              <a
+                className="sample-account-primary"
+                href="/auth/login?tab=register"
+              >
+                Create a free account
+              </a>
+              <a className="sample-account-secondary" href="/auth/login">
+                I already have an account
+              </a>
+            </div>
+          </section>
+        </div>
+      )}
     </div>
   );
 }

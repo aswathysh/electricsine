@@ -29,6 +29,12 @@ export default function LoginPage() {
   const [errors, setErrors] = useState({});
 
   useEffect(() => {
+    if (new URLSearchParams(window.location.search).get("tab") === "register") {
+      setActiveTab("register");
+    }
+  }, []);
+
+  useEffect(() => {
     setSuccess(false);
     setValidate(false);
     setForgot(false);

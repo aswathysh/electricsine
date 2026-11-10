@@ -170,7 +170,7 @@ function ArticleCard({ article, onClick }) {
         </h3>
         </Link>
         <div
-          className={`article-excerpt ${article.wide ? "blob-wide" : "blob-nonWide"}`}
+          className={`article-excerpt blob-nonWide`}
           dangerouslySetInnerHTML={{ __html: article.description }}
         />
         <div className="article-footer">

@@ -639,3 +639,207 @@
     font-size: 11px;
   }
 }
+
+.sample-account-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1400;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(15, 23, 42, 0.72);
+  backdrop-filter: blur(5px);
+  animation: sample-account-fade-in 180ms ease-out;
+}
+
+.sample-account-dialog {
+  position: relative;
+  width: min(100%, 440px);
+  padding: 38px 36px 30px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 50% 0, rgba(59, 130, 246, 0.12), transparent 42%),
+    #fff;
+  box-shadow: 0 24px 80px rgba(2, 6, 23, 0.32);
+  text-align: center;
+  animation: sample-account-pop-in 220ms ease-out;
+}
+
+.sample-account-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  background: #f1f5f9;
+  color: #64748b;
+  font-size: 25px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 160ms ease, color 160ms ease;
+}
+
+.sample-account-close:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+.sample-account-icon {
+  position: relative;
+  display: grid;
+  width: 76px;
+  height: 76px;
+  margin: 0 auto 19px;
+  place-items: center;
+  border: 1px solid #bfdbfe;
+  border-radius: 23px;
+  background: linear-gradient(145deg, #eff6ff, #dbeafe);
+  color: #1d4ed8;
+  font-size: 25px;
+  font-weight: 800;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.12);
+  transform: rotate(-4deg);
+}
+
+.sample-account-icon-check {
+  position: absolute;
+  right: -7px;
+  bottom: -5px;
+  display: grid;
+  width: 27px;
+  height: 27px;
+  place-items: center;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  background: #16a34a;
+  color: #fff;
+  font-size: 14px;
+  transform: rotate(4deg);
+}
+
+.sample-account-eyebrow {
+  margin: 0 0 8px;
+  color: #2563eb;
+  font-size: 13px;
+  font-weight: 750;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.sample-account-dialog h2 {
+  margin: 0;
+  color: #172554;
+  font-size: clamp(23px, 5vw, 29px);
+  font-weight: 750;
+  line-height: 1.2;
+}
+
+.sample-account-copy {
+  max-width: 340px;
+  margin: 13px auto 25px;
+  color: #64748b;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.sample-account-actions {
+  display: grid;
+  gap: 10px;
+}
+
+.sample-account-primary,
+.sample-account-secondary {
+  display: flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 18px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+}
+
+.sample-account-primary {
+  background: linear-gradient(135deg, #1d4ed8, #2563eb);
+  box-shadow: 0 8px 18px rgba(37, 99, 235, 0.22);
+  color: #fff;
+}
+
+.sample-account-primary:hover {
+  background: linear-gradient(135deg, #1e40af, #1d4ed8);
+  box-shadow: 0 10px 24px rgba(37, 99, 235, 0.3);
+  transform: translateY(-1px);
+}
+
+.sample-account-secondary {
+  border: 1px solid #dbeafe;
+  background: #f8fafc;
+  color: #1e40af;
+}
+
+.sample-account-secondary:hover {
+  background: #eff6ff;
+  transform: translateY(-1px);
+}
+
+.sample-account-continue {
+  margin-top: 17px;
+  padding: 7px 10px;
+  border: 0;
+  background: transparent;
+  color: #64748b;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.sample-account-continue:hover {
+  color: #1e40af;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.sample-account-close:focus-visible,
+.sample-account-primary:focus-visible,
+.sample-account-secondary:focus-visible,
+.sample-account-continue:focus-visible {
+  outline: 3px solid #93c5fd;
+  outline-offset: 3px;
+}
+
+@keyframes sample-account-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes sample-account-pop-in {
+  from { opacity: 0; transform: translateY(10px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@media (max-width: 480px) {
+  .sample-account-dialog {
+    padding: 34px 22px 24px;
+    border-radius: 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sample-account-overlay,
+  .sample-account-dialog {
+    animation: none;
+  }
+
+  .sample-account-primary,
+  .sample-account-secondary {
+    transition: none;
+  }
+}
